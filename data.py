@@ -6,13 +6,13 @@ import os
 import json
 
 # Read data
-file_names = os.listdir("data")
-
 ev = pd.read_csv(
-    os.path.join("data", file_names[0]), index_col=0
+    os.path.join("data", "EV Data - EV Data.csv"), index_col=0
 )  # this is historical data
-chargers = pd.read_csv(os.path.join("data", file_names[1]), index_col=0)
-energy_prod = pd.read_csv(os.path.join("data", file_names[2]), index_col=0)
+chargers = pd.read_csv(
+    os.path.join("data", "EV Charging Stations - EV Chargers.csv"), index_col=0
+)
+energy_prod = pd.read_csv(os.path.join("data", "Energy Production.csv"), index_col=0)
 
 
 # Understanding variables
