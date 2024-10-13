@@ -6,9 +6,7 @@ import os
 import json
 
 # Read data
-ev = pd.read_csv(
-    os.path.join("data", "EV Data - EV Data.csv"), index_col=0
-)  # this is historical data
+ev = pd.read_csv(os.path.join("data", "EV Data - EV Data.csv"), index_col=0)
 chargers = pd.read_csv(
     os.path.join("data", "EV Charging Stations - EV Chargers.csv"), index_col=0
 )
@@ -37,4 +35,18 @@ def export_unique_values_json(data, filename):
 ## export_unique_values_json(chargers, "chargers_unique_values")
 ## export_unique_values_json(energy_prod, "energy_prod_unique_values")
 
-# Actual exploration
+
+# Data cleaning
+## Aligning column names.
+ev.rename(columns={"region": "Country"}, inplace=True)
+chargers.rename(columns={"region": "Country"}, inplace=True)
+
+## Clean date for energy_prod
+energy_prod[["Year", "Month"]] = energy_prod["Time"].str.split("-", expand=True)
+energy_prod["Year"] = "20" + energy_prod["Year"]
+energy_prod["Date"] = pd.to_datetime(
+    energy_prod["Month"] + " " + energy_prod["Year"], format="%b %Y"
+)
+
+## Join data
+## TODO: Join all data under one df.
