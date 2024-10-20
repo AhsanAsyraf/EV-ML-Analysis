@@ -1,0 +1,3131 @@
+country,parameter,powertrain,year,unit,value
+Australia,EV sales share,EV,2011,percent,0.006500000134
+Australia,EV stock share,EV,2011,percent,0.0003900000011
+Australia,EV sales,BEV,2011,Vehicles,49.0
+Australia,EV stock,BEV,2011,Vehicles,49.0
+Australia,EV stock,BEV,2012,Vehicles,220.0
+Australia,EV sales,BEV,2012,Vehicles,170.0
+Australia,EV stock share,EV,2012,percent,0.002400000114
+Australia,EV sales share,EV,2012,percent,0.02999999933
+Australia,EV stock,PHEV,2012,Vehicles,80.0
+Australia,EV sales,PHEV,2012,Vehicles,80.0
+Australia,EV sales,PHEV,2013,Vehicles,100.0
+Australia,EV stock,PHEV,2013,Vehicles,180.0
+Australia,EV sales share,EV,2013,percent,0.03400000185
+Australia,EV stock share,EV,2013,percent,0.004600000102
+Australia,EV sales,BEV,2013,Vehicles,190.0
+Australia,EV stock,BEV,2013,Vehicles,410.0
+Australia,EV stock,BEV,2014,Vehicles,780.0
+Australia,EV sales,BEV,2014,Vehicles,370.0
+Australia,EV stock share,EV,2014,percent,0.01400000043
+Australia,EV sales share,EV,2014,percent,0.1599999964
+Australia,EV stock,PHEV,2014,Vehicles,1100.0
+Australia,EV sales,PHEV,2014,Vehicles,950.0
+Australia,EV sales,PHEV,2015,Vehicles,1000.0
+Australia,EV stock,PHEV,2015,Vehicles,2100.0
+Australia,EV sales share,EV,2015,percent,0.200000003
+Australia,EV stock share,EV,2015,percent,0.0270000007
+Australia,EV sales,BEV,2015,Vehicles,760.0
+Australia,EV stock,BEV,2015,Vehicles,1500.0
+Australia,EV stock,BEV,2016,Vehicles,2200.0
+Australia,EV sales,BEV,2016,Vehicles,670.0
+Australia,EV stock share,EV,2016,percent,0.03700000048
+Australia,EV sales share,EV,2016,percent,0.150000006
+Australia,EV stock,PHEV,2016,Vehicles,2800.0
+Australia,EV sales,PHEV,2016,Vehicles,700.0
+Australia,EV sales,PHEV,2017,Vehicles,1100.0
+Australia,EV stock,PHEV,2017,Vehicles,3900.0
+Australia,EV sales share,EV,2017,percent,0.2599999905
+Australia,EV stock share,EV,2017,percent,0.05200000107
+Australia,EV sales,BEV,2017,Vehicles,1200.0
+Australia,EV stock,BEV,2017,Vehicles,3400.0
+Australia,EV stock,BEV,2018,Vehicles,5200.0
+Australia,EV sales,BEV,2018,Vehicles,1800.0
+Australia,EV stock share,EV,2018,percent,0.07699999958
+Australia,EV sales share,EV,2018,percent,0.4199999869
+Australia,EV stock,PHEV,2018,Vehicles,5700.0
+Australia,EV sales,PHEV,2018,Vehicles,1800.0
+Australia,EV sales,PHEV,2019,Vehicles,2900.0
+Australia,EV stock,PHEV,2019,Vehicles,8600.0
+Australia,EV sales share,EV,2019,percent,1.200000048
+Australia,EV stock share,EV,2019,percent,0.1400000006
+Australia,EV sales,BEV,2019,Vehicles,6300.0
+Australia,EV stock,BEV,2019,Vehicles,12000.0
+Australia,EV stock,BEV,2020,Vehicles,17000.0
+Australia,EV sales,BEV,2020,Vehicles,5200.0
+Australia,EV stock share,EV,2020,percent,0.1800000072
+Australia,EV sales share,EV,2020,percent,1.100000024
+Australia,EV stock,PHEV,2020,Vehicles,10000.0
+Australia,EV sales,PHEV,2020,Vehicles,1700.0
+Australia,EV sales,PHEV,2021,Vehicles,3400.0
+Australia,EV stock,PHEV,2021,Vehicles,14000.0
+Australia,EV stock,FCEV,2021,Vehicles,44.0
+Australia,EV sales share,EV,2021,percent,2.799999952
+Australia,EV stock share,EV,2021,percent,0.3199999928
+Australia,EV sales,BEV,2021,Vehicles,17000.0
+Australia,EV sales,FCEV,2021,Vehicles,44.0
+Australia,EV stock,BEV,2021,Vehicles,34000.0
+Austria,EV stock share,EV,2010,percent,0.007899999619
+Austria,EV stock,BEV,2010,Vehicles,350.0
+Austria,EV stock,BEV,2011,Vehicles,990.0
+Austria,EV stock share,EV,2011,percent,0.02199999988
+Austria,EV stock share,EV,2012,percent,0.03299999982
+Austria,EV stock,BEV,2012,Vehicles,1400.0
+Austria,EV stock,PHEV,2012,Vehicles,140.0
+Austria,EV stock,PHEV,2013,Vehicles,410.0
+Austria,EV stock,BEV,2013,Vehicles,2100.0
+Austria,EV sales,BEV,2013,Vehicles,650.0
+Austria,EV stock share,EV,2013,percent,0.05299999937
+Austria,EV sales share,EV,2013,percent,0.200000003
+Austria,EV sales share,EV,2014,percent,0.5699999928
+Austria,EV stock share,EV,2014,percent,0.08900000155
+Austria,EV sales,BEV,2014,Vehicles,1700.0
+Austria,EV stock,BEV,2014,Vehicles,3400.0
+Austria,EV sales,FCEV,2014,Vehicles,6.0
+Austria,EV stock,FCEV,2014,Vehicles,3.0
+Austria,EV stock,PHEV,2014,Vehicles,780.0
+Austria,EV stock,PHEV,2015,Vehicles,1500.0
+Austria,EV stock,FCEV,2015,Vehicles,6.0
+Austria,EV sales,FCEV,2015,Vehicles,4.0
+Austria,EV sales,PHEV,2015,Vehicles,1100.0
+Austria,EV stock,BEV,2015,Vehicles,5000.0
+Austria,EV sales,BEV,2015,Vehicles,1700.0
+Austria,EV stock share,EV,2015,percent,0.1400000006
+Austria,EV sales share,EV,2015,percent,0.8999999762
+Austria,EV sales share,EV,2016,percent,1.5
+Austria,EV stock share,EV,2016,percent,0.2399999946
+Austria,EV sales,BEV,2016,Vehicles,3800.0
+Austria,EV stock,BEV,2016,Vehicles,9100.0
+Austria,EV sales,PHEV,2016,Vehicles,1200.0
+Austria,EV stock,FCEV,2016,Vehicles,13.0
+Austria,EV stock,PHEV,2016,Vehicles,2300.0
+Austria,EV stock,PHEV,2017,Vehicles,3900.0
+Austria,EV stock,FCEV,2017,Vehicles,19.0
+Austria,EV sales,FCEV,2017,Vehicles,2.0
+Austria,EV sales,PHEV,2017,Vehicles,1700.0
+Austria,EV stock,BEV,2017,Vehicles,15000.0
+Austria,EV sales,BEV,2017,Vehicles,5400.0
+Austria,EV stock share,EV,2017,percent,0.3799999952
+Austria,EV sales share,EV,2017,percent,2.0
+Austria,EV sales share,EV,2018,percent,2.599999905
+Austria,EV stock share,EV,2018,percent,0.5299999714
+Austria,EV sales,BEV,2018,Vehicles,6800.0
+Austria,EV stock,BEV,2018,Vehicles,21000.0
+Austria,EV sales,PHEV,2018,Vehicles,2300.0
+Austria,EV sales,FCEV,2018,Vehicles,7.0
+Austria,EV stock,FCEV,2018,Vehicles,24.0
+Austria,EV stock,PHEV,2018,Vehicles,5700.0
+Austria,EV stock,PHEV,2019,Vehicles,8000.0
+Austria,EV sales,PHEV,2019,Vehicles,2200.0
+Austria,EV stock,FCEV,2019,Vehicles,41.0
+Austria,EV sales,FCEV,2019,Vehicles,19.0
+Austria,EV stock,BEV,2019,Vehicles,30000.0
+Austria,EV sales,BEV,2019,Vehicles,9300.0
+Austria,EV stock share,EV,2019,percent,0.75
+Austria,EV sales share,EV,2019,percent,3.5
+Austria,EV sales share,EV,2020,percent,9.5
+Austria,EV stock share,EV,2020,percent,1.200000048
+Austria,EV sales,BEV,2020,Vehicles,16000.0
+Austria,EV stock,BEV,2020,Vehicles,45000.0
+Austria,EV sales,FCEV,2020,Vehicles,14.0
+Austria,EV stock,FCEV,2020,Vehicles,45.0
+Austria,EV sales,PHEV,2020,Vehicles,7600.0
+Austria,EV stock,PHEV,2020,Vehicles,15000.0
+Austria,EV stock,PHEV,2021,Vehicles,29000.0
+Austria,EV sales,PHEV,2021,Vehicles,15000.0
+Austria,EV stock,FCEV,2021,Vehicles,55.0
+Austria,EV sales,FCEV,2021,Vehicles,14.0
+Austria,EV stock,BEV,2021,Vehicles,77000.0
+Austria,EV sales,BEV,2021,Vehicles,33000.0
+Austria,EV stock share,EV,2021,percent,2.099999905
+Austria,EV sales share,EV,2021,percent,20.0
+Belgium,EV sales share,EV,2010,percent,0.009999999776
+Belgium,EV stock share,EV,2010,percent,0.001300000004
+Belgium,EV sales,BEV,2010,Vehicles,48.0
+Belgium,EV stock,BEV,2010,Vehicles,61.0
+Belgium,EV sales,PHEV,2010,Vehicles,8.0
+Belgium,EV stock,FCEV,2010,Vehicles,1.0
+Belgium,EV stock,PHEV,2010,Vehicles,9.0
+Belgium,EV stock,PHEV,2011,Vehicles,26.0
+Belgium,EV stock,FCEV,2011,Vehicles,1.0
+Belgium,EV sales,PHEV,2011,Vehicles,16.0
+Belgium,EV stock,BEV,2011,Vehicles,320.0
+Belgium,EV sales,BEV,2011,Vehicles,280.0
+Belgium,EV stock share,EV,2011,percent,0.006500000134
+Belgium,EV sales share,EV,2011,percent,0.05200000107
+Belgium,EV sales share,EV,2012,percent,0.1899999976
+Belgium,EV stock share,EV,2012,percent,0.02199999988
+Belgium,EV sales,BEV,2012,Vehicles,570.0
+Belgium,EV stock,BEV,2012,Vehicles,830.0
+Belgium,EV sales,PHEV,2012,Vehicles,340.0
+Belgium,EV stock,FCEV,2012,Vehicles,1.0
+Belgium,EV stock,PHEV,2012,Vehicles,350.0
+Belgium,EV stock,PHEV,2013,Vehicles,590.0
+Belgium,EV stock,FCEV,2013,Vehicles,1.0
+Belgium,EV sales,PHEV,2013,Vehicles,60.0
+Belgium,EV stock,BEV,2013,Vehicles,1200.0
+Belgium,EV sales,BEV,2013,Vehicles,500.0
+Belgium,EV stock share,EV,2013,percent,0.03299999982
+Belgium,EV sales share,EV,2013,percent,0.1199999973
+Belgium,EV sales share,EV,2014,percent,0.4099999964
+Belgium,EV stock share,EV,2014,percent,0.06700000167
+Belgium,EV sales,BEV,2014,Vehicles,1300.0
+Belgium,EV stock,BEV,2014,Vehicles,2200.0
+Belgium,EV stock,FCEV,2014,Vehicles,2.0
+Belgium,EV stock,PHEV,2014,Vehicles,1500.0
+Belgium,EV sales,PHEV,2014,Vehicles,650.0
+Belgium,EV sales,PHEV,2015,Vehicles,2500.0
+Belgium,EV stock,PHEV,2015,Vehicles,3800.0
+Belgium,EV stock,FCEV,2015,Vehicles,8.0
+Belgium,EV stock,BEV,2015,Vehicles,3300.0
+Belgium,EV sales,FCEV,2015,Vehicles,2.0
+Belgium,EV sales,BEV,2015,Vehicles,1400.0
+Belgium,EV stock share,EV,2015,percent,0.1299999952
+Belgium,EV sales share,EV,2015,percent,0.7699999809
+Belgium,EV sales share,EV,2016,percent,1.700000048
+Belgium,EV stock share,EV,2016,percent,0.2800000012
+Belgium,EV sales,BEV,2016,Vehicles,2100.0
+Belgium,EV sales,FCEV,2016,Vehicles,7.0
+Belgium,EV stock,BEV,2016,Vehicles,5200.0
+Belgium,EV stock,FCEV,2016,Vehicles,20.0
+Belgium,EV stock,PHEV,2016,Vehicles,11000.0
+Belgium,EV sales,PHEV,2016,Vehicles,7100.0
+Belgium,EV sales,PHEV,2017,Vehicles,12000.0
+Belgium,EV stock,PHEV,2017,Vehicles,23000.0
+Belgium,EV stock,FCEV,2017,Vehicles,31.0
+Belgium,EV stock,BEV,2017,Vehicles,7500.0
+Belgium,EV sales,FCEV,2017,Vehicles,11.0
+Belgium,EV sales,BEV,2017,Vehicles,2700.0
+Belgium,EV stock share,EV,2017,percent,0.5299999714
+Belgium,EV sales share,EV,2017,percent,2.599999905
+Belgium,EV sales share,EV,2018,percent,2.400000095
+Belgium,EV stock share,EV,2018,percent,0.7400000095
+Belgium,EV sales,BEV,2018,Vehicles,3600.0
+Belgium,EV sales,FCEV,2018,Vehicles,13.0
+Belgium,EV stock,BEV,2018,Vehicles,11000.0
+Belgium,EV stock,FCEV,2018,Vehicles,44.0
+Belgium,EV stock,PHEV,2018,Vehicles,33000.0
+Belgium,EV sales,PHEV,2018,Vehicles,9600.0
+Belgium,EV sales,PHEV,2019,Vehicles,8900.0
+Belgium,EV stock,PHEV,2019,Vehicles,41000.0
+Belgium,EV stock,FCEV,2019,Vehicles,41.0
+Belgium,EV stock,BEV,2019,Vehicles,19000.0
+Belgium,EV sales,FCEV,2019,Vehicles,12.0
+Belgium,EV sales,BEV,2019,Vehicles,8800.0
+Belgium,EV stock share,EV,2019,percent,1.0
+Belgium,EV sales share,EV,2019,percent,3.200000048
+Belgium,EV sales share,EV,2020,percent,11.0
+Belgium,EV stock share,EV,2020,percent,1.799999952
+Belgium,EV sales,BEV,2020,Vehicles,15000.0
+Belgium,EV sales,FCEV,2020,Vehicles,4.0
+Belgium,EV stock,BEV,2020,Vehicles,32000.0
+Belgium,EV stock,FCEV,2020,Vehicles,64.0
+Belgium,EV stock,PHEV,2020,Vehicles,73000.0
+Belgium,EV sales,PHEV,2020,Vehicles,32000.0
+Belgium,EV sales,PHEV,2021,Vehicles,48000.0
+Belgium,EV stock,PHEV,2021,Vehicles,120000.0
+Belgium,EV stock,FCEV,2021,Vehicles,85.0
+Belgium,EV stock,BEV,2021,Vehicles,52000.0
+Belgium,EV sales,FCEV,2021,Vehicles,21.0
+Belgium,EV sales,BEV,2021,Vehicles,23000.0
+Belgium,EV stock share,EV,2021,percent,2.900000095
+Belgium,EV sales share,EV,2021,percent,18.0
+Brazil,EV sales,BEV,2010,Vehicles,10.0
+Brazil,EV sales share,EV,2010,percent,0.0003499999875
+Brazil,EV sales share,EV,2011,percent,0.0002800000075
+Brazil,EV sales,BEV,2011,Vehicles,8.0
+Brazil,EV sales,BEV,2012,Vehicles,22.0
+Brazil,EV sales,PHEV,2012,Vehicles,18.0
+Brazil,EV sales share,EV,2012,percent,0.001300000004
+Brazil,EV sales share,EV,2013,percent,0.002400000114
+Brazil,EV sales,PHEV,2013,Vehicles,33.0
+Brazil,EV sales,BEV,2013,Vehicles,39.0
+Brazil,EV sales,BEV,2014,Vehicles,61.0
+Brazil,EV stock,BEV,2014,Vehicles,61.0
+Brazil,EV sales share,EV,2014,percent,0.002199999988
+Brazil,EV stock share,EV,2014,percent,0.000159999996
+Brazil,EV stock share,EV,2015,percent,0.0003800000122
+Brazil,EV sales share,EV,2015,percent,0.00419999985
+Brazil,EV stock,BEV,2015,Vehicles,120.0
+Brazil,EV sales,BEV,2015,Vehicles,61.0
+Brazil,EV sales,PHEV,2015,Vehicles,28.0
+Brazil,EV stock,PHEV,2015,Vehicles,28.0
+Brazil,EV stock,PHEV,2016,Vehicles,75.0
+Brazil,EV sales,PHEV,2016,Vehicles,47.0
+Brazil,EV sales,BEV,2016,Vehicles,130.0
+Brazil,EV stock,BEV,2016,Vehicles,250.0
+Brazil,EV sales share,EV,2016,percent,0.01099999994
+Brazil,EV stock share,EV,2016,percent,0.0007999999798
+Brazil,EV stock share,EV,2017,percent,0.001700000023
+Brazil,EV sales share,EV,2017,percent,0.02300000004
+Brazil,EV stock,BEV,2017,Vehicles,320.0
+Brazil,EV sales,BEV,2017,Vehicles,140.0
+Brazil,EV sales,PHEV,2017,Vehicles,290.0
+Brazil,EV stock,PHEV,2017,Vehicles,360.0
+Brazil,EV stock,PHEV,2018,Vehicles,700.0
+Brazil,EV sales,PHEV,2018,Vehicles,230.0
+Brazil,EV sales,BEV,2018,Vehicles,180.0
+Brazil,EV stock,BEV,2018,Vehicles,350.0
+Brazil,EV sales share,EV,2018,percent,0.01999999955
+Brazil,EV stock share,EV,2018,percent,0.002499999944
+Brazil,EV stock share,EV,2019,percent,0.007000000216
+Brazil,EV sales share,EV,2019,percent,0.08600000292
+Brazil,EV stock,BEV,2019,Vehicles,890.0
+Brazil,EV sales,BEV,2019,Vehicles,540.0
+Brazil,EV sales,PHEV,2019,Vehicles,1400.0
+Brazil,EV stock,PHEV,2019,Vehicles,2100.0
+Brazil,EV stock,PHEV,2020,Vehicles,3800.0
+Brazil,EV sales,PHEV,2020,Vehicles,1800.0
+Brazil,EV sales,BEV,2020,Vehicles,800.0
+Brazil,EV stock,BEV,2020,Vehicles,1600.0
+Brazil,EV sales share,EV,2020,percent,0.1599999964
+Brazil,EV stock share,EV,2020,percent,0.01300000027
+Brazil,EV stock share,EV,2021,percent,0.04600000009
+Brazil,EV sales share,EV,2021,percent,0.8999999762
+Brazil,EV stock,BEV,2021,Vehicles,4400.0
+Brazil,EV sales,BEV,2021,Vehicles,2900.0
+Brazil,EV sales,PHEV,2021,Vehicles,11000.0
+Brazil,EV stock,PHEV,2021,Vehicles,15000.0
+Brazil,EV sales,FCEV,2021,Vehicles,1.0
+Brazil,EV stock,FCEV,2021,Vehicles,1.0
+Bulgaria,EV sales share,EV,2015,percent,0.09000000358
+Bulgaria,EV sales,BEV,2015,Vehicles,21.0
+Bulgaria,EV sales,BEV,2016,Vehicles,5.0
+Bulgaria,EV sales,PHEV,2016,Vehicles,8.0
+Bulgaria,EV sales share,EV,2016,percent,0.05000000075
+Bulgaria,EV sales share,EV,2017,percent,0.3400000036
+Bulgaria,EV sales,PHEV,2017,Vehicles,38.0
+Bulgaria,EV sales,BEV,2017,Vehicles,68.0
+Bulgaria,EV sales,BEV,2018,Vehicles,190.0
+Bulgaria,EV sales,PHEV,2018,Vehicles,26.0
+Bulgaria,EV sales share,EV,2018,percent,0.6399999857
+Bulgaria,EV sales share,EV,2019,percent,0.6700000167
+Bulgaria,EV sales,PHEV,2019,Vehicles,56.0
+Bulgaria,EV sales,BEV,2019,Vehicles,180.0
+Bulgaria,EV sales,BEV,2020,Vehicles,140.0
+Bulgaria,EV sales,PHEV,2020,Vehicles,41.0
+Bulgaria,EV sales,PHEV,2021,Vehicles,120.0
+Bulgaria,EV sales,BEV,2021,Vehicles,430.0
+Bulgaria,EV sales share,EV,2021,percent,2.200000048
+Canada,EV stock,FCEV,2010,Vehicles,5.0
+Canada,EV stock,FCEV,2011,Vehicles,5.0
+Canada,EV sales,BEV,2011,Vehicles,220.0
+Canada,EV stock,BEV,2011,Vehicles,250.0
+Canada,EV sales,PHEV,2011,Vehicles,300.0
+Canada,EV stock,PHEV,2011,Vehicles,300.0
+Canada,EV stock share,EV,2011,percent,0.002899999963
+Canada,EV sales share,EV,2011,percent,0.04100000113
+Canada,EV sales share,EV,2012,percent,0.1400000006
+Canada,EV stock share,EV,2012,percent,0.01300000027
+Canada,EV stock,PHEV,2012,Vehicles,1600.0
+Canada,EV sales,PHEV,2012,Vehicles,1300.0
+Canada,EV stock,BEV,2012,Vehicles,830.0
+Canada,EV sales,BEV,2012,Vehicles,620.0
+Canada,EV stock,FCEV,2012,Vehicles,5.0
+Canada,EV stock,FCEV,2013,Vehicles,5.0
+Canada,EV sales,BEV,2013,Vehicles,1600.0
+Canada,EV stock,BEV,2013,Vehicles,2400.0
+Canada,EV sales,PHEV,2013,Vehicles,1500.0
+Canada,EV stock,PHEV,2013,Vehicles,3100.0
+Canada,EV stock share,EV,2013,percent,0.0270000007
+Canada,EV sales share,EV,2013,percent,0.2199999988
+Canada,EV sales share,EV,2014,percent,0.349999994
+Canada,EV stock share,EV,2014,percent,0.05299999937
+Canada,EV stock,PHEV,2014,Vehicles,5300.0
+Canada,EV sales,PHEV,2014,Vehicles,2300.0
+Canada,EV stock,BEV,2014,Vehicles,5400.0
+Canada,EV sales,BEV,2014,Vehicles,2800.0
+Canada,EV stock,FCEV,2014,Vehicles,5.0
+Canada,EV stock,FCEV,2015,Vehicles,5.0
+Canada,EV sales,BEV,2015,Vehicles,4400.0
+Canada,EV stock,BEV,2015,Vehicles,9900.0
+Canada,EV sales,PHEV,2015,Vehicles,2400.0
+Canada,EV stock,PHEV,2015,Vehicles,7700.0
+Canada,EV stock share,EV,2015,percent,0.08399999887
+Canada,EV sales share,EV,2015,percent,0.4499999881
+Canada,EV sales share,EV,2016,percent,0.7599999905
+Canada,EV stock share,EV,2016,percent,0.1299999952
+Canada,EV stock,PHEV,2016,Vehicles,14000.0
+Canada,EV sales,PHEV,2016,Vehicles,6400.0
+Canada,EV stock,BEV,2016,Vehicles,15000.0
+Canada,EV sales,BEV,2016,Vehicles,5200.0
+Canada,EV stock,FCEV,2016,Vehicles,5.0
+Canada,EV stock,FCEV,2017,Vehicles,5.0
+Canada,EV sales,BEV,2017,Vehicles,8700.0
+Canada,EV stock,BEV,2017,Vehicles,25000.0
+Canada,EV sales,PHEV,2017,Vehicles,8000.0
+Canada,EV stock,PHEV,2017,Vehicles,22000.0
+Canada,EV stock share,EV,2017,percent,0.2099999934
+Canada,EV sales share,EV,2017,percent,1.0
+Canada,EV sales share,EV,2018,percent,2.799999952
+Canada,EV stock share,EV,2018,percent,0.3799999952
+Canada,EV stock,PHEV,2018,Vehicles,42000.0
+Canada,EV sales,PHEV,2018,Vehicles,21000.0
+Canada,EV stock,FCEV,2018,Vehicles,5.0
+Canada,EV stock,BEV,2018,Vehicles,45000.0
+Canada,EV sales,BEV,2018,Vehicles,23000.0
+Canada,EV sales,BEV,2019,Vehicles,32000.0
+Canada,EV stock,BEV,2019,Vehicles,76000.0
+Canada,EV sales,FCEV,2019,Vehicles,79.0
+Canada,EV stock,FCEV,2019,Vehicles,96.0
+Canada,EV sales,PHEV,2019,Vehicles,19000.0
+Canada,EV stock,PHEV,2019,Vehicles,60000.0
+Canada,EV stock share,EV,2019,percent,0.5899999738
+Canada,EV sales share,EV,2019,percent,3.400000095
+Canada,EV sales share,EV,2020,percent,4.199999809
+Canada,EV stock share,EV,2020,percent,0.8299999833
+Canada,EV stock,PHEV,2020,Vehicles,82000.0
+Canada,EV sales,PHEV,2020,Vehicles,14000.0
+Canada,EV stock,FCEV,2020,Vehicles,130.0
+Canada,EV sales,FCEV,2020,Vehicles,16.0
+Canada,EV stock,BEV,2020,Vehicles,130000.0
+Canada,EV sales,BEV,2020,Vehicles,37000.0
+Canada,EV sales,BEV,2021,Vehicles,59000.0
+Canada,EV stock,BEV,2021,Vehicles,190000.0
+Canada,EV sales,FCEV,2021,Vehicles,130.0
+Canada,EV stock,FCEV,2021,Vehicles,250.0
+Canada,EV sales,PHEV,2021,Vehicles,28000.0
+Canada,EV stock,PHEV,2021,Vehicles,110000.0
+Canada,EV stock share,EV,2021,percent,1.200000048
+Canada,EV sales share,EV,2021,percent,6.400000095
+Chile,EV sales share,EV,2011,percent,0.002400000114
+Chile,EV stock share,EV,2011,percent,0.0002200000017
+Chile,EV sales,BEV,2011,Vehicles,6.0
+Chile,EV stock,BEV,2011,Vehicles,6.0
+Chile,EV stock,BEV,2012,Vehicles,11.0
+Chile,EV sales,BEV,2012,Vehicles,5.0
+Chile,EV stock share,EV,2012,percent,0.0003800000122
+Chile,EV sales share,EV,2012,percent,0.002000000095
+Chile,EV sales share,EV,2013,percent,0.001900000032
+Chile,EV stock share,EV,2013,percent,0.0005099999835
+Chile,EV sales,BEV,2013,Vehicles,5.0
+Chile,EV stock,BEV,2013,Vehicles,16.0
+Chile,EV stock,BEV,2014,Vehicles,19.0
+Chile,EV sales,BEV,2014,Vehicles,3.0
+Chile,EV stock,PHEV,2014,Vehicles,14.0
+Chile,EV stock share,EV,2014,percent,0.001000000047
+Chile,EV sales share,EV,2014,percent,0.007100000046
+Chile,EV sales,PHEV,2014,Vehicles,14.0
+Chile,EV sales,PHEV,2015,Vehicles,23.0
+Chile,EV sales share,EV,2015,percent,0.01700000092
+Chile,EV stock share,EV,2015,percent,0.002099999925
+Chile,EV stock,PHEV,2015,Vehicles,37.0
+Chile,EV sales,BEV,2015,Vehicles,10.0
+Chile,EV stock,BEV,2015,Vehicles,32.0
+Chile,EV stock,BEV,2016,Vehicles,54.0
+Chile,EV sales,BEV,2016,Vehicles,18.0
+Chile,EV stock,PHEV,2016,Vehicles,46.0
+Chile,EV stock share,EV,2016,percent,0.002899999963
+Chile,EV sales share,EV,2016,percent,0.01300000027
+Chile,EV sales,PHEV,2016,Vehicles,9.0
+Chile,EV sales,PHEV,2017,Vehicles,15.0
+Chile,EV sales share,EV,2017,percent,0.06100000069
+Chile,EV stock share,EV,2017,percent,0.006500000134
+Chile,EV stock,PHEV,2017,Vehicles,61.0
+Chile,EV sales,BEV,2017,Vehicles,120.0
+Chile,EV stock,BEV,2017,Vehicles,170.0
+Chile,EV sales,BEV,2018,Vehicles,100.0
+Chile,EV stock,PHEV,2018,Vehicles,130.0
+Chile,EV stock,BEV,2018,Vehicles,280.0
+Chile,EV stock share,EV,2018,percent,0.01099999994
+Chile,EV sales share,EV,2018,percent,0.0700000003
+Chile,EV sales,PHEV,2018,Vehicles,68.0
+Chile,EV sales,PHEV,2019,Vehicles,140.0
+Chile,EV sales share,EV,2019,percent,0.1400000006
+Chile,EV stock share,EV,2019,percent,0.01700000092
+Chile,EV stock,BEV,2019,Vehicles,440.0
+Chile,EV stock,PHEV,2019,Vehicles,210.0
+Chile,EV sales,BEV,2019,Vehicles,160.0
+Chile,EV sales,BEV,2020,Vehicles,110.0
+Chile,EV stock,PHEV,2020,Vehicles,290.0
+Chile,EV stock,BEV,2020,Vehicles,550.0
+Chile,EV stock share,EV,2020,percent,0.02199999988
+Chile,EV sales share,EV,2020,percent,0.1599999964
+Chile,EV sales,PHEV,2020,Vehicles,79.0
+Chile,EV sales,PHEV,2021,Vehicles,300.0
+Chile,EV sales share,EV,2021,percent,0.1899999976
+Chile,EV stock share,EV,2021,percent,0.03500000015
+Chile,EV sales,FCEV,2021,Vehicles,1.0
+Chile,EV stock,FCEV,2021,Vehicles,1.0
+Chile,EV stock,BEV,2021,Vehicles,820.0
+Chile,EV stock,PHEV,2021,Vehicles,590.0
+Chile,EV sales,BEV,2021,Vehicles,270.0
+China,Electricity demand,EV,2010,GWh,46.0
+China,EV stock,BEV,2010,Vehicles,1600.0
+China,EV stock,PHEV,2010,Vehicles,340.0
+China,EV sales,PHEV,2010,Vehicles,340.0
+China,EV sales,BEV,2010,Vehicles,1100.0
+China,Oil displacement Mbd,EV,2010,Milion barrels per day,2.9e-05
+China,"Oil displacement, million lge",EV,2010,"Oil displacement, million lge",1.700000048
+China,EV sales share,EV,2010,percent,0.009999999776
+China,EV stock share,EV,2010,percent,0.003100000089
+China,EV stock share,EV,2011,percent,0.009200000204
+China,EV sales share,EV,2011,percent,0.03400000185
+China,Oil displacement Mbd,EV,2011,Milion barrels per day,0.0001100000009
+China,"Oil displacement, million lge",EV,2011,"Oil displacement, million lge",6.699999809
+China,EV sales,BEV,2011,Vehicles,4800.0
+China,EV sales,PHEV,2011,Vehicles,320.0
+China,EV stock,PHEV,2011,Vehicles,660.0
+China,EV stock,BEV,2011,Vehicles,6300.0
+China,Electricity demand,EV,2011,GWh,120.0
+China,Electricity demand,EV,2012,GWh,230.0
+China,EV stock,BEV,2012,Vehicles,16000.0
+China,EV stock,PHEV,2012,Vehicles,920.0
+China,EV sales,PHEV,2012,Vehicles,260.0
+China,EV sales,BEV,2012,Vehicles,9600.0
+China,Oil displacement Mbd,EV,2012,Milion barrels per day,0.0002699999895
+China,"Oil displacement, million lge",EV,2012,"Oil displacement, million lge",16.0
+China,EV sales share,EV,2012,percent,0.07299999893
+China,EV stock share,EV,2012,percent,0.01899999939
+China,EV stock share,EV,2013,percent,0.03099999949
+China,EV sales share,EV,2013,percent,0.09499999881
+China,Oil displacement Mbd,EV,2013,Milion barrels per day,0.000549999997
+China,"Oil displacement, million lge",EV,2013,"Oil displacement, million lge",33.0
+China,EV sales,BEV,2013,Vehicles,15000.0
+China,EV sales,PHEV,2013,Vehicles,730.0
+China,EV stock,PHEV,2013,Vehicles,1600.0
+China,EV stock,BEV,2013,Vehicles,31000.0
+China,Electricity demand,EV,2013,GWh,470.0
+China,Electricity demand,EV,2014,GWh,660.0
+China,EV stock,BEV,2014,Vehicles,59000.0
+China,EV stock,PHEV,2014,Vehicles,26000.0
+China,EV sales,PHEV,2014,Vehicles,24000.0
+China,EV sales,BEV,2014,Vehicles,49000.0
+China,Oil displacement Mbd,EV,2014,Milion barrels per day,0.001300000004
+China,"Oil displacement, million lge",EV,2014,"Oil displacement, million lge",81.0
+China,EV sales share,EV,2014,percent,0.400000006
+China,EV stock share,EV,2014,percent,0.0700000003
+China,EV stock share,EV,2015,percent,0.2099999934
+China,EV sales share,EV,2015,percent,1.0
+China,Oil displacement Mbd,EV,2015,Milion barrels per day,0.00410000002
+China,"Oil displacement, million lge",EV,2015,"Oil displacement, million lge",240.0
+China,EV sales,BEV,2015,Vehicles,150000.0
+China,EV sales,PHEV,2015,Vehicles,61000.0
+China,EV stock,PHEV,2015,Vehicles,87000.0
+China,EV stock,BEV,2015,Vehicles,210000.0
+China,Electricity demand,EV,2015,GWh,1600.0
+China,Electricity demand,EV,2016,GWh,2400.0
+China,EV stock,BEV,2016,Vehicles,460000.0
+China,EV stock,PHEV,2016,Vehicles,170000.0
+China,EV sales,PHEV,2016,Vehicles,79000.0
+China,EV sales,BEV,2016,Vehicles,260000.0
+China,Oil displacement Mbd,EV,2016,Milion barrels per day,0.00820000004
+China,"Oil displacement, million lge",EV,2016,"Oil displacement, million lge",490.0
+China,EV sales share,EV,2016,percent,1.5
+China,EV stock share,EV,2016,percent,0.3899999857
+China,EV stock share,EV,2017,percent,0.6600000262
+China,EV sales share,EV,2017,percent,2.400000095
+China,Oil displacement Mbd,EV,2017,Milion barrels per day,0.01499999966
+China,"Oil displacement, million lge",EV,2017,"Oil displacement, million lge",920.0
+China,EV sales,PHEV,2017,Vehicles,110000.0
+China,EV stock,PHEV,2017,Vehicles,280000.0
+China,EV stock,BEV,2017,Vehicles,930000.0
+China,EV sales,BEV,2017,Vehicles,470000.0
+China,Electricity demand,EV,2017,GWh,3400.0
+China,Electricity demand,EV,2018,GWh,6200.0
+China,EV sales,BEV,2018,Vehicles,820000.0
+China,EV stock,BEV,2018,Vehicles,1700000.0
+China,EV stock,PHEV,2018,Vehicles,540000.0
+China,EV sales,PHEV,2018,Vehicles,270000.0
+China,Oil displacement Mbd,EV,2018,Milion barrels per day,0.02999999933
+China,"Oil displacement, million lge",EV,2018,"Oil displacement, million lge",1800.0
+China,EV sales share,EV,2018,percent,4.699999809
+China,EV stock share,EV,2018,percent,1.100000024
+China,EV stock share,EV,2019,percent,1.5
+China,EV sales share,EV,2019,percent,5.0
+China,Oil displacement Mbd,EV,2019,Milion barrels per day,0.04300000146
+China,"Oil displacement, million lge",EV,2019,"Oil displacement, million lge",2600.0
+China,EV sales,PHEV,2019,Vehicles,230000.0
+China,EV stock,PHEV,2019,Vehicles,770000.0
+China,EV stock,BEV,2019,Vehicles,2600000.0
+China,EV sales,BEV,2019,Vehicles,830000.0
+China,Electricity demand,EV,2019,GWh,8400.0
+China,Electricity demand,EV,2020,GWh,9600.0
+China,EV sales,BEV,2020,Vehicles,920000.0
+China,EV stock,BEV,2020,Vehicles,3500000.0
+China,EV stock,PHEV,2020,Vehicles,990000.0
+China,EV sales,PHEV,2020,Vehicles,220000.0
+China,Oil displacement Mbd,EV,2020,Milion barrels per day,0.05099999905
+China,"Oil displacement, million lge",EV,2020,"Oil displacement, million lge",3000.0
+China,EV sales share,EV,2020,percent,5.699999809
+China,EV stock share,EV,2020,percent,1.899999976
+China,EV stock share,EV,2021,percent,3.099999905
+China,EV sales share,EV,2021,percent,16.0
+China,Oil displacement Mbd,EV,2021,Milion barrels per day,0.09799999744
+China,EV stock,FCEV,2021,Vehicles,19.0
+China,EV sales,PHEV,2021,Vehicles,550000.0
+China,EV stock,PHEV,2021,Vehicles,1600000.0
+China,EV stock,BEV,2021,Vehicles,6200000.0
+China,EV sales,BEV,2021,Vehicles,2700000.0
+China,EV sales,FCEV,2021,Vehicles,19.0
+China,Electricity demand,EV,2021,GWh,18000.0
+China,"Oil displacement, million lge",EV,2021,"Oil displacement, million lge",5800.0
+Colombia,EV sales share,EV,2015,percent,0.01700000092
+Colombia,EV sales,PHEV,2015,Vehicles,3.0
+Colombia,EV sales,BEV,2015,Vehicles,39.0
+Colombia,EV sales,BEV,2016,Vehicles,28.0
+Colombia,EV sales,PHEV,2016,Vehicles,25.0
+Colombia,EV sales share,EV,2016,percent,0.02300000004
+Colombia,EV sales share,EV,2017,percent,0.06700000167
+Colombia,EV sales,PHEV,2017,Vehicles,56.0
+Colombia,EV sales,BEV,2017,Vehicles,92.0
+Colombia,EV sales,BEV,2018,Vehicles,250.0
+Colombia,EV sales,PHEV,2018,Vehicles,320.0
+Colombia,EV sales share,EV,2018,percent,0.2399999946
+Colombia,EV sales share,EV,2019,percent,0.5500000119
+Colombia,EV sales,PHEV,2019,Vehicles,450.0
+Colombia,EV sales,BEV,2019,Vehicles,870.0
+Colombia,EV sales,BEV,2020,Vehicles,480.0
+Colombia,EV sales,PHEV,2020,Vehicles,470.0
+Colombia,EV sales share,EV,2020,percent,0.5699999928
+Colombia,EV sales share,EV,2021,percent,1.200000048
+Colombia,EV sales,PHEV,2021,Vehicles,1700.0
+Colombia,EV sales,BEV,2021,Vehicles,840.0
+Costa Rica,EV sales share,EV,2015,percent,0.009600000456
+Costa Rica,EV sales,BEV,2015,Vehicles,4.0
+Costa Rica,EV stock,BEV,2015,Vehicles,140.0
+Costa Rica,EV stock,BEV,2016,Vehicles,160.0
+Costa Rica,EV sales,BEV,2016,Vehicles,12.0
+Costa Rica,EV sales share,EV,2016,percent,0.02500000037
+Costa Rica,EV sales share,EV,2017,percent,0.05999999866
+Costa Rica,EV sales,BEV,2017,Vehicles,25.0
+Costa Rica,EV stock,BEV,2017,Vehicles,180.0
+Costa Rica,EV stock,BEV,2018,Vehicles,380.0
+Costa Rica,EV sales,BEV,2018,Vehicles,200.0
+Costa Rica,EV sales share,EV,2018,percent,0.5899999738
+Costa Rica,EV sales share,EV,2019,percent,1.5
+Costa Rica,EV sales,BEV,2019,Vehicles,460.0
+Costa Rica,EV stock,BEV,2019,Vehicles,840.0
+Costa Rica,EV stock,BEV,2020,Vehicles,1500.0
+Costa Rica,EV sales,BEV,2020,Vehicles,630.0
+Costa Rica,EV sales share,EV,2020,percent,2.700000048
+Costa Rica,EV sales share,EV,2021,percent,3.900000095
+Costa Rica,EV sales,BEV,2021,Vehicles,1000.0
+Costa Rica,EV stock,BEV,2021,Vehicles,2500.0
+Croatia,EV sales share,EV,2019,percent,0.4099999964
+Croatia,EV sales,BEV,2019,Vehicles,190.0
+Croatia,EV sales,PHEV,2019,Vehicles,67.0
+Croatia,EV sales,PHEV,2020,Vehicles,140.0
+Croatia,EV sales,BEV,2020,Vehicles,530.0
+Croatia,EV sales share,EV,2020,percent,1.899999976
+Croatia,EV sales share,EV,2021,percent,3.799999952
+Croatia,EV sales,BEV,2021,Vehicles,1400.0
+Croatia,EV sales,PHEV,2021,Vehicles,400.0
+Cyprus,EV sales,BEV,2019,Vehicles,23.0
+Cyprus,EV sales share,EV,2019,percent,0.1899999976
+Cyprus,EV sales share,EV,2020,percent,1.399999976
+Cyprus,EV sales,BEV,2020,Vehicles,42.0
+Cyprus,EV sales,PHEV,2020,Vehicles,83.0
+Cyprus,EV sales,PHEV,2021,Vehicles,98.0
+Cyprus,EV sales,BEV,2021,Vehicles,84.0
+Cyprus,EV sales share,EV,2021,percent,1.700000048
+Czech Republic,EV sales share,EV,2015,percent,0.1299999952
+Czech Republic,EV sales,BEV,2015,Vehicles,300.0
+Czech Republic,EV sales,BEV,2016,Vehicles,200.0
+Czech Republic,EV sales share,EV,2016,percent,0.07999999821
+Czech Republic,EV sales share,EV,2017,percent,0.1400000006
+Czech Republic,EV sales,BEV,2017,Vehicles,390.0
+Czech Republic,EV sales,BEV,2018,Vehicles,700.0
+Czech Republic,EV sales,PHEV,2018,Vehicles,280.0
+Czech Republic,EV sales share,EV,2018,percent,0.3799999952
+Czech Republic,EV sales share,EV,2019,percent,0.4900000095
+Czech Republic,EV sales,PHEV,2019,Vehicles,470.0
+Czech Republic,EV sales,BEV,2019,Vehicles,760.0
+Czech Republic,EV sales,BEV,2020,Vehicles,3300.0
+Czech Republic,EV sales,PHEV,2020,Vehicles,2000.0
+Czech Republic,EV sales share,EV,2020,percent,2.5
+Czech Republic,EV sales share,EV,2021,percent,3.099999905
+Czech Republic,EV sales,PHEV,2021,Vehicles,3700.0
+Czech Republic,EV sales,BEV,2021,Vehicles,2700.0
+Denmark,EV stock share,EV,2010,percent,0.003700000001
+Denmark,EV stock,BEV,2010,Vehicles,59.0
+Denmark,EV stock,PHEV,2010,Vehicles,20.0
+Denmark,EV stock,PHEV,2011,Vehicles,20.0
+Denmark,EV sales,PHEV,2011,Vehicles,2.0
+Denmark,EV stock,BEV,2011,Vehicles,480.0
+Denmark,EV sales,BEV,2011,Vehicles,420.0
+Denmark,EV stock share,EV,2011,percent,0.02300000004
+Denmark,EV sales share,EV,2011,percent,0.25
+Denmark,EV sales share,EV,2012,percent,0.2899999917
+Denmark,EV stock share,EV,2012,percent,0.05600000173
+Denmark,EV sales,BEV,2012,Vehicles,490.0
+Denmark,EV stock,BEV,2012,Vehicles,1200.0
+Denmark,EV sales,PHEV,2012,Vehicles,12.0
+Denmark,EV stock,PHEV,2012,Vehicles,14.0
+Denmark,EV stock,PHEV,2013,Vehicles,14.0
+Denmark,EV sales,PHEV,2013,Vehicles,10.0
+Denmark,EV stock,BEV,2013,Vehicles,1500.0
+Denmark,EV sales,FCEV,2013,Vehicles,15.0
+Denmark,EV sales,BEV,2013,Vehicles,500.0
+Denmark,EV stock share,EV,2013,percent,0.0680000037
+Denmark,EV sales share,EV,2013,percent,0.2800000012
+Denmark,EV sales share,EV,2014,percent,0.8999999762
+Denmark,EV stock share,EV,2014,percent,0.1299999952
+Denmark,EV sales,BEV,2014,Vehicles,1600.0
+Denmark,EV sales,FCEV,2014,Vehicles,1.0
+Denmark,EV stock,BEV,2014,Vehicles,2900.0
+Denmark,EV sales,PHEV,2014,Vehicles,90.0
+Denmark,EV stock,PHEV,2014,Vehicles,100.0
+Denmark,EV stock,PHEV,2015,Vehicles,570.0
+Denmark,EV sales,PHEV,2015,Vehicles,420.0
+Denmark,EV stock,FCEV,2015,Vehicles,37.0
+Denmark,EV stock,BEV,2015,Vehicles,7900.0
+Denmark,EV sales,FCEV,2015,Vehicles,38.0
+Denmark,EV sales,BEV,2015,Vehicles,4300.0
+Denmark,EV stock share,EV,2015,percent,0.349999994
+Denmark,EV sales share,EV,2015,percent,2.299999952
+Denmark,EV sales share,EV,2016,percent,0.8500000238
+Denmark,EV stock share,EV,2016,percent,0.400000006
+Denmark,EV sales,BEV,2016,Vehicles,1300.0
+Denmark,EV sales,FCEV,2016,Vehicles,14.0
+Denmark,EV stock,BEV,2016,Vehicles,8700.0
+Denmark,EV stock,FCEV,2016,Vehicles,68.0
+Denmark,EV sales,PHEV,2016,Vehicles,570.0
+Denmark,EV stock,PHEV,2016,Vehicles,1100.0
+Denmark,EV stock,PHEV,2017,Vehicles,1800.0
+Denmark,EV sales,PHEV,2017,Vehicles,620.0
+Denmark,EV stock,FCEV,2017,Vehicles,83.0
+Denmark,EV stock,BEV,2017,Vehicles,8800.0
+Denmark,EV sales,FCEV,2017,Vehicles,15.0
+Denmark,EV sales,BEV,2017,Vehicles,710.0
+Denmark,EV stock share,EV,2017,percent,0.4199999869
+Denmark,EV sales share,EV,2017,percent,0.6000000238
+Denmark,EV sales share,EV,2018,percent,2.099999905
+Denmark,EV stock share,EV,2018,percent,0.5899999738
+Denmark,EV sales,BEV,2018,Vehicles,1500.0
+Denmark,EV sales,FCEV,2018,Vehicles,5.0
+Denmark,EV stock,BEV,2018,Vehicles,10000.0
+Denmark,EV stock,FCEV,2018,Vehicles,88.0
+Denmark,EV sales,PHEV,2018,Vehicles,3100.0
+Denmark,EV stock,PHEV,2018,Vehicles,5200.0
+Denmark,EV stock,PHEV,2019,Vehicles,9900.0
+Denmark,EV sales,PHEV,2019,Vehicles,3900.0
+Denmark,EV stock,FCEV,2019,Vehicles,100.0
+Denmark,EV stock,BEV,2019,Vehicles,16000.0
+Denmark,EV sales,FCEV,2019,Vehicles,8.0
+Denmark,EV sales,BEV,2019,Vehicles,5500.0
+Denmark,EV stock share,EV,2019,percent,0.9599999785
+Denmark,EV sales share,EV,2019,percent,4.199999809
+Denmark,EV sales share,EV,2020,percent,16.0
+Denmark,EV stock share,EV,2020,percent,2.299999952
+Denmark,EV sales,BEV,2020,Vehicles,14000.0
+Denmark,EV sales,FCEV,2020,Vehicles,45.0
+Denmark,EV stock,BEV,2020,Vehicles,32000.0
+Denmark,EV stock,FCEV,2020,Vehicles,150.0
+Denmark,EV sales,PHEV,2020,Vehicles,18000.0
+Denmark,EV stock,PHEV,2020,Vehicles,30000.0
+Denmark,EV stock,PHEV,2021,Vehicles,78000.0
+Denmark,EV sales,PHEV,2021,Vehicles,40000.0
+Denmark,EV stock,FCEV,2021,Vehicles,230.0
+Denmark,EV stock,BEV,2021,Vehicles,67000.0
+Denmark,EV sales,FCEV,2021,Vehicles,78.0
+Denmark,EV sales,BEV,2021,Vehicles,25000.0
+Denmark,EV stock share,EV,2021,percent,5.199999809
+Denmark,EV sales share,EV,2021,percent,35.0
+Estonia,EV sales share,EV,2015,percent,0.1599999964
+Estonia,EV sales,BEV,2015,Vehicles,34.0
+Estonia,EV sales,BEV,2016,Vehicles,35.0
+Estonia,EV sales share,EV,2016,percent,0.150000006
+Estonia,EV sales share,EV,2017,percent,0.1800000072
+Estonia,EV sales,BEV,2017,Vehicles,26.0
+Estonia,EV sales,PHEV,2017,Vehicles,20.0
+Estonia,EV sales,PHEV,2018,Vehicles,33.0
+Estonia,EV sales,BEV,2018,Vehicles,85.0
+Estonia,EV sales share,EV,2018,percent,0.4600000083
+Estonia,EV sales share,EV,2019,percent,0.3600000143
+Estonia,EV sales,BEV,2019,Vehicles,80.0
+Estonia,EV sales,PHEV,2019,Vehicles,17.0
+Estonia,EV sales,PHEV,2020,Vehicles,75.0
+Estonia,EV sales,BEV,2020,Vehicles,340.0
+Estonia,EV sales share,EV,2020,percent,1.799999952
+Estonia,EV sales share,EV,2021,percent,3.200000048
+Estonia,EV sales,BEV,2021,Vehicles,480.0
+Estonia,EV sales,PHEV,2021,Vehicles,240.0
+EU27,EV stock,BEV,2010,Vehicles,4900.0
+EU27,EV sales,FCEV,2010,Vehicles,16.0
+EU27,EV sales,PHEV,2010,Vehicles,91.0
+EU27,EV stock,FCEV,2010,Vehicles,20.0
+EU27,EV sales,BEV,2010,Vehicles,1100.0
+EU27,EV stock,PHEV,2010,Vehicles,40.0
+EU27,EV sales share,EV,2010,percent,0.009999999776
+EU27,EV stock share,EV,2010,percent,0.002400000114
+EU27,EV stock share,EV,2011,percent,0.006099999882
+EU27,EV sales share,EV,2011,percent,0.06499999762
+EU27,EV stock,PHEV,2011,Vehicles,430.0
+EU27,EV sales,BEV,2011,Vehicles,7100.0
+EU27,EV stock,FCEV,2011,Vehicles,58.0
+EU27,EV sales,PHEV,2011,Vehicles,360.0
+EU27,EV sales,FCEV,2011,Vehicles,38.0
+EU27,EV stock,BEV,2011,Vehicles,12000.0
+EU27,EV stock,BEV,2012,Vehicles,23000.0
+EU27,EV sales,FCEV,2012,Vehicles,29.0
+EU27,EV sales,PHEV,2012,Vehicles,7500.0
+EU27,EV stock,FCEV,2012,Vehicles,87.0
+EU27,EV sales,BEV,2012,Vehicles,12000.0
+EU27,EV stock,PHEV,2012,Vehicles,7900.0
+EU27,EV sales share,EV,2012,percent,0.1899999976
+EU27,EV stock share,EV,2012,percent,0.01499999966
+EU27,EV stock share,EV,2013,percent,0.03700000048
+EU27,EV sales share,EV,2013,percent,0.4699999988
+EU27,EV stock,PHEV,2013,Vehicles,33000.0
+EU27,EV sales,BEV,2013,Vehicles,21000.0
+EU27,EV stock,FCEV,2013,Vehicles,110.0
+EU27,EV sales,PHEV,2013,Vehicles,24000.0
+EU27,EV sales,FCEV,2013,Vehicles,42.0
+EU27,EV stock,BEV,2013,Vehicles,44000.0
+EU27,EV stock,BEV,2014,Vehicles,75000.0
+EU27,EV sales,FCEV,2014,Vehicles,28.0
+EU27,EV sales,PHEV,2014,Vehicles,24000.0
+EU27,EV stock,FCEV,2014,Vehicles,140.0
+EU27,EV sales,BEV,2014,Vehicles,33000.0
+EU27,EV stock,PHEV,2014,Vehicles,57000.0
+EU27,EV sales share,EV,2014,percent,0.5600000024
+EU27,EV stock share,EV,2014,percent,0.06300000101
+EU27,EV stock share,EV,2015,percent,0.1199999973
+EU27,EV sales share,EV,2015,percent,1.100000024
+EU27,EV stock,PHEV,2015,Vehicles,130000.0
+EU27,EV sales,BEV,2015,Vehicles,49000.0
+EU27,EV stock,FCEV,2015,Vehicles,310.0
+EU27,EV sales,PHEV,2015,Vehicles,70000.0
+EU27,EV sales,FCEV,2015,Vehicles,160.0
+EU27,EV stock,BEV,2015,Vehicles,120000.0
+EU27,EV stock,BEV,2016,Vehicles,170000.0
+EU27,EV sales,FCEV,2016,Vehicles,130.0
+EU27,EV sales,PHEV,2016,Vehicles,65000.0
+EU27,EV stock,FCEV,2016,Vehicles,460.0
+EU27,EV sales,BEV,2016,Vehicles,54000.0
+EU27,EV stock,PHEV,2016,Vehicles,190000.0
+EU27,EV sales share,EV,2016,percent,0.9800000191
+EU27,EV stock share,EV,2016,percent,0.1700000018
+EU27,EV stock share,EV,2017,percent,0.25
+EU27,EV sales share,EV,2017,percent,1.299999952
+EU27,EV stock,PHEV,2017,Vehicles,290000.0
+EU27,EV sales,BEV,2017,Vehicles,85000.0
+EU27,EV stock,FCEV,2017,Vehicles,750.0
+EU27,EV sales,PHEV,2017,Vehicles,89000.0
+EU27,EV sales,FCEV,2017,Vehicles,270.0
+EU27,EV stock,BEV,2017,Vehicles,250000.0
+EU27,EV stock,BEV,2018,Vehicles,370000.0
+EU27,EV sales,FCEV,2018,Vehicles,160.0
+EU27,EV sales,PHEV,2018,Vehicles,110000.0
+EU27,EV stock,FCEV,2018,Vehicles,750.0
+EU27,EV sales,BEV,2018,Vehicles,140000.0
+EU27,EV stock,PHEV,2018,Vehicles,390000.0
+EU27,EV sales share,EV,2018,percent,1.899999976
+EU27,EV stock share,EV,2018,percent,0.349999994
+EU27,EV stock share,EV,2019,percent,0.4900000095
+EU27,EV sales share,EV,2019,percent,2.900000095
+EU27,EV stock,PHEV,2019,Vehicles,500000.0
+EU27,EV sales,BEV,2019,Vehicles,250000.0
+EU27,EV stock,FCEV,2019,Vehicles,1200.0
+EU27,EV sales,PHEV,2019,Vehicles,140000.0
+EU27,EV sales,FCEV,2019,Vehicles,480.0
+EU27,EV stock,BEV,2019,Vehicles,610000.0
+EU27,EV stock,BEV,2020,Vehicles,1100000.0
+EU27,EV sales,FCEV,2020,Vehicles,660.0
+EU27,EV stock,FCEV,2020,Vehicles,1900.0
+EU27,EV sales,BEV,2020,Vehicles,540000.0
+EU27,EV stock,PHEV,2020,Vehicles,990000.0
+EU27,EV sales,PHEV,2020,Vehicles,510000.0
+EU27,EV sales share,EV,2020,percent,10.0
+EU27,EV stock share,EV,2020,percent,0.9300000072
+EU27,EV stock share,EV,2021,percent,1.700000048
+EU27,EV sales share,EV,2021,percent,17.0
+EU27,EV sales,PHEV,2021,Vehicles,880000.0
+EU27,EV stock,PHEV,2021,Vehicles,1900000.0
+EU27,EV sales,BEV,2021,Vehicles,890000.0
+EU27,EV stock,FCEV,2021,Vehicles,2700.0
+EU27,EV sales,FCEV,2021,Vehicles,860.0
+EU27,EV stock,BEV,2021,Vehicles,2000000.0
+Europe,EV sales share,EV,2010,percent,0.0120000001
+Europe,EV stock share,EV,2010,percent,0.003899999894
+Europe,Electricity demand,EV,2010,GWh,300.0
+Europe,Oil displacement Mbd,EV,2010,Milion barrels per day,0.0001
+Europe,"Oil displacement, million lge",EV,2010,"Oil displacement, million lge",5.900000095
+Europe,EV sales,BEV,2010,Vehicles,1700.0
+Europe,EV stock,BEV,2010,Vehicles,9800.0
+Europe,EV sales,FCEV,2010,Vehicles,27.0
+Europe,EV stock,FCEV,2010,Vehicles,40.0
+Europe,EV stock,PHEV,2010,Vehicles,63.0
+Europe,EV sales,PHEV,2010,Vehicles,110.0
+Europe,EV sales,PHEV,2011,Vehicles,410.0
+Europe,EV stock,PHEV,2011,Vehicles,510.0
+Europe,EV stock,FCEV,2011,Vehicles,78.0
+Europe,EV sales,FCEV,2011,Vehicles,38.0
+Europe,EV stock,BEV,2011,Vehicles,20000.0
+Europe,EV sales,BEV,2011,Vehicles,11000.0
+Europe,Oil displacement Mbd,EV,2011,Milion barrels per day,0.0003199999919
+Europe,"Oil displacement, million lge",EV,2011,"Oil displacement, million lge",18.0
+Europe,Electricity demand,EV,2011,GWh,460.0
+Europe,EV stock share,EV,2011,percent,0.007899999619
+Europe,EV sales share,EV,2011,percent,0.07400000095
+Europe,EV sales share,EV,2012,percent,0.200000003
+Europe,EV stock share,EV,2012,percent,0.01799999923
+Europe,Electricity demand,EV,2012,GWh,290.0
+Europe,Oil displacement Mbd,EV,2012,Milion barrels per day,0.0006900000153
+Europe,"Oil displacement, million lge",EV,2012,"Oil displacement, million lge",40.0
+Europe,EV sales,BEV,2012,Vehicles,19000.0
+Europe,EV stock,BEV,2012,Vehicles,37000.0
+Europe,EV sales,FCEV,2012,Vehicles,29.0
+Europe,EV stock,FCEV,2012,Vehicles,110.0
+Europe,EV stock,PHEV,2012,Vehicles,9700.0
+Europe,EV sales,PHEV,2012,Vehicles,9200.0
+Europe,EV sales,PHEV,2013,Vehicles,26000.0
+Europe,Electricity demand,EV,2013,GWh,410.0
+Europe,EV stock,PHEV,2013,Vehicles,36000.0
+Europe,EV stock,FCEV,2013,Vehicles,130.0
+Europe,EV sales,FCEV,2013,Vehicles,42.0
+Europe,EV stock,BEV,2013,Vehicles,68000.0
+Europe,EV sales,BEV,2013,Vehicles,33000.0
+Europe,Oil displacement Mbd,EV,2013,Milion barrels per day,0.00139999995
+Europe,"Oil displacement, million lge",EV,2013,"Oil displacement, million lge",80.0
+Europe,EV stock share,EV,2013,percent,0.03999999911
+Europe,EV sales share,EV,2013,percent,0.4199999869
+Europe,EV sales share,EV,2014,percent,0.6600000262
+Europe,EV stock share,EV,2014,percent,0.07400000095
+Europe,Oil displacement Mbd,EV,2014,Milion barrels per day,0.00270000007
+Europe,"Oil displacement, million lge",EV,2014,"Oil displacement, million lge",160.0
+Europe,EV sales,BEV,2014,Vehicles,62000.0
+Europe,EV stock,BEV,2014,Vehicles,130000.0
+Europe,EV sales,FCEV,2014,Vehicles,32.0
+Europe,EV stock,FCEV,2014,Vehicles,150.0
+Europe,EV stock,PHEV,2014,Vehicles,70000.0
+Europe,Electricity demand,EV,2014,GWh,530.0
+Europe,EV sales,PHEV,2014,Vehicles,34000.0
+Europe,EV sales,PHEV,2015,Vehicles,100000.0
+Europe,Electricity demand,EV,2015,GWh,790.0
+Europe,EV stock,PHEV,2015,Vehicles,170000.0
+Europe,EV stock,FCEV,2015,Vehicles,340.0
+Europe,EV sales,FCEV,2015,Vehicles,190.0
+Europe,EV stock,BEV,2015,Vehicles,210000.0
+Europe,EV sales,BEV,2015,Vehicles,89000.0
+Europe,Oil displacement Mbd,EV,2015,Milion barrels per day,0.004900000058
+Europe,"Oil displacement, million lge",EV,2015,"Oil displacement, million lge",280.0
+Europe,EV stock share,EV,2015,percent,0.1400000006
+Europe,EV sales share,EV,2015,percent,1.200000048
+Europe,EV sales share,EV,2016,percent,1.200000048
+Europe,EV stock share,EV,2016,percent,0.2199999988
+Europe,Oil displacement Mbd,EV,2016,Milion barrels per day,0.007100000046
+Europe,"Oil displacement, million lge",EV,2016,"Oil displacement, million lge",410.0
+Europe,EV sales,BEV,2016,Vehicles,93000.0
+Europe,EV stock,BEV,2016,Vehicles,300000.0
+Europe,EV sales,FCEV,2016,Vehicles,180.0
+Europe,EV stock,FCEV,2016,Vehicles,540.0
+Europe,EV stock,PHEV,2016,Vehicles,290000.0
+Europe,Electricity demand,EV,2016,GWh,1100.0
+Europe,EV sales,PHEV,2016,Vehicles,120000.0
+Europe,EV sales,PHEV,2017,Vehicles,160000.0
+Europe,Electricity demand,EV,2017,GWh,1500.0
+Europe,EV stock,PHEV,2017,Vehicles,450000.0
+Europe,EV stock,FCEV,2017,Vehicles,890.0
+Europe,EV sales,FCEV,2017,Vehicles,340.0
+Europe,EV stock,BEV,2017,Vehicles,430000.0
+Europe,EV sales,BEV,2017,Vehicles,140000.0
+Europe,Oil displacement Mbd,EV,2017,Milion barrels per day,0.009999999776
+Europe,"Oil displacement, million lge",EV,2017,"Oil displacement, million lge",590.0
+Europe,EV stock share,EV,2017,percent,0.3100000024
+Europe,EV sales share,EV,2017,percent,1.700000048
+Europe,EV sales share,EV,2018,percent,2.299999952
+Europe,EV stock share,EV,2018,percent,0.4499999881
+Europe,Oil displacement Mbd,EV,2018,Milion barrels per day,0.01400000043
+Europe,"Oil displacement, million lge",EV,2018,"Oil displacement, million lge",830.0
+Europe,EV sales,BEV,2018,Vehicles,210000.0
+Europe,EV stock,BEV,2018,Vehicles,620000.0
+Europe,EV sales,FCEV,2018,Vehicles,280.0
+Europe,EV stock,FCEV,2018,Vehicles,1000.0
+Europe,EV stock,PHEV,2018,Vehicles,630000.0
+Europe,Electricity demand,EV,2018,GWh,2100.0
+Europe,EV sales,PHEV,2018,Vehicles,190000.0
+Europe,EV sales,PHEV,2019,Vehicles,210000.0
+Europe,Electricity demand,EV,2019,GWh,3100.0
+Europe,EV stock,PHEV,2019,Vehicles,800000.0
+Europe,EV stock,FCEV,2019,Vehicles,1700.0
+Europe,EV sales,FCEV,2019,Vehicles,610.0
+Europe,EV stock,BEV,2019,Vehicles,970000.0
+Europe,EV sales,BEV,2019,Vehicles,370000.0
+Europe,Oil displacement Mbd,EV,2019,Milion barrels per day,0.02199999988
+Europe,"Oil displacement, million lge",EV,2019,"Oil displacement, million lge",1300.0
+Europe,EV stock share,EV,2019,percent,0.6100000143
+Europe,EV sales share,EV,2019,percent,3.299999952
+Europe,EV sales share,EV,2020,percent,10.0
+Europe,EV stock share,EV,2020,percent,1.100000024
+Europe,Oil displacement Mbd,EV,2020,Milion barrels per day,0.03200000152
+Europe,"Oil displacement, million lge",EV,2020,"Oil displacement, million lge",1900.0
+Europe,EV sales,BEV,2020,Vehicles,760000.0
+Europe,EV stock,BEV,2020,Vehicles,1700000.0
+Europe,EV sales,FCEV,2020,Vehicles,740.0
+Europe,EV stock,FCEV,2020,Vehicles,2400.0
+Europe,EV stock,PHEV,2020,Vehicles,1400000.0
+Europe,Electricity demand,EV,2020,GWh,4600.0
+Europe,EV sales,PHEV,2020,Vehicles,640000.0
+Europe,EV sales,PHEV,2021,Vehicles,1100000.0
+Europe,Electricity demand,EV,2021,GWh,7800.0
+Europe,EV stock,PHEV,2021,Vehicles,2500000.0
+Europe,EV stock,FCEV,2021,Vehicles,3400.0
+Europe,EV sales,FCEV,2021,Vehicles,960.0
+Europe,EV stock,BEV,2021,Vehicles,2900000.0
+Europe,EV sales,BEV,2021,Vehicles,1200000.0
+Europe,Oil displacement Mbd,EV,2021,Milion barrels per day,0.06199999899
+Europe,"Oil displacement, million lge",EV,2021,"Oil displacement, million lge",3600.0
+Europe,EV stock share,EV,2021,percent,1.799999952
+Europe,EV sales share,EV,2021,percent,17.0
+Finland,EV sales share,EV,2011,percent,0.02500000037
+Finland,EV stock share,EV,2011,percent,0.002000000095
+Finland,EV sales,BEV,2011,Vehicles,30.0
+Finland,EV stock,BEV,2011,Vehicles,56.0
+Finland,EV stock,BEV,2012,Vehicles,110.0
+Finland,EV sales,PHEV,2012,Vehicles,130.0
+Finland,EV sales,BEV,2012,Vehicles,51.0
+Finland,EV stock,PHEV,2012,Vehicles,130.0
+Finland,EV stock share,EV,2012,percent,0.008600000292
+Finland,EV sales share,EV,2012,percent,0.1700000018
+Finland,EV sales share,EV,2013,percent,0.2099999934
+Finland,EV stock share,EV,2013,percent,0.01700000092
+Finland,EV stock,PHEV,2013,Vehicles,300.0
+Finland,EV sales,BEV,2013,Vehicles,50.0
+Finland,EV sales,PHEV,2013,Vehicles,170.0
+Finland,EV stock,BEV,2013,Vehicles,170.0
+Finland,EV stock,BEV,2014,Vehicles,360.0
+Finland,EV sales,PHEV,2014,Vehicles,260.0
+Finland,EV sales,BEV,2014,Vehicles,180.0
+Finland,EV stock,PHEV,2014,Vehicles,570.0
+Finland,EV stock share,EV,2014,percent,0.03400000185
+Finland,EV sales share,EV,2014,percent,0.4099999964
+Finland,EV sales share,EV,2015,percent,0.6000000238
+Finland,EV stock share,EV,2015,percent,0.05799999833
+Finland,EV stock,PHEV,2015,Vehicles,970.0
+Finland,EV sales,BEV,2015,Vehicles,240.0
+Finland,EV sales,PHEV,2015,Vehicles,420.0
+Finland,EV stock,BEV,2015,Vehicles,610.0
+Finland,EV stock,BEV,2016,Vehicles,840.0
+Finland,EV sales,PHEV,2016,Vehicles,1200.0
+Finland,EV sales,BEV,2016,Vehicles,220.0
+Finland,EV stock,PHEV,2016,Vehicles,2400.0
+Finland,EV stock share,EV,2016,percent,0.1199999973
+Finland,EV sales share,EV,2016,percent,1.200000048
+Finland,EV sales share,EV,2017,percent,2.599999905
+Finland,EV stock share,EV,2017,percent,0.2599999905
+Finland,EV stock,PHEV,2017,Vehicles,5700.0
+Finland,EV sales,BEV,2017,Vehicles,500.0
+Finland,EV sales,PHEV,2017,Vehicles,2600.0
+Finland,EV stock,BEV,2017,Vehicles,1400.0
+Finland,EV stock,BEV,2018,Vehicles,2400.0
+Finland,EV sales,PHEV,2018,Vehicles,4900.0
+Finland,EV sales,BEV,2018,Vehicles,780.0
+Finland,EV stock,PHEV,2018,Vehicles,13000.0
+Finland,EV stock share,EV,2018,percent,0.5600000024
+Finland,EV sales share,EV,2018,percent,4.699999809
+Finland,EV sales share,EV,2019,percent,6.900000095
+Finland,EV stock share,EV,2019,percent,1.100000024
+Finland,EV stock,PHEV,2019,Vehicles,25000.0
+Finland,EV sales,BEV,2019,Vehicles,1900.0
+Finland,EV sales,PHEV,2019,Vehicles,6000.0
+Finland,EV stock,FCEV,2019,Vehicles,1.0
+Finland,EV stock,BEV,2019,Vehicles,4700.0
+Finland,EV stock,BEV,2020,Vehicles,9700.0
+Finland,EV stock,FCEV,2020,Vehicles,1.0
+Finland,EV sales,PHEV,2020,Vehicles,13000.0
+Finland,EV sales,BEV,2020,Vehicles,4200.0
+Finland,EV stock,PHEV,2020,Vehicles,46000.0
+Finland,EV stock share,EV,2020,percent,2.0
+Finland,EV sales share,EV,2020,percent,18.0
+Finland,EV sales share,EV,2021,percent,31.0
+Finland,EV stock share,EV,2021,percent,3.599999905
+Finland,EV stock,PHEV,2021,Vehicles,77000.0
+Finland,EV sales,BEV,2021,Vehicles,10000.0
+Finland,EV sales,PHEV,2021,Vehicles,20000.0
+Finland,EV stock,FCEV,2021,Vehicles,1.0
+Finland,EV stock,BEV,2021,Vehicles,23000.0
+Finland,EV sales,FCEV,2021,Vehicles,1.0
+France,EV sales share,EV,2010,percent,0.0120000001
+France,EV sales,BEV,2010,Vehicles,190.0
+France,EV stock,BEV,2010,Vehicles,300.0
+France,EV sales,PHEV,2010,Vehicles,82.0
+France,EV stock share,EV,2010,percent,0.0009299999801
+France,EV stock share,EV,2011,percent,0.009300000034
+France,EV sales share,EV,2011,percent,0.1199999973
+France,EV sales,PHEV,2011,Vehicles,56.0
+France,EV stock,BEV,2011,Vehicles,2900.0
+France,EV sales,BEV,2011,Vehicles,2600.0
+France,EV stock,PHEV,2011,Vehicles,96.0
+France,EV stock,PHEV,2012,Vehicles,700.0
+France,EV sales,BEV,2012,Vehicles,5700.0
+France,EV stock,BEV,2012,Vehicles,8600.0
+France,EV sales,PHEV,2012,Vehicles,660.0
+France,EV sales share,EV,2012,percent,0.3300000131
+France,EV stock share,EV,2012,percent,0.02800000086
+France,EV stock share,EV,2013,percent,0.05799999833
+France,EV sales share,EV,2013,percent,0.5299999714
+France,EV sales,PHEV,2013,Vehicles,850.0
+France,EV stock,FCEV,2013,Vehicles,1.0
+France,EV stock,BEV,2013,Vehicles,17000.0
+France,EV sales,FCEV,2013,Vehicles,1.0
+France,EV sales,BEV,2013,Vehicles,8900.0
+France,EV stock,PHEV,2013,Vehicles,1500.0
+France,EV stock,PHEV,2014,Vehicles,3600.0
+France,EV sales,BEV,2014,Vehicles,11000.0
+France,EV sales,FCEV,2014,Vehicles,1.0
+France,EV stock,BEV,2014,Vehicles,28000.0
+France,EV stock,FCEV,2014,Vehicles,2.0
+France,EV sales,PHEV,2014,Vehicles,2100.0
+France,EV sales share,EV,2014,percent,0.6899999976
+France,EV stock share,EV,2014,percent,0.09700000286
+France,EV stock share,EV,2015,percent,0.1700000018
+France,EV sales share,EV,2015,percent,1.200000048
+France,EV stock,FCEV,2015,Vehicles,12.0
+France,EV stock,BEV,2015,Vehicles,45000.0
+France,EV sales,FCEV,2015,Vehicles,10.0
+France,EV sales,BEV,2015,Vehicles,18000.0
+France,EV sales,PHEV,2015,Vehicles,5800.0
+France,EV stock,PHEV,2015,Vehicles,9300.0
+France,EV stock,PHEV,2016,Vehicles,17000.0
+France,EV sales,PHEV,2016,Vehicles,7600.0
+France,EV sales,BEV,2016,Vehicles,23000.0
+France,EV sales,FCEV,2016,Vehicles,34.0
+France,EV stock,BEV,2016,Vehicles,67000.0
+France,EV stock,FCEV,2016,Vehicles,46.0
+France,EV sales share,EV,2016,percent,1.399999976
+France,EV stock share,EV,2016,percent,0.2599999905
+France,EV stock share,EV,2017,percent,0.4600000083
+France,EV sales share,EV,2017,percent,1.700000048
+France,EV stock,FCEV,2017,Vehicles,92.0
+France,EV stock,BEV,2017,Vehicles,93000.0
+France,EV sales,FCEV,2017,Vehicles,46.0
+France,EV sales,BEV,2017,Vehicles,26000.0
+France,EV sales,PHEV,2017,Vehicles,12000.0
+France,EV stock,PHEV,2017,Vehicles,54000.0
+France,EV stock,PHEV,2018,Vehicles,68000.0
+France,EV sales,PHEV,2018,Vehicles,15000.0
+France,EV sales,BEV,2018,Vehicles,33000.0
+France,EV sales,FCEV,2018,Vehicles,10.0
+France,EV stock,BEV,2018,Vehicles,120000.0
+France,EV stock,FCEV,2018,Vehicles,100.0
+France,EV sales share,EV,2018,percent,2.0
+France,EV stock share,EV,2018,percent,0.6000000238
+France,EV stock share,EV,2019,percent,0.6600000262
+France,EV sales share,EV,2019,percent,2.700000048
+France,EV stock,FCEV,2019,Vehicles,170.0
+France,EV stock,BEV,2019,Vehicles,170000.0
+France,EV sales,FCEV,2019,Vehicles,60.0
+France,EV sales,BEV,2019,Vehicles,45000.0
+France,EV sales,PHEV,2019,Vehicles,19000.0
+France,EV stock,PHEV,2019,Vehicles,85000.0
+France,EV stock,PHEV,2020,Vehicles,160000.0
+France,EV sales,PHEV,2020,Vehicles,75000.0
+France,EV sales,BEV,2020,Vehicles,110000.0
+France,EV sales,FCEV,2020,Vehicles,210.0
+France,EV stock,BEV,2020,Vehicles,280000.0
+France,EV stock,FCEV,2020,Vehicles,380.0
+France,EV sales share,EV,2020,percent,11.0
+France,EV stock share,EV,2020,percent,1.100000024
+France,EV stock share,EV,2021,percent,1.899999976
+France,EV sales share,EV,2021,percent,17.0
+France,EV stock,FCEV,2021,Vehicles,400.0
+France,EV stock,BEV,2021,Vehicles,440000.0
+France,EV sales,FCEV,2021,Vehicles,14.0
+France,EV sales,BEV,2021,Vehicles,170000.0
+France,EV sales,PHEV,2021,Vehicles,140000.0
+France,EV stock,PHEV,2021,Vehicles,300000.0
+Germany,EV sales,BEV,2010,Vehicles,140.0
+Germany,EV stock,BEV,2010,Vehicles,250.0
+Germany,EV sales,FCEV,2010,Vehicles,16.0
+Germany,EV stock,FCEV,2010,Vehicles,19.0
+Germany,EV sales share,EV,2010,percent,0.004900000058
+Germany,EV stock share,EV,2010,percent,0.0005799999926
+Germany,EV stock share,EV,2011,percent,0.004399999976
+Germany,EV sales share,EV,2011,percent,0.05200000107
+Germany,EV stock,FCEV,2011,Vehicles,57.0
+Germany,EV sales,FCEV,2011,Vehicles,38.0
+Germany,EV sales,PHEV,2011,Vehicles,240.0
+Germany,EV stock,PHEV,2011,Vehicles,240.0
+Germany,EV stock,BEV,2011,Vehicles,1600.0
+Germany,EV sales,BEV,2011,Vehicles,1400.0
+Germany,EV sales,BEV,2012,Vehicles,2200.0
+Germany,EV stock,BEV,2012,Vehicles,3900.0
+Germany,EV stock,PHEV,2012,Vehicles,1400.0
+Germany,EV sales,PHEV,2012,Vehicles,1200.0
+Germany,EV sales,FCEV,2012,Vehicles,29.0
+Germany,EV stock,FCEV,2012,Vehicles,86.0
+Germany,EV sales share,EV,2012,percent,0.1099999994
+Germany,EV stock share,EV,2012,percent,0.0120000001
+Germany,EV stock share,EV,2013,percent,0.02800000086
+Germany,EV sales share,EV,2013,percent,0.2300000042
+Germany,EV stock,FCEV,2013,Vehicles,110.0
+Germany,EV sales,FCEV,2013,Vehicles,23.0
+Germany,EV sales,PHEV,2013,Vehicles,1600.0
+Germany,EV stock,PHEV,2013,Vehicles,3000.0
+Germany,EV stock,BEV,2013,Vehicles,9200.0
+Germany,EV sales,BEV,2013,Vehicles,5200.0
+Germany,EV sales,BEV,2014,Vehicles,9100.0
+Germany,EV stock,BEV,2014,Vehicles,18000.0
+Germany,EV sales,PHEV,2014,Vehicles,4400.0
+Germany,EV sales,FCEV,2014,Vehicles,8.0
+Germany,EV stock,FCEV,2014,Vehicles,120.0
+Germany,EV sales share,EV,2014,percent,0.4499999881
+Germany,EV stock share,EV,2014,percent,0.05600000173
+Germany,EV stock,PHEV,2014,Vehicles,7400.0
+Germany,EV stock,PHEV,2015,Vehicles,19000.0
+Germany,EV stock share,EV,2015,percent,0.09700000286
+Germany,EV sales share,EV,2015,percent,0.7300000191
+Germany,EV stock,FCEV,2015,Vehicles,180.0
+Germany,EV sales,FCEV,2015,Vehicles,63.0
+Germany,EV sales,PHEV,2015,Vehicles,11000.0
+Germany,EV stock,BEV,2015,Vehicles,26000.0
+Germany,EV sales,BEV,2015,Vehicles,12000.0
+Germany,EV sales,BEV,2016,Vehicles,11000.0
+Germany,EV stock,BEV,2016,Vehicles,34000.0
+Germany,EV sales,PHEV,2016,Vehicles,13000.0
+Germany,EV stock,FCEV,2016,Vehicles,180.0
+Germany,EV sales share,EV,2016,percent,0.7400000095
+Germany,EV stock share,EV,2016,percent,0.1400000006
+Germany,EV stock,PHEV,2016,Vehicles,32000.0
+Germany,EV stock,PHEV,2017,Vehicles,50000.0
+Germany,EV stock share,EV,2017,percent,0.2199999988
+Germany,EV sales share,EV,2017,percent,1.600000024
+Germany,EV stock,FCEV,2017,Vehicles,260.0
+Germany,EV sales,FCEV,2017,Vehicles,82.0
+Germany,EV sales,PHEV,2017,Vehicles,29000.0
+Germany,EV stock,BEV,2017,Vehicles,54000.0
+Germany,EV sales,BEV,2017,Vehicles,25000.0
+Germany,EV sales,BEV,2018,Vehicles,36000.0
+Germany,EV stock,BEV,2018,Vehicles,83000.0
+Germany,EV sales,PHEV,2018,Vehicles,31000.0
+Germany,EV sales,FCEV,2018,Vehicles,110.0
+Germany,EV stock,FCEV,2018,Vehicles,370.0
+Germany,EV sales share,EV,2018,percent,2.0
+Germany,EV stock share,EV,2018,percent,0.349999994
+Germany,EV stock,PHEV,2018,Vehicles,82000.0
+Germany,EV stock,PHEV,2019,Vehicles,100000.0
+Germany,EV stock share,EV,2019,percent,0.5
+Germany,EV sales share,EV,2019,percent,3.0
+Germany,EV stock,FCEV,2019,Vehicles,540.0
+Germany,EV sales,FCEV,2019,Vehicles,200.0
+Germany,EV sales,PHEV,2019,Vehicles,45000.0
+Germany,EV stock,BEV,2019,Vehicles,140000.0
+Germany,EV sales,BEV,2019,Vehicles,63000.0
+Germany,EV sales,BEV,2020,Vehicles,190000.0
+Germany,EV stock,BEV,2020,Vehicles,310000.0
+Germany,EV sales,PHEV,2020,Vehicles,200000.0
+Germany,EV sales,FCEV,2020,Vehicles,200.0
+Germany,EV stock,FCEV,2020,Vehicles,740.0
+Germany,EV sales share,EV,2020,percent,14.0
+Germany,EV stock share,EV,2020,percent,1.299999952
+Germany,EV stock,PHEV,2020,Vehicles,300000.0
+Germany,EV stock,PHEV,2021,Vehicles,630000.0
+Germany,EV stock share,EV,2021,percent,2.599999905
+Germany,EV sales share,EV,2021,percent,26.0
+Germany,EV stock,FCEV,2021,Vehicles,1200.0
+Germany,EV sales,FCEV,2021,Vehicles,460.0
+Germany,EV sales,PHEV,2021,Vehicles,330000.0
+Germany,EV stock,BEV,2021,Vehicles,620000.0
+Germany,EV sales,BEV,2021,Vehicles,360000.0
+Greece,EV stock share,EV,2013,percent,6.7e-05
+Greece,EV sales share,EV,2013,percent,0.005100000184
+Greece,EV sales,BEV,2013,Vehicles,3.0
+Greece,EV stock,BEV,2013,Vehicles,3.0
+Greece,EV stock,BEV,2014,Vehicles,42.0
+Greece,EV sales,BEV,2014,Vehicles,39.0
+Greece,EV sales share,EV,2014,percent,0.0549999997
+Greece,EV stock share,EV,2014,percent,0.000950000016
+Greece,EV stock share,EV,2015,percent,0.00270000007
+Greece,EV sales share,EV,2015,percent,0.07800000161
+Greece,EV sales,BEV,2015,Vehicles,35.0
+Greece,EV stock,BEV,2015,Vehicles,97.0
+Greece,EV stock,PHEV,2015,Vehicles,22.0
+Greece,EV sales,PHEV,2015,Vehicles,22.0
+Greece,EV sales,PHEV,2016,Vehicles,56.0
+Greece,EV stock,PHEV,2016,Vehicles,78.0
+Greece,EV stock,BEV,2016,Vehicles,140.0
+Greece,EV sales,BEV,2016,Vehicles,41.0
+Greece,EV sales share,EV,2016,percent,0.1199999973
+Greece,EV stock share,EV,2016,percent,0.004999999888
+Greece,EV stock share,EV,2017,percent,0.009600000456
+Greece,EV sales share,EV,2017,percent,0.2199999988
+Greece,EV sales,BEV,2017,Vehicles,50.0
+Greece,EV stock,BEV,2017,Vehicles,190.0
+Greece,EV stock,PHEV,2017,Vehicles,220.0
+Greece,EV sales,PHEV,2017,Vehicles,140.0
+Greece,EV sales,PHEV,2018,Vehicles,210.0
+Greece,EV stock,PHEV,2018,Vehicles,440.0
+Greece,EV stock,BEV,2018,Vehicles,280.0
+Greece,EV sales,BEV,2018,Vehicles,88.0
+Greece,EV sales share,EV,2018,percent,0.2899999917
+Greece,EV stock share,EV,2018,percent,0.01700000092
+Greece,EV stock share,EV,2019,percent,0.02899999917
+Greece,EV sales share,EV,2019,percent,0.4199999869
+Greece,EV sales,BEV,2019,Vehicles,190.0
+Greece,EV stock,BEV,2019,Vehicles,470.0
+Greece,EV stock,PHEV,2019,Vehicles,730.0
+Greece,EV sales,PHEV,2019,Vehicles,290.0
+Greece,EV sales,PHEV,2020,Vehicles,1500.0
+Greece,EV stock,PHEV,2020,Vehicles,2200.0
+Greece,EV stock,BEV,2020,Vehicles,1100.0
+Greece,EV sales,BEV,2020,Vehicles,680.0
+Greece,EV sales share,EV,2020,percent,2.599999905
+Greece,EV stock share,EV,2020,percent,0.08299999684
+Greece,EV stock share,EV,2021,percent,0.2599999905
+Greece,EV sales share,EV,2021,percent,6.900000095
+Greece,EV sales,BEV,2021,Vehicles,2200.0
+Greece,EV stock,BEV,2021,Vehicles,3300.0
+Greece,EV stock,PHEV,2021,Vehicles,7000.0
+Greece,EV sales,PHEV,2021,Vehicles,4800.0
+Hungary,EV sales share,EV,2015,percent,0.1700000018
+Hungary,EV sales,PHEV,2015,Vehicles,15.0
+Hungary,EV sales,BEV,2015,Vehicles,120.0
+Hungary,EV sales,BEV,2016,Vehicles,170.0
+Hungary,EV sales,PHEV,2016,Vehicles,170.0
+Hungary,EV sales share,EV,2016,percent,0.3600000143
+Hungary,EV sales share,EV,2017,percent,1.0
+Hungary,EV sales,PHEV,2017,Vehicles,440.0
+Hungary,EV sales,BEV,2017,Vehicles,750.0
+Hungary,EV sales,BEV,2018,Vehicles,1300.0
+Hungary,EV sales,PHEV,2018,Vehicles,770.0
+Hungary,EV sales share,EV,2018,percent,1.5
+Hungary,EV sales share,EV,2019,percent,1.899999976
+Hungary,EV sales,PHEV,2019,Vehicles,1100.0
+Hungary,EV sales,BEV,2019,Vehicles,1800.0
+Hungary,EV sales,BEV,2020,Vehicles,3000.0
+Hungary,EV sales,PHEV,2020,Vehicles,3000.0
+Hungary,EV sales share,EV,2020,percent,4.699999809
+Hungary,EV sales share,EV,2021,percent,7.0
+Hungary,EV sales,PHEV,2021,Vehicles,4200.0
+Hungary,EV sales,BEV,2021,Vehicles,4300.0
+Iceland,EV stock,BEV,2010,Vehicles,14.0
+Iceland,EV sales,FCEV,2010,Vehicles,11.0
+Iceland,EV stock,FCEV,2010,Vehicles,20.0
+Iceland,EV stock share,EV,2010,percent,0.006699999794
+Iceland,EV stock share,EV,2011,percent,0.006699999794
+Iceland,EV stock,FCEV,2011,Vehicles,20.0
+Iceland,EV stock,BEV,2011,Vehicles,14.0
+Iceland,EV stock,BEV,2012,Vehicles,31.0
+Iceland,EV sales,BEV,2012,Vehicles,17.0
+Iceland,EV stock,FCEV,2012,Vehicles,20.0
+Iceland,EV sales,PHEV,2012,Vehicles,9.0
+Iceland,EV stock,PHEV,2012,Vehicles,9.0
+Iceland,EV stock share,EV,2012,percent,0.01899999939
+Iceland,EV sales share,EV,2012,percent,0.3300000131
+Iceland,EV sales share,EV,2013,percent,1.399999976
+Iceland,EV stock share,EV,2013,percent,0.06700000167
+Iceland,EV stock,PHEV,2013,Vehicles,32.0
+Iceland,EV sales,PHEV,2013,Vehicles,23.0
+Iceland,EV stock,FCEV,2013,Vehicles,18.0
+Iceland,EV sales,BEV,2013,Vehicles,80.0
+Iceland,EV stock,BEV,2013,Vehicles,110.0
+Iceland,EV stock,BEV,2014,Vehicles,240.0
+Iceland,EV sales,BEV,2014,Vehicles,200.0
+Iceland,EV stock,FCEV,2014,Vehicles,3.0
+Iceland,EV sales,PHEV,2014,Vehicles,29.0
+Iceland,EV stock,PHEV,2014,Vehicles,52.0
+Iceland,EV stock share,EV,2014,percent,0.150000006
+Iceland,EV sales share,EV,2014,percent,2.400000095
+Iceland,EV sales share,EV,2015,percent,3.900000095
+Iceland,EV stock share,EV,2015,percent,0.3600000143
+Iceland,EV stock,PHEV,2015,Vehicles,140.0
+Iceland,EV sales,PHEV,2015,Vehicles,170.0
+Iceland,EV stock,FCEV,2015,Vehicles,4.0
+Iceland,EV sales,BEV,2015,Vehicles,390.0
+Iceland,EV stock,BEV,2015,Vehicles,570.0
+Iceland,EV stock,BEV,2016,Vehicles,960.0
+Iceland,EV sales,BEV,2016,Vehicles,380.0
+Iceland,EV stock,FCEV,2016,Vehicles,3.0
+Iceland,EV sales,PHEV,2016,Vehicles,780.0
+Iceland,EV stock,PHEV,2016,Vehicles,600.0
+Iceland,EV stock share,EV,2016,percent,0.75
+Iceland,EV sales share,EV,2016,percent,6.300000191
+Iceland,EV sales share,EV,2017,percent,14.0
+Iceland,EV stock share,EV,2017,percent,1.700000048
+Iceland,EV stock,PHEV,2017,Vehicles,2200.0
+Iceland,EV sales,PHEV,2017,Vehicles,2200.0
+Iceland,EV stock,FCEV,2017,Vehicles,2.0
+Iceland,EV sales,BEV,2017,Vehicles,840.0
+Iceland,EV stock,BEV,2017,Vehicles,1700.0
+Iceland,EV stock,BEV,2018,Vehicles,2400.0
+Iceland,EV sales,BEV,2018,Vehicles,780.0
+Iceland,EV stock,FCEV,2018,Vehicles,17.0
+Iceland,EV sales,FCEV,2018,Vehicles,16.0
+Iceland,EV sales,PHEV,2018,Vehicles,2900.0
+Iceland,EV stock,PHEV,2018,Vehicles,5600.0
+Iceland,EV stock share,EV,2018,percent,3.400000095
+Iceland,EV sales share,EV,2018,percent,20.0
+Iceland,EV sales share,EV,2019,percent,26.0
+Iceland,EV stock share,EV,2019,percent,4.699999809
+Iceland,EV stock,PHEV,2019,Vehicles,7500.0
+Iceland,EV sales,PHEV,2019,Vehicles,2000.0
+Iceland,EV sales,FCEV,2019,Vehicles,7.0
+Iceland,EV stock,FCEV,2019,Vehicles,31.0
+Iceland,EV sales,BEV,2019,Vehicles,1100.0
+Iceland,EV stock,BEV,2019,Vehicles,3500.0
+Iceland,EV stock,BEV,2020,Vehicles,5400.0
+Iceland,EV sales,BEV,2020,Vehicles,2500.0
+Iceland,EV stock,FCEV,2020,Vehicles,30.0
+Iceland,EV sales,FCEV,2020,Vehicles,1.0
+Iceland,EV sales,PHEV,2020,Vehicles,2400.0
+Iceland,EV stock,PHEV,2020,Vehicles,9600.0
+Iceland,EV stock share,EV,2020,percent,6.5
+Iceland,EV sales share,EV,2020,percent,52.0
+Iceland,EV sales share,EV,2021,percent,70.0
+Iceland,EV stock share,EV,2021,percent,9.300000191
+Iceland,EV stock,PHEV,2021,Vehicles,13000.0
+Iceland,EV sales,PHEV,2021,Vehicles,4900.0
+Iceland,EV sales,FCEV,2021,Vehicles,3.0
+Iceland,EV stock,FCEV,2021,Vehicles,31.0
+Iceland,EV sales,BEV,2021,Vehicles,4200.0
+Iceland,EV stock,BEV,2021,Vehicles,8500.0
+India,EV stock,BEV,2010,Vehicles,880.0
+India,EV sales,BEV,2010,Vehicles,450.0
+India,EV sales share,EV,2010,percent,0.02099999972
+India,EV stock share,EV,2010,percent,0.004999999888
+India,Oil displacement Mbd,EV,2010,Milion barrels per day,2.2e-05
+India,"Oil displacement, million lge",EV,2010,"Oil displacement, million lge",1.299999952
+India,Oil displacement Mbd,EV,2011,Milion barrels per day,4.5e-05
+India,"Oil displacement, million lge",EV,2011,"Oil displacement, million lge",2.599999905
+India,EV stock share,EV,2011,percent,0.006699999794
+India,EV sales share,EV,2011,percent,0.05600000173
+India,EV sales,BEV,2011,Vehicles,1400.0
+India,EV stock,BEV,2011,Vehicles,1300.0
+India,EV stock,BEV,2012,Vehicles,2800.0
+India,EV sales,BEV,2012,Vehicles,190.0
+India,EV sales share,EV,2012,percent,0.007199999876
+India,EV stock share,EV,2012,percent,0.0120000001
+India,Oil displacement Mbd,EV,2012,Milion barrels per day,4.5e-05
+India,"Oil displacement, million lge",EV,2012,"Oil displacement, million lge",2.599999905
+India,Oil displacement Mbd,EV,2013,Milion barrels per day,5e-05
+India,"Oil displacement, million lge",EV,2013,"Oil displacement, million lge",2.900000095
+India,EV stock share,EV,2013,percent,0.0120000001
+India,EV sales share,EV,2013,percent,0.01600000076
+India,EV sales,BEV,2013,Vehicles,410.0
+India,EV stock,BEV,2013,Vehicles,2900.0
+India,EV stock,BEV,2014,Vehicles,3400.0
+India,EV sales,BEV,2014,Vehicles,1000.0
+India,EV sales share,EV,2014,percent,0.03799999878
+India,EV stock share,EV,2014,percent,0.01300000027
+India,Oil displacement Mbd,EV,2014,Milion barrels per day,6.5e-05
+India,"Oil displacement, million lge",EV,2014,"Oil displacement, million lge",3.700000048
+India,Oil displacement Mbd,EV,2015,Milion barrels per day,7.4e-05
+India,"Oil displacement, million lge",EV,2015,"Oil displacement, million lge",4.199999809
+India,EV stock share,EV,2015,percent,0.01499999966
+India,EV sales share,EV,2015,percent,0.01700000092
+India,EV sales,BEV,2015,Vehicles,450.0
+India,EV stock,BEV,2015,Vehicles,4400.0
+India,EV stock,BEV,2016,Vehicles,4800.0
+India,EV sales,BEV,2016,Vehicles,730.0
+India,EV sales share,EV,2016,percent,0.02600000054
+India,EV stock share,EV,2016,percent,0.01499999966
+India,Oil displacement Mbd,EV,2016,Milion barrels per day,8.4e-05
+India,"Oil displacement, million lge",EV,2016,"Oil displacement, million lge",4.800000191
+India,Oil displacement Mbd,EV,2017,Milion barrels per day,0.0001
+India,"Oil displacement, million lge",EV,2017,"Oil displacement, million lge",5.800000191
+India,EV stock share,EV,2017,percent,0.02099999972
+India,EV sales share,EV,2017,percent,0.03099999949
+India,EV sales,BEV,2017,Vehicles,920.0
+India,EV stock,BEV,2017,Vehicles,7000.0
+India,EV stock,BEV,2018,Vehicles,7900.0
+India,EV sales,BEV,2018,Vehicles,920.0
+India,EV sales share,EV,2018,percent,0.02999999933
+India,EV stock share,EV,2018,percent,0.02199999988
+India,Oil displacement Mbd,EV,2018,Milion barrels per day,0.0001100000009
+India,"Oil displacement, million lge",EV,2018,"Oil displacement, million lge",6.599999905
+India,Oil displacement Mbd,EV,2019,Milion barrels per day,0.000119999997
+India,"Oil displacement, million lge",EV,2019,"Oil displacement, million lge",7.0
+India,EV stock share,EV,2019,percent,0.02199999988
+India,EV sales,PHEV,2019,Vehicles,7.0
+India,EV sales share,EV,2019,percent,0.02400000021
+India,EV sales,BEV,2019,Vehicles,680.0
+India,EV stock,BEV,2019,Vehicles,8600.0
+India,EV stock,PHEV,2019,Vehicles,7.0
+India,Electricity demand,EV,2019,GWh,0.003899999894
+India,Electricity demand,EV,2020,GWh,0.02300000004
+India,EV stock,PHEV,2020,Vehicles,50.0
+India,EV stock,BEV,2020,Vehicles,12000.0
+India,EV sales,BEV,2020,Vehicles,3100.0
+India,EV sales share,EV,2020,percent,0.1199999973
+India,EV sales,PHEV,2020,Vehicles,43.0
+India,EV stock share,EV,2020,percent,0.02899999917
+India,Oil displacement Mbd,EV,2020,Milion barrels per day,0.0001500000071
+India,"Oil displacement, million lge",EV,2020,"Oil displacement, million lge",8.5
+India,Oil displacement Mbd,EV,2021,Milion barrels per day,0.0003499999875
+India,"Oil displacement, million lge",EV,2021,"Oil displacement, million lge",20.0
+India,EV stock share,EV,2021,percent,0.0540000014
+India,EV sales,PHEV,2021,Vehicles,50.0
+India,EV sales,FCEV,2021,Vehicles,1.0
+India,EV stock,FCEV,2021,Vehicles,1.0
+India,EV sales share,EV,2021,percent,0.349999994
+India,EV sales,BEV,2021,Vehicles,12000.0
+India,EV stock,BEV,2021,Vehicles,23000.0
+India,EV stock,PHEV,2021,Vehicles,100.0
+India,Electricity demand,EV,2021,GWh,0.05299999937
+Ireland,EV sales,BEV,2015,Vehicles,470.0
+Ireland,EV sales,PHEV,2015,Vehicles,120.0
+Ireland,EV sales share,EV,2015,percent,0.4699999988
+Ireland,EV sales share,EV,2016,percent,0.4699999988
+Ireland,EV sales,PHEV,2016,Vehicles,300.0
+Ireland,EV sales,BEV,2016,Vehicles,390.0
+Ireland,EV sales,BEV,2017,Vehicles,620.0
+Ireland,EV sales,PHEV,2017,Vehicles,330.0
+Ireland,EV sales share,EV,2017,percent,0.7200000286
+Ireland,EV sales share,EV,2018,percent,1.600000024
+Ireland,EV sales,PHEV,2018,Vehicles,740.0
+Ireland,EV sales,BEV,2018,Vehicles,1200.0
+Ireland,EV sales,BEV,2019,Vehicles,3400.0
+Ireland,EV sales,PHEV,2019,Vehicles,1300.0
+Ireland,EV sales share,EV,2019,percent,4.099999905
+Ireland,EV sales share,EV,2020,percent,7.400000095
+Ireland,EV sales,PHEV,2020,Vehicles,2500.0
+Ireland,EV sales,BEV,2020,Vehicles,4000.0
+Ireland,EV sales,BEV,2021,Vehicles,8600.0
+Ireland,EV sales,PHEV,2021,Vehicles,7900.0
+Ireland,EV sales share,EV,2021,percent,16.0
+Israel,EV stock share,EV,2010,percent,0.0003199999919
+Israel,EV stock,BEV,2010,Vehicles,6.0
+Israel,EV stock,BEV,2011,Vehicles,85.0
+Israel,EV sales,BEV,2011,Vehicles,3.0
+Israel,EV stock share,EV,2011,percent,0.004300000146
+Israel,EV sales share,EV,2011,percent,0.001300000004
+Israel,EV sales share,EV,2012,percent,0.2700000107
+Israel,EV stock share,EV,2012,percent,0.02899999917
+Israel,EV sales,BEV,2012,Vehicles,600.0
+Israel,EV stock,BEV,2012,Vehicles,610.0
+Israel,EV sales,PHEV,2012,Vehicles,1.0
+Israel,EV stock,PHEV,2012,Vehicles,1.0
+Israel,EV stock,PHEV,2013,Vehicles,18.0
+Israel,EV sales,PHEV,2013,Vehicles,17.0
+Israel,EV stock,BEV,2013,Vehicles,1000.0
+Israel,EV sales,BEV,2013,Vehicles,460.0
+Israel,EV stock share,EV,2013,percent,0.04800000042
+Israel,EV sales share,EV,2013,percent,0.2099999934
+Israel,EV sales share,EV,2014,percent,0.02199999988
+Israel,EV stock share,EV,2014,percent,0.05600000173
+Israel,EV sales,BEV,2014,Vehicles,6.0
+Israel,EV stock,BEV,2014,Vehicles,1200.0
+Israel,EV sales,PHEV,2014,Vehicles,52.0
+Israel,EV stock,PHEV,2014,Vehicles,70.0
+Israel,EV stock,PHEV,2015,Vehicles,140.0
+Israel,EV sales,PHEV,2015,Vehicles,65.0
+Israel,EV stock,BEV,2015,Vehicles,1200.0
+Israel,EV sales,BEV,2015,Vehicles,3.0
+Israel,EV stock share,EV,2015,percent,0.0549999997
+Israel,EV sales share,EV,2015,percent,0.02400000021
+Israel,EV sales share,EV,2016,percent,0.02199999988
+Israel,EV stock share,EV,2016,percent,0.0540000014
+Israel,EV sales,BEV,2016,Vehicles,5.0
+Israel,EV stock,BEV,2016,Vehicles,1200.0
+Israel,EV sales,PHEV,2016,Vehicles,63.0
+Israel,EV stock,PHEV,2016,Vehicles,200.0
+Israel,EV stock,PHEV,2017,Vehicles,1700.0
+Israel,EV sales,PHEV,2017,Vehicles,1500.0
+Israel,EV stock,BEV,2017,Vehicles,1400.0
+Israel,EV sales,BEV,2017,Vehicles,130.0
+Israel,EV stock share,EV,2017,percent,0.1099999994
+Israel,EV sales share,EV,2017,percent,0.5199999809
+Israel,EV sales share,EV,2018,percent,1.200000048
+Israel,EV sales,BEV,2018,Vehicles,130.0
+Israel,EV stock,BEV,2018,Vehicles,1500.0
+Israel,EV sales,PHEV,2018,Vehicles,3600.0
+Israel,EV stock,PHEV,2018,Vehicles,5300.0
+Israel,EV stock share,EV,2018,percent,0.2300000042
+Israel,EV stock share,EV,2019,percent,0.3700000048
+Israel,EV stock,PHEV,2019,Vehicles,9200.0
+Israel,EV sales,PHEV,2019,Vehicles,3900.0
+Israel,EV stock,BEV,2019,Vehicles,2200.0
+Israel,EV sales,BEV,2019,Vehicles,850.0
+Israel,EV sales share,EV,2019,percent,1.600000024
+Israel,EV sales share,EV,2020,percent,2.599999905
+Israel,EV sales,BEV,2020,Vehicles,1500.0
+Israel,EV stock,BEV,2020,Vehicles,3800.0
+Israel,EV sales,PHEV,2020,Vehicles,5400.0
+Israel,EV stock,PHEV,2020,Vehicles,15000.0
+Israel,EV stock share,EV,2020,percent,0.5799999833
+Israel,EV stock share,EV,2021,percent,1.299999952
+Israel,EV stock,PHEV,2021,Vehicles,28000.0
+Israel,EV sales,PHEV,2021,Vehicles,13000.0
+Israel,EV stock,BEV,2021,Vehicles,15000.0
+Israel,EV sales,BEV,2021,Vehicles,11000.0
+Israel,EV sales share,EV,2021,percent,6.900000095
+Italy,EV sales,BEV,2010,Vehicles,40.0
+Italy,EV stock,BEV,2010,Vehicles,650.0
+Italy,EV sales share,EV,2010,percent,0.002000000095
+Italy,EV stock share,EV,2010,percent,0.001700000023
+Italy,EV stock share,EV,2011,percent,0.002000000095
+Italy,EV sales share,EV,2011,percent,0.006500000134
+Italy,EV stock,BEV,2011,Vehicles,760.0
+Italy,EV sales,BEV,2011,Vehicles,110.0
+Italy,EV sales,BEV,2012,Vehicles,460.0
+Italy,EV stock,BEV,2012,Vehicles,1200.0
+Italy,EV sales share,EV,2012,percent,0.03299999982
+Italy,EV stock share,EV,2012,percent,0.003199999919
+Italy,EV stock share,EV,2013,percent,0.005799999926
+Italy,EV sales share,EV,2013,percent,0.07999999821
+Italy,EV stock,BEV,2013,Vehicles,2000.0
+Italy,EV sales,BEV,2013,Vehicles,860.0
+Italy,EV sales,PHEV,2013,Vehicles,180.0
+Italy,EV stock,PHEV,2013,Vehicles,180.0
+Italy,EV stock,PHEV,2014,Vehicles,520.0
+Italy,EV sales,PHEV,2014,Vehicles,340.0
+Italy,EV stock,FCEV,2014,Vehicles,10.0
+Italy,EV sales,FCEV,2014,Vehicles,10.0
+Italy,EV sales,BEV,2014,Vehicles,1000.0
+Italy,EV stock,BEV,2014,Vehicles,3100.0
+Italy,EV sales share,EV,2014,percent,0.1000000015
+Italy,EV stock share,EV,2014,percent,0.009399999864
+Italy,EV stock share,EV,2015,percent,0.01499999966
+Italy,EV sales share,EV,2015,percent,0.1400000006
+Italy,EV stock,BEV,2015,Vehicles,4400.0
+Italy,EV sales,BEV,2015,Vehicles,1500.0
+Italy,EV sales,FCEV,2015,Vehicles,1.0
+Italy,EV stock,FCEV,2015,Vehicles,11.0
+Italy,EV sales,PHEV,2015,Vehicles,740.0
+Italy,EV stock,PHEV,2015,Vehicles,1300.0
+Italy,EV stock,PHEV,2016,Vehicles,2700.0
+Italy,EV sales,PHEV,2016,Vehicles,1300.0
+Italy,EV stock,FCEV,2016,Vehicles,11.0
+Italy,EV sales,BEV,2016,Vehicles,1400.0
+Italy,EV stock,BEV,2016,Vehicles,5800.0
+Italy,EV sales share,EV,2016,percent,0.150000006
+Italy,EV stock share,EV,2016,percent,0.02199999988
+Italy,EV stock share,EV,2017,percent,0.03400000185
+Italy,EV sales share,EV,2017,percent,0.25
+Italy,EV stock,BEV,2017,Vehicles,7800.0
+Italy,EV sales,BEV,2017,Vehicles,2000.0
+Italy,EV stock,FCEV,2017,Vehicles,11.0
+Italy,EV sales,PHEV,2017,Vehicles,2900.0
+Italy,EV stock,PHEV,2017,Vehicles,5600.0
+Italy,EV stock,PHEV,2018,Vehicles,10000.0
+Italy,EV sales,PHEV,2018,Vehicles,4700.0
+Italy,EV stock,FCEV,2018,Vehicles,12.0
+Italy,EV sales,FCEV,2018,Vehicles,1.0
+Italy,EV stock,BEV,2018,Vehicles,13000.0
+Italy,EV sales,BEV,2018,Vehicles,5000.0
+Italy,EV sales share,EV,2018,percent,0.5099999905
+Italy,EV stock share,EV,2018,percent,0.05799999833
+Italy,EV stock share,EV,2019,percent,0.1000000015
+Italy,EV sales share,EV,2019,percent,0.8999999762
+Italy,EV sales,BEV,2019,Vehicles,11000.0
+Italy,EV stock,BEV,2019,Vehicles,23000.0
+Italy,EV sales,FCEV,2019,Vehicles,17.0
+Italy,EV stock,FCEV,2019,Vehicles,28.0
+Italy,EV sales,PHEV,2019,Vehicles,6500.0
+Italy,EV stock,PHEV,2019,Vehicles,17000.0
+Italy,EV stock,PHEV,2020,Vehicles,44000.0
+Italy,EV sales,PHEV,2020,Vehicles,27000.0
+Italy,EV stock,FCEV,2020,Vehicles,35.0
+Italy,EV sales,FCEV,2020,Vehicles,7.0
+Italy,EV stock,BEV,2020,Vehicles,55000.0
+Italy,EV sales,BEV,2020,Vehicles,33000.0
+Italy,EV sales share,EV,2020,percent,4.300000191
+Italy,EV stock share,EV,2020,percent,0.25
+Italy,EV stock share,EV,2021,percent,0.5899999738
+Italy,EV sales share,EV,2021,percent,9.5
+Italy,EV sales,BEV,2021,Vehicles,67000.0
+Italy,EV stock,BEV,2021,Vehicles,120000.0
+Italy,EV sales,FCEV,2021,Vehicles,10.0
+Italy,EV stock,FCEV,2021,Vehicles,45.0
+Italy,EV sales,PHEV,2021,Vehicles,71000.0
+Italy,EV stock,PHEV,2021,Vehicles,110000.0
+Japan,EV sales,BEV,2010,Vehicles,2400.0
+Japan,EV stock,BEV,2010,Vehicles,3500.0
+Japan,EV sales,FCEV,2010,Vehicles,2.0
+Japan,EV sales share,EV,2010,percent,0.05299999937
+Japan,EV stock share,EV,2010,percent,0.006099999882
+Japan,EV stock share,EV,2011,percent,0.02800000086
+Japan,EV sales share,EV,2011,percent,0.2899999917
+Japan,EV sales,PHEV,2011,Vehicles,15.0
+Japan,EV stock,BEV,2011,Vehicles,16000.0
+Japan,EV sales,BEV,2011,Vehicles,13000.0
+Japan,EV stock,PHEV,2011,Vehicles,15.0
+Japan,EV stock,PHEV,2012,Vehicles,11000.0
+Japan,EV sales,BEV,2012,Vehicles,13000.0
+Japan,EV stock,BEV,2012,Vehicles,30000.0
+Japan,EV sales,PHEV,2012,Vehicles,11000.0
+Japan,EV sales,FCEV,2012,Vehicles,1.0
+Japan,EV sales share,EV,2012,percent,0.4499999881
+Japan,EV stock share,EV,2012,percent,0.06899999827
+Japan,EV stock share,EV,2013,percent,0.1199999973
+Japan,EV sales share,EV,2013,percent,0.5400000215
+Japan,EV sales,FCEV,2013,Vehicles,4.0
+Japan,EV sales,PHEV,2013,Vehicles,14000.0
+Japan,EV stock,BEV,2013,Vehicles,44000.0
+Japan,EV sales,BEV,2013,Vehicles,15000.0
+Japan,EV stock,PHEV,2013,Vehicles,25000.0
+Japan,EV stock,PHEV,2014,Vehicles,41000.0
+Japan,EV sales,BEV,2014,Vehicles,16000.0
+Japan,EV stock,BEV,2014,Vehicles,70000.0
+Japan,EV sales,PHEV,2014,Vehicles,16000.0
+Japan,EV sales,FCEV,2014,Vehicles,7.0
+Japan,EV sales share,EV,2014,percent,0.6100000143
+Japan,EV stock share,EV,2014,percent,0.1899999976
+Japan,EV stock share,EV,2015,percent,0.2199999988
+Japan,EV sales share,EV,2015,percent,0.5199999809
+Japan,EV sales,FCEV,2015,Vehicles,390.0
+Japan,EV stock,FCEV,2015,Vehicles,400.0
+Japan,EV stock,BEV,2015,Vehicles,79000.0
+Japan,EV sales,BEV,2015,Vehicles,10000.0
+Japan,EV stock,PHEV,2015,Vehicles,55000.0
+Japan,EV sales,PHEV,2015,Vehicles,14000.0
+Japan,EV sales,PHEV,2016,Vehicles,9400.0
+Japan,EV stock,PHEV,2016,Vehicles,65000.0
+Japan,EV sales,BEV,2016,Vehicles,15000.0
+Japan,EV stock,BEV,2016,Vehicles,88000.0
+Japan,EV stock,FCEV,2016,Vehicles,1400.0
+Japan,EV sales,FCEV,2016,Vehicles,1100.0
+Japan,EV sales share,EV,2016,percent,0.5099999905
+Japan,EV stock share,EV,2016,percent,0.25
+Japan,EV stock share,EV,2017,percent,0.3100000024
+Japan,EV sales share,EV,2017,percent,1.200000048
+Japan,EV sales,FCEV,2017,Vehicles,850.0
+Japan,EV stock,FCEV,2017,Vehicles,2300.0
+Japan,EV stock,BEV,2017,Vehicles,100000.0
+Japan,EV sales,BEV,2017,Vehicles,18000.0
+Japan,EV stock,PHEV,2017,Vehicles,100000.0
+Japan,EV sales,PHEV,2017,Vehicles,36000.0
+Japan,EV sales,PHEV,2018,Vehicles,23000.0
+Japan,EV stock,PHEV,2018,Vehicles,120000.0
+Japan,EV sales,BEV,2018,Vehicles,27000.0
+Japan,EV stock,BEV,2018,Vehicles,110000.0
+Japan,EV stock,FCEV,2018,Vehicles,2900.0
+Japan,EV sales,FCEV,2018,Vehicles,610.0
+Japan,EV stock share,EV,2018,percent,0.3600000143
+Japan,EV sales share,EV,2018,percent,1.100000024
+Japan,EV sales share,EV,2019,percent,0.8600000143
+Japan,EV stock share,EV,2019,percent,0.4099999964
+Japan,EV sales,FCEV,2019,Vehicles,670.0
+Japan,EV stock,FCEV,2019,Vehicles,3600.0
+Japan,EV stock,BEV,2019,Vehicles,120000.0
+Japan,EV sales,BEV,2019,Vehicles,21000.0
+Japan,EV stock,PHEV,2019,Vehicles,140000.0
+Japan,EV sales,PHEV,2019,Vehicles,18000.0
+Japan,EV sales,PHEV,2020,Vehicles,15000.0
+Japan,EV stock,PHEV,2020,Vehicles,160000.0
+Japan,EV sales,BEV,2020,Vehicles,15000.0
+Japan,EV stock,BEV,2020,Vehicles,140000.0
+Japan,EV stock,FCEV,2020,Vehicles,4100.0
+Japan,EV sales,FCEV,2020,Vehicles,490.0
+Japan,EV stock share,EV,2020,percent,0.4499999881
+Japan,EV sales share,EV,2020,percent,0.75
+Japan,EV sales share,EV,2021,percent,1.200000048
+Japan,EV stock share,EV,2021,percent,0.5099999905
+Japan,EV sales,FCEV,2021,Vehicles,2500.0
+Japan,EV stock,FCEV,2021,Vehicles,6600.0
+Japan,EV stock,BEV,2021,Vehicles,160000.0
+Japan,EV sales,BEV,2021,Vehicles,22000.0
+Japan,EV stock,PHEV,2021,Vehicles,180000.0
+Japan,EV sales,PHEV,2021,Vehicles,23000.0
+Korea,EV sales,BEV,2010,Vehicles,61.0
+Korea,EV stock,BEV,2010,Vehicles,61.0
+Korea,EV sales share,EV,2010,percent,0.004999999888
+Korea,EV stock share,EV,2010,percent,0.0003999999899
+Korea,EV stock share,EV,2011,percent,0.002199999988
+Korea,EV sales share,EV,2011,percent,0.02300000004
+Korea,EV stock,BEV,2011,Vehicles,340.0
+Korea,EV sales,BEV,2011,Vehicles,270.0
+Korea,EV sales,BEV,2012,Vehicles,510.0
+Korea,EV stock,BEV,2012,Vehicles,850.0
+Korea,EV sales share,EV,2012,percent,0.04100000113
+Korea,EV stock share,EV,2012,percent,0.00540000014
+Korea,EV stock share,EV,2013,percent,0.009100000374
+Korea,EV sales share,EV,2013,percent,0.04899999872
+Korea,EV stock,BEV,2013,Vehicles,1400.0
+Korea,EV sales,BEV,2013,Vehicles,600.0
+Korea,EV sales,BEV,2014,Vehicles,1300.0
+Korea,EV stock,BEV,2014,Vehicles,2700.0
+Korea,EV sales share,EV,2014,percent,0.09300000221
+Korea,EV stock share,EV,2014,percent,0.01700000092
+Korea,EV stock share,EV,2015,percent,0.03599999845
+Korea,EV sales share,EV,2015,percent,0.2199999988
+Korea,EV stock,BEV,2015,Vehicles,5800.0
+Korea,EV sales,BEV,2015,Vehicles,3100.0
+Korea,EV sales,PHEV,2015,Vehicles,250.0
+Korea,EV sales,FCEV,2015,Vehicles,29.0
+Korea,EV stock,FCEV,2015,Vehicles,12.0
+Korea,EV stock,PHEV,2015,Vehicles,250.0
+Korea,EV stock,PHEV,2016,Vehicles,580.0
+Korea,EV stock,FCEV,2016,Vehicles,46.0
+Korea,EV sales,FCEV,2016,Vehicles,58.0
+Korea,EV sales,PHEV,2016,Vehicles,330.0
+Korea,EV sales,BEV,2016,Vehicles,4700.0
+Korea,EV stock,BEV,2016,Vehicles,10000.0
+Korea,EV sales share,EV,2016,percent,0.3300000131
+Korea,EV stock share,EV,2016,percent,0.06400000304
+Korea,EV stock share,EV,2017,percent,0.1400000006
+Korea,EV sales share,EV,2017,percent,0.9499999881
+Korea,EV stock,BEV,2017,Vehicles,24000.0
+Korea,EV sales,BEV,2017,Vehicles,14000.0
+Korea,EV sales,PHEV,2017,Vehicles,670.0
+Korea,EV sales,FCEV,2017,Vehicles,75.0
+Korea,EV stock,FCEV,2017,Vehicles,100.0
+Korea,EV stock,PHEV,2017,Vehicles,1300.0
+Korea,EV stock,PHEV,2018,Vehicles,5600.0
+Korea,EV stock,FCEV,2018,Vehicles,900.0
+Korea,EV sales,FCEV,2018,Vehicles,910.0
+Korea,EV sales,PHEV,2018,Vehicles,4400.0
+Korea,EV sales,BEV,2018,Vehicles,55000.0
+Korea,EV stock,BEV,2018,Vehicles,55000.0
+Korea,EV sales share,EV,2018,percent,3.799999952
+Korea,EV stock share,EV,2018,percent,0.3300000131
+Korea,EV stock share,EV,2019,percent,0.5299999714
+Korea,EV sales share,EV,2019,percent,2.299999952
+Korea,EV stock,BEV,2019,Vehicles,89000.0
+Korea,EV sales,BEV,2019,Vehicles,33000.0
+Korea,EV sales,PHEV,2019,Vehicles,2700.0
+Korea,EV sales,FCEV,2019,Vehicles,4200.0
+Korea,EV stock,FCEV,2019,Vehicles,5100.0
+Korea,EV stock,PHEV,2019,Vehicles,11000.0
+Korea,EV stock,PHEV,2020,Vehicles,24000.0
+Korea,EV stock,FCEV,2020,Vehicles,10000.0
+Korea,EV sales,FCEV,2020,Vehicles,5000.0
+Korea,EV sales,PHEV,2020,Vehicles,8700.0
+Korea,EV sales,BEV,2020,Vehicles,31000.0
+Korea,EV stock,BEV,2020,Vehicles,120000.0
+Korea,EV sales share,EV,2020,percent,2.400000095
+Korea,EV stock share,EV,2020,percent,0.7400000095
+Korea,EV stock share,EV,2021,percent,1.200000048
+Korea,EV sales share,EV,2021,percent,5.800000191
+Korea,EV stock,BEV,2021,Vehicles,190000.0
+Korea,EV sales,BEV,2021,Vehicles,72000.0
+Korea,EV sales,PHEV,2021,Vehicles,19000.0
+Korea,EV sales,FCEV,2021,Vehicles,9200.0
+Korea,EV stock,FCEV,2021,Vehicles,19000.0
+Korea,EV stock,PHEV,2021,Vehicles,44000.0
+Latvia,EV sales share,EV,2015,percent,0.1899999976
+Latvia,EV sales,PHEV,2015,Vehicles,9.0
+Latvia,EV sales,BEV,2015,Vehicles,17.0
+Latvia,EV sales,BEV,2016,Vehicles,22.0
+Latvia,EV sales,PHEV,2016,Vehicles,18.0
+Latvia,EV sales share,EV,2016,percent,0.2399999946
+Latvia,EV sales share,EV,2017,percent,0.2399999946
+Latvia,EV sales,PHEV,2017,Vehicles,18.0
+Latvia,EV sales,BEV,2017,Vehicles,22.0
+Latvia,EV sales,BEV,2018,Vehicles,73.0
+Latvia,EV sales,PHEV,2018,Vehicles,17.0
+Latvia,EV sales share,EV,2018,percent,0.5299999714
+Latvia,EV sales share,EV,2019,percent,0.5400000215
+Latvia,EV sales,PHEV,2019,Vehicles,12.0
+Latvia,EV sales,BEV,2019,Vehicles,86.0
+Latvia,EV sales,BEV,2020,Vehicles,310.0
+Latvia,EV sales,PHEV,2020,Vehicles,73.0
+Latvia,EV sales share,EV,2020,percent,2.599999905
+Latvia,EV sales share,EV,2021,percent,3.900000095
+Latvia,EV sales,PHEV,2021,Vehicles,140.0
+Latvia,EV sales,BEV,2021,Vehicles,410.0
+Lithuania,EV sales,BEV,2015,Vehicles,37.0
+Lithuania,EV sales share,EV,2015,percent,0.2199999988
+Lithuania,EV sales share,EV,2016,percent,0.3199999928
+Lithuania,EV sales,BEV,2016,Vehicles,64.0
+Lithuania,EV sales,BEV,2017,Vehicles,52.0
+Lithuania,EV sales share,EV,2017,percent,0.200000003
+Lithuania,EV sales,BEV,2018,Vehicles,140.0
+Lithuania,EV sales,BEV,2019,Vehicles,160.0
+Lithuania,EV sales share,EV,2019,percent,0.349999994
+Lithuania,EV sales share,EV,2020,percent,1.100000024
+Lithuania,EV sales,BEV,2020,Vehicles,450.0
+Lithuania,EV sales,BEV,2021,Vehicles,1200.0
+Lithuania,EV sales,PHEV,2021,Vehicles,400.0
+Lithuania,EV sales share,EV,2021,percent,5.0
+Luxembourg,EV sales share,EV,2019,percent,3.5
+Luxembourg,EV sales,PHEV,2019,Vehicles,910.0
+Luxembourg,EV sales,BEV,2019,Vehicles,990.0
+Luxembourg,EV sales,BEV,2020,Vehicles,2500.0
+Luxembourg,EV sales,PHEV,2020,Vehicles,2700.0
+Luxembourg,EV sales share,EV,2020,percent,11.0
+Luxembourg,EV sales share,EV,2021,percent,20.0
+Luxembourg,EV sales,PHEV,2021,Vehicles,4400.0
+Luxembourg,EV sales,BEV,2021,Vehicles,4600.0
+Mexico,EV sales,BEV,2011,Vehicles,3.0
+Mexico,EV stock,BEV,2011,Vehicles,3.0
+Mexico,EV sales share,EV,2011,percent,0.0002600000007
+Mexico,EV stock share,EV,2011,percent,1.5e-05
+Mexico,EV stock share,EV,2012,percent,0.0004400000034
+Mexico,EV sales share,EV,2012,percent,0.007699999958
+Mexico,EV stock,BEV,2012,Vehicles,91.0
+Mexico,EV sales,BEV,2012,Vehicles,88.0
+Mexico,EV sales,BEV,2013,Vehicles,12.0
+Mexico,EV stock,BEV,2013,Vehicles,100.0
+Mexico,EV sales share,EV,2013,percent,0.0008900000248
+Mexico,EV stock share,EV,2013,percent,0.0004799999879
+Mexico,EV stock share,EV,2014,percent,0.0006699999794
+Mexico,EV sales share,EV,2014,percent,0.003800000064
+Mexico,EV stock,BEV,2014,Vehicles,150.0
+Mexico,EV sales,BEV,2014,Vehicles,48.0
+Mexico,EV sales,BEV,2015,Vehicles,92.0
+Mexico,EV stock,BEV,2015,Vehicles,240.0
+Mexico,EV sales,PHEV,2015,Vehicles,7.0
+Mexico,EV stock,PHEV,2015,Vehicles,7.0
+Mexico,EV sales share,EV,2015,percent,0.00800000038
+Mexico,EV stock share,EV,2015,percent,0.001099999994
+Mexico,EV stock share,EV,2016,percent,0.00419999985
+Mexico,EV sales share,EV,2016,percent,0.05299999937
+Mexico,EV stock,PHEV,2016,Vehicles,530.0
+Mexico,EV sales,PHEV,2016,Vehicles,520.0
+Mexico,EV stock,BEV,2016,Vehicles,500.0
+Mexico,EV sales,BEV,2016,Vehicles,250.0
+Mexico,EV sales,BEV,2017,Vehicles,230.0
+Mexico,EV stock,BEV,2017,Vehicles,730.0
+Mexico,EV sales,PHEV,2017,Vehicles,970.0
+Mexico,EV stock,PHEV,2017,Vehicles,1500.0
+Mexico,EV sales share,EV,2017,percent,0.08600000292
+Mexico,EV stock share,EV,2017,percent,0.008899999782
+Mexico,EV stock share,EV,2018,percent,0.01499999966
+Mexico,EV sales share,EV,2018,percent,0.1400000006
+Mexico,EV stock,PHEV,2018,Vehicles,3100.0
+Mexico,EV sales,PHEV,2018,Vehicles,1600.0
+Mexico,EV stock,BEV,2018,Vehicles,930.0
+Mexico,EV sales,BEV,2018,Vehicles,200.0
+Mexico,EV sales,BEV,2019,Vehicles,290.0
+Mexico,EV stock,BEV,2019,Vehicles,1200.0
+Mexico,EV sales,PHEV,2019,Vehicles,1400.0
+Mexico,EV stock,PHEV,2019,Vehicles,4400.0
+Mexico,EV sales share,EV,2019,percent,0.1400000006
+Mexico,EV stock share,EV,2019,percent,0.02099999972
+Mexico,EV stock share,EV,2020,percent,0.03500000015
+Mexico,EV sales share,EV,2020,percent,0.4499999881
+Mexico,EV stock,PHEV,2020,Vehicles,6400.0
+Mexico,EV sales,PHEV,2020,Vehicles,2000.0
+Mexico,EV stock,BEV,2020,Vehicles,3100.0
+Mexico,EV sales,BEV,2020,Vehicles,1800.0
+Mexico,EV sales,BEV,2021,Vehicles,3000.0
+Mexico,EV stock,BEV,2021,Vehicles,6100.0
+Mexico,EV sales,PHEV,2021,Vehicles,3500.0
+Mexico,EV stock,PHEV,2021,Vehicles,9900.0
+Mexico,EV sales share,EV,2021,percent,0.7200000286
+Mexico,EV stock share,EV,2021,percent,0.05900000036
+Netherlands,EV sales share,EV,2010,percent,0.02500000037
+Netherlands,EV stock share,EV,2010,percent,0.003599999938
+Netherlands,EV stock,BEV,2010,Vehicles,270.0
+Netherlands,EV sales,BEV,2010,Vehicles,120.0
+Netherlands,EV stock,PHEV,2010,Vehicles,11.0
+Netherlands,EV stock,PHEV,2011,Vehicles,26.0
+Netherlands,EV sales,PHEV,2011,Vehicles,17.0
+Netherlands,EV sales,BEV,2011,Vehicles,860.0
+Netherlands,EV stock,BEV,2011,Vehicles,1100.0
+Netherlands,EV stock share,EV,2011,percent,0.01499999966
+Netherlands,EV sales share,EV,2011,percent,0.1599999964
+Netherlands,EV sales share,EV,2012,percent,1.0
+Netherlands,EV stock share,EV,2012,percent,0.07900000364
+Netherlands,EV stock,BEV,2012,Vehicles,1900.0
+Netherlands,EV sales,BEV,2012,Vehicles,790.0
+Netherlands,EV sales,PHEV,2012,Vehicles,4300.0
+Netherlands,EV stock,PHEV,2012,Vehicles,4400.0
+Netherlands,EV stock,PHEV,2013,Vehicles,24000.0
+Netherlands,EV sales,PHEV,2013,Vehicles,20000.0
+Netherlands,EV sales,BEV,2013,Vehicles,2600.0
+Netherlands,EV stock,BEV,2013,Vehicles,4200.0
+Netherlands,EV stock share,EV,2013,percent,0.3600000143
+Netherlands,EV sales share,EV,2013,percent,5.5
+Netherlands,EV sales share,EV,2014,percent,3.900000095
+Netherlands,EV stock share,EV,2014,percent,0.5500000119
+Netherlands,EV stock,BEV,2014,Vehicles,6800.0
+Netherlands,EV sales,FCEV,2014,Vehicles,2.200000048
+Netherlands,EV sales,BEV,2014,Vehicles,2700.0
+Netherlands,EV sales,PHEV,2014,Vehicles,12000.0
+Netherlands,EV stock,PHEV,2014,Vehicles,37000.0
+Netherlands,EV stock,FCEV,2014,Vehicles,2.200000048
+Netherlands,EV stock,FCEV,2015,Vehicles,26.0
+Netherlands,EV stock,PHEV,2015,Vehicles,79000.0
+Netherlands,EV sales,PHEV,2015,Vehicles,39000.0
+Netherlands,EV sales,BEV,2015,Vehicles,3400.0
+Netherlands,EV sales,FCEV,2015,Vehicles,19.0
+Netherlands,EV stock,BEV,2015,Vehicles,9400.0
+Netherlands,EV stock share,EV,2015,percent,1.100000024
+Netherlands,EV sales share,EV,2015,percent,9.5
+Netherlands,EV sales share,EV,2016,percent,5.800000191
+Netherlands,EV stock share,EV,2016,percent,1.399999976
+Netherlands,EV stock,BEV,2016,Vehicles,13000.0
+Netherlands,EV sales,FCEV,2016,Vehicles,7.0
+Netherlands,EV sales,BEV,2016,Vehicles,4000.0
+Netherlands,EV sales,PHEV,2016,Vehicles,18000.0
+Netherlands,EV stock,PHEV,2016,Vehicles,99000.0
+Netherlands,EV stock,FCEV,2016,Vehicles,33.0
+Netherlands,EV stock,FCEV,2017,Vehicles,39.0
+Netherlands,EV stock,PHEV,2017,Vehicles,97000.0
+Netherlands,EV sales,PHEV,2017,Vehicles,2500.0
+Netherlands,EV sales,BEV,2017,Vehicles,8700.0
+Netherlands,EV sales,FCEV,2017,Vehicles,7.0
+Netherlands,EV stock,BEV,2017,Vehicles,21000.0
+Netherlands,EV stock share,EV,2017,percent,1.399999976
+Netherlands,EV sales share,EV,2017,percent,1.799999952
+Netherlands,EV sales share,EV,2018,percent,4.699999809
+Netherlands,EV stock share,EV,2018,percent,1.600000024
+Netherlands,EV stock,BEV,2018,Vehicles,44000.0
+Netherlands,EV sales,FCEV,2018,Vehicles,13.0
+Netherlands,EV sales,BEV,2018,Vehicles,25000.0
+Netherlands,EV sales,PHEV,2018,Vehicles,5100.0
+Netherlands,EV stock,PHEV,2018,Vehicles,95000.0
+Netherlands,EV stock,FCEV,2018,Vehicles,52.0
+Netherlands,EV stock,FCEV,2019,Vehicles,210.0
+Netherlands,EV stock,PHEV,2019,Vehicles,92000.0
+Netherlands,EV sales,PHEV,2019,Vehicles,6700.0
+Netherlands,EV sales,BEV,2019,Vehicles,63000.0
+Netherlands,EV sales,FCEV,2019,Vehicles,160.0
+Netherlands,EV stock,BEV,2019,Vehicles,110000.0
+Netherlands,EV stock share,EV,2019,percent,2.299999952
+Netherlands,EV sales share,EV,2019,percent,11.0
+Netherlands,EV sales share,EV,2020,percent,16.0
+Netherlands,EV stock share,EV,2020,percent,3.099999905
+Netherlands,EV stock,BEV,2020,Vehicles,170000.0
+Netherlands,EV sales,FCEV,2020,Vehicles,170.0
+Netherlands,EV sales,BEV,2020,Vehicles,76000.0
+Netherlands,EV sales,PHEV,2020,Vehicles,18000.0
+Netherlands,EV stock,PHEV,2020,Vehicles,98000.0
+Netherlands,EV stock,FCEV,2020,Vehicles,360.0
+Netherlands,EV stock,FCEV,2021,Vehicles,490.0
+Netherlands,EV stock,PHEV,2021,Vehicles,140000.0
+Netherlands,EV sales,PHEV,2021,Vehicles,40000.0
+Netherlands,EV sales,BEV,2021,Vehicles,70000.0
+Netherlands,EV sales,FCEV,2021,Vehicles,140.0
+Netherlands,EV stock,BEV,2021,Vehicles,240000.0
+Netherlands,EV stock share,EV,2021,percent,4.300000191
+Netherlands,EV sales share,EV,2021,percent,19.0
+New Zealand,EV sales share,EV,2010,percent,0.006300000008
+New Zealand,EV stock share,EV,2010,percent,0.0004799999879
+New Zealand,EV stock,BEV,2010,Vehicles,14.0
+New Zealand,EV sales,BEV,2010,Vehicles,10.0
+New Zealand,EV sales,BEV,2011,Vehicles,13.0
+New Zealand,EV stock,BEV,2011,Vehicles,27.0
+New Zealand,EV sales,PHEV,2011,Vehicles,2.0
+New Zealand,EV stock,PHEV,2011,Vehicles,2.0
+New Zealand,EV stock share,EV,2011,percent,0.0009899999714
+New Zealand,EV sales share,EV,2011,percent,0.009899999946
+New Zealand,EV sales share,EV,2012,percent,0.01700000092
+New Zealand,EV stock share,EV,2012,percent,0.001900000032
+New Zealand,EV stock,PHEV,2012,Vehicles,7.0
+New Zealand,EV sales,PHEV,2012,Vehicles,5.0
+New Zealand,EV stock,BEV,2012,Vehicles,49.0
+New Zealand,EV sales,BEV,2012,Vehicles,22.0
+New Zealand,EV sales,BEV,2013,Vehicles,30.0
+New Zealand,EV stock,BEV,2013,Vehicles,79.0
+New Zealand,EV sales,PHEV,2013,Vehicles,6.0
+New Zealand,EV stock,PHEV,2013,Vehicles,13.0
+New Zealand,EV stock share,EV,2013,percent,0.003100000089
+New Zealand,EV sales share,EV,2013,percent,0.01899999939
+New Zealand,EV sales share,EV,2014,percent,0.1400000006
+New Zealand,EV stock share,EV,2014,percent,0.01400000043
+New Zealand,EV stock,PHEV,2014,Vehicles,220.0
+New Zealand,EV sales,PHEV,2014,Vehicles,210.0
+New Zealand,EV stock,BEV,2014,Vehicles,190.0
+New Zealand,EV sales,BEV,2014,Vehicles,110.0
+New Zealand,EV sales,BEV,2015,Vehicles,300.0
+New Zealand,EV stock,BEV,2015,Vehicles,490.0
+New Zealand,EV sales,PHEV,2015,Vehicles,200.0
+New Zealand,EV stock,PHEV,2015,Vehicles,420.0
+New Zealand,EV stock share,EV,2015,percent,0.02999999933
+New Zealand,EV sales share,EV,2015,percent,0.3000000119
+New Zealand,EV sales share,EV,2016,percent,0.7799999714
+New Zealand,EV stock share,EV,2016,percent,0.07999999821
+New Zealand,EV stock,PHEV,2016,Vehicles,760.0
+New Zealand,EV sales,PHEV,2016,Vehicles,340.0
+New Zealand,EV stock,BEV,2016,Vehicles,1600.0
+New Zealand,EV sales,BEV,2016,Vehicles,1200.0
+New Zealand,EV sales,BEV,2017,Vehicles,2900.0
+New Zealand,EV stock,BEV,2017,Vehicles,4600.0
+New Zealand,EV sales,PHEV,2017,Vehicles,540.0
+New Zealand,EV stock,PHEV,2017,Vehicles,1300.0
+New Zealand,EV stock share,EV,2017,percent,0.1899999976
+New Zealand,EV sales share,EV,2017,percent,1.399999976
+New Zealand,EV sales share,EV,2018,percent,2.099999905
+New Zealand,EV stock share,EV,2018,percent,0.3700000048
+New Zealand,EV stock,PHEV,2018,Vehicles,2500.0
+New Zealand,EV sales,PHEV,2018,Vehicles,1200.0
+New Zealand,EV stock,BEV,2018,Vehicles,8900.0
+New Zealand,EV sales,BEV,2018,Vehicles,4400.0
+New Zealand,EV sales,BEV,2019,Vehicles,5300.0
+New Zealand,EV stock,BEV,2019,Vehicles,13000.0
+New Zealand,EV sales,PHEV,2019,Vehicles,1600.0
+New Zealand,EV sales,FCEV,2019,Vehicles,2.0
+New Zealand,EV stock,PHEV,2019,Vehicles,4400.0
+New Zealand,EV stock,FCEV,2019,Vehicles,2.0
+New Zealand,EV stock share,EV,2019,percent,0.5699999928
+New Zealand,EV sales share,EV,2019,percent,2.299999952
+New Zealand,EV sales share,EV,2020,percent,1.600000024
+New Zealand,EV stock share,EV,2020,percent,0.7200000286
+New Zealand,EV stock,FCEV,2020,Vehicles,5.0
+New Zealand,EV stock,PHEV,2020,Vehicles,5900.0
+New Zealand,EV sales,FCEV,2020,Vehicles,3.0
+New Zealand,EV sales,PHEV,2020,Vehicles,1500.0
+New Zealand,EV stock,BEV,2020,Vehicles,17000.0
+New Zealand,EV sales,BEV,2020,Vehicles,3900.0
+New Zealand,EV sales,BEV,2021,Vehicles,6800.0
+New Zealand,EV stock,BEV,2021,Vehicles,26000.0
+New Zealand,EV sales,PHEV,2021,Vehicles,3500.0
+New Zealand,EV sales,FCEV,2021,Vehicles,1.0
+New Zealand,EV stock,PHEV,2021,Vehicles,9400.0
+New Zealand,EV stock,FCEV,2021,Vehicles,6.0
+New Zealand,EV stock share,EV,2021,percent,1.100000024
+New Zealand,EV sales share,EV,2021,percent,3.400000095
+Norway,EV stock,PHEV,2010,Vehicles,2.0
+Norway,EV stock,BEV,2010,Vehicles,2700.0
+Norway,EV sales,BEV,2010,Vehicles,360.0
+Norway,EV sales share,EV,2010,percent,0.2800000012
+Norway,EV stock share,EV,2010,percent,0.1199999973
+Norway,EV stock share,EV,2011,percent,0.1700000018
+Norway,EV sales share,EV,2011,percent,1.399999976
+Norway,EV sales,BEV,2011,Vehicles,2000.0
+Norway,EV stock,BEV,2011,Vehicles,3900.0
+Norway,EV stock,PHEV,2011,Vehicles,3.0
+Norway,EV stock,PHEV,2012,Vehicles,340.0
+Norway,EV sales,PHEV,2012,Vehicles,320.0
+Norway,EV stock,BEV,2012,Vehicles,8000.0
+Norway,EV sales,BEV,2012,Vehicles,3900.0
+Norway,EV sales share,EV,2012,percent,3.099999905
+Norway,EV stock share,EV,2012,percent,0.3600000143
+Norway,EV stock share,EV,2013,percent,0.6399999857
+Norway,EV sales share,EV,2013,percent,5.800000191
+Norway,EV sales,BEV,2013,Vehicles,7900.0
+Norway,EV stock,BEV,2013,Vehicles,15000.0
+Norway,EV sales,PHEV,2013,Vehicles,340.0
+Norway,EV stock,PHEV,2013,Vehicles,660.0
+Norway,EV sales,PHEV,2014,Vehicles,1700.0
+Norway,EV sales,FCEV,2014,Vehicles,4.0
+Norway,EV stock,FCEV,2014,Vehicles,4.0
+Norway,EV stock,BEV,2014,Vehicles,33000.0
+Norway,EV sales,BEV,2014,Vehicles,20000.0
+Norway,EV sales share,EV,2014,percent,15.0
+Norway,EV stock share,EV,2014,percent,1.399999976
+Norway,EV stock,PHEV,2014,Vehicles,2300.0
+Norway,EV stock,PHEV,2015,Vehicles,10000.0
+Norway,EV stock share,EV,2015,percent,2.700000048
+Norway,EV sales share,EV,2015,percent,22.0
+Norway,EV sales,BEV,2015,Vehicles,26000.0
+Norway,EV stock,BEV,2015,Vehicles,59000.0
+Norway,EV stock,FCEV,2015,Vehicles,13.0
+Norway,EV sales,FCEV,2015,Vehicles,9.0
+Norway,EV sales,PHEV,2015,Vehicles,7900.0
+Norway,EV sales,PHEV,2016,Vehicles,21000.0
+Norway,EV sales,FCEV,2016,Vehicles,20.0
+Norway,EV stock,FCEV,2016,Vehicles,40.0
+Norway,EV stock,BEV,2016,Vehicles,83000.0
+Norway,EV sales,BEV,2016,Vehicles,24000.0
+Norway,EV sales share,EV,2016,percent,29.0
+Norway,EV stock share,EV,2016,percent,4.300000191
+Norway,EV stock,PHEV,2016,Vehicles,31000.0
+Norway,EV stock,PHEV,2017,Vehicles,60000.0
+Norway,EV stock share,EV,2017,percent,6.400000095
+Norway,EV sales share,EV,2017,percent,39.0
+Norway,EV sales,BEV,2017,Vehicles,33000.0
+Norway,EV stock,BEV,2017,Vehicles,120000.0
+Norway,EV stock,FCEV,2017,Vehicles,70.0
+Norway,EV sales,FCEV,2017,Vehicles,30.0
+Norway,EV sales,PHEV,2017,Vehicles,29000.0
+Norway,EV sales,PHEV,2018,Vehicles,27000.0
+Norway,EV sales,FCEV,2018,Vehicles,45.0
+Norway,EV stock,FCEV,2018,Vehicles,120.0
+Norway,EV stock,BEV,2018,Vehicles,160000.0
+Norway,EV sales,BEV,2018,Vehicles,46000.0
+Norway,EV sales share,EV,2018,percent,49.0
+Norway,EV stock share,EV,2018,percent,8.899999619
+Norway,EV stock,PHEV,2018,Vehicles,87000.0
+Norway,EV stock,PHEV,2019,Vehicles,110000.0
+Norway,EV stock share,EV,2019,percent,12.0
+Norway,EV sales share,EV,2019,percent,56.0
+Norway,EV sales,BEV,2019,Vehicles,60000.0
+Norway,EV stock,BEV,2019,Vehicles,220000.0
+Norway,EV stock,FCEV,2019,Vehicles,180.0
+Norway,EV sales,FCEV,2019,Vehicles,29.0
+Norway,EV sales,PHEV,2019,Vehicles,19000.0
+Norway,EV sales,PHEV,2020,Vehicles,29000.0
+Norway,EV sales,FCEV,2020,Vehicles,16.0
+Norway,EV stock,FCEV,2020,Vehicles,200.0
+Norway,EV stock,BEV,2020,Vehicles,340000.0
+Norway,EV sales,BEV,2020,Vehicles,77000.0
+Norway,EV sales share,EV,2020,percent,75.0
+Norway,EV stock share,EV,2020,percent,17.0
+Norway,EV stock,PHEV,2020,Vehicles,150000.0
+Norway,EV stock,PHEV,2021,Vehicles,180000.0
+Norway,EV stock share,EV,2021,percent,21.0
+Norway,EV sales share,EV,2021,percent,86.0
+Norway,EV sales,BEV,2021,Vehicles,110000.0
+Norway,EV stock,BEV,2021,Vehicles,450000.0
+Norway,EV stock,FCEV,2021,Vehicles,230.0
+Norway,EV sales,FCEV,2021,Vehicles,39.0
+Norway,EV sales,PHEV,2021,Vehicles,38000.0
+Poland,EV sales share,EV,2010,percent,0.004800000228
+Poland,EV sales,BEV,2010,Vehicles,15.0
+Poland,EV sales,PHEV,2010,Vehicles,1.0
+Poland,EV sales,BEV,2011,Vehicles,43.0
+Poland,EV sales share,EV,2011,percent,0.01400000043
+Poland,EV sales share,EV,2012,percent,0.01700000092
+Poland,EV sales,BEV,2012,Vehicles,44.0
+Poland,EV sales,PHEV,2012,Vehicles,4.0
+Poland,EV sales,PHEV,2013,Vehicles,6.0
+Poland,EV sales,BEV,2013,Vehicles,31.0
+Poland,EV sales share,EV,2013,percent,0.01300000027
+Poland,EV sales share,EV,2014,percent,0.06199999899
+Poland,EV sales,BEV,2014,Vehicles,140.0
+Poland,EV sales,PHEV,2014,Vehicles,61.0
+Poland,EV sales,PHEV,2015,Vehicles,150.0
+Poland,EV sales,BEV,2015,Vehicles,70.0
+Poland,EV stock,BEV,2015,Vehicles,2500.0
+Poland,EV sales share,EV,2015,percent,0.06100000069
+Poland,EV stock share,EV,2015,percent,0.0120000001
+Poland,EV stock share,EV,2016,percent,0.01700000092
+Poland,EV sales share,EV,2016,percent,0.1199999973
+Poland,EV stock,BEV,2016,Vehicles,2600.0
+Poland,EV sales,BEV,2016,Vehicles,110.0
+Poland,EV sales,PHEV,2016,Vehicles,400.0
+Poland,EV sales,PHEV,2017,Vehicles,640.0
+Poland,EV stock,FCEV,2017,Vehicles,14.0
+Poland,EV sales,BEV,2017,Vehicles,440.0
+Poland,EV stock,BEV,2017,Vehicles,3100.0
+Poland,EV sales share,EV,2017,percent,0.2199999988
+Poland,EV stock share,EV,2017,percent,0.01400000043
+Poland,EV stock share,EV,2018,percent,0.02099999972
+Poland,EV sales share,EV,2018,percent,0.2599999905
+Poland,EV stock,BEV,2018,Vehicles,3700.0
+Poland,EV sales,BEV,2018,Vehicles,620.0
+Poland,EV stock,FCEV,2018,Vehicles,28.0
+Poland,EV sales,FCEV,2018,Vehicles,1.0
+Poland,EV sales,PHEV,2018,Vehicles,760.0
+Poland,EV sales,PHEV,2019,Vehicles,1200.0
+Poland,EV stock,FCEV,2019,Vehicles,34.0
+Poland,EV stock,PHEV,2019,Vehicles,3800.0
+Poland,EV sales,BEV,2019,Vehicles,1500.0
+Poland,EV stock,BEV,2019,Vehicles,4800.0
+Poland,EV sales share,EV,2019,percent,0.4900000095
+Poland,EV stock share,EV,2019,percent,0.04699999839
+Poland,EV stock share,EV,2020,percent,0.09499999881
+Poland,EV sales share,EV,2020,percent,1.899999976
+Poland,EV stock,BEV,2020,Vehicles,9400.0
+Poland,EV sales,BEV,2020,Vehicles,3700.0
+Poland,EV stock,PHEV,2020,Vehicles,8300.0
+Poland,EV stock,FCEV,2020,Vehicles,28.0
+Poland,EV sales,PHEV,2020,Vehicles,4500.0
+Poland,EV sales,PHEV,2021,Vehicles,9100.0
+Poland,EV stock,FCEV,2021,Vehicles,91.0
+Poland,EV sales,FCEV,2021,Vehicles,78.0
+Poland,EV stock,PHEV,2021,Vehicles,19000.0
+Poland,EV sales,BEV,2021,Vehicles,7200.0
+Poland,EV stock,BEV,2021,Vehicles,18000.0
+Poland,EV sales share,EV,2021,percent,3.599999905
+Poland,EV stock share,EV,2021,percent,0.1899999976
+Portugal,EV sales share,EV,2010,percent,0.005799999926
+Portugal,EV stock,BEV,2010,Vehicles,720.0
+Portugal,EV sales,BEV,2010,Vehicles,13.0
+Portugal,EV stock share,EV,2010,percent,0.01499999966
+Portugal,EV stock share,EV,2011,percent,0.01899999939
+Portugal,EV sales,BEV,2011,Vehicles,170.0
+Portugal,EV stock,BEV,2011,Vehicles,910.0
+Portugal,EV sales,PHEV,2011,Vehicles,2.0
+Portugal,EV sales share,EV,2011,percent,0.1099999994
+Portugal,EV sales share,EV,2012,percent,0.08799999952
+Portugal,EV sales,PHEV,2012,Vehicles,30.0
+Portugal,EV stock,BEV,2012,Vehicles,960.0
+Portugal,EV sales,BEV,2012,Vehicles,54.0
+Portugal,EV stock share,EV,2012,percent,0.02300000004
+Portugal,EV stock share,EV,2013,percent,0.0270000007
+Portugal,EV sales,BEV,2013,Vehicles,150.0
+Portugal,EV stock,BEV,2013,Vehicles,1100.0
+Portugal,EV sales,PHEV,2013,Vehicles,35.0
+Portugal,EV stock,PHEV,2013,Vehicles,37.0
+Portugal,EV sales share,EV,2013,percent,0.1700000018
+Portugal,EV sales share,EV,2014,percent,0.200000003
+Portugal,EV stock,PHEV,2014,Vehicles,46.0
+Portugal,EV sales,PHEV,2014,Vehicles,98.0
+Portugal,EV stock,BEV,2014,Vehicles,1300.0
+Portugal,EV sales,BEV,2014,Vehicles,190.0
+Portugal,EV stock share,EV,2014,percent,0.02899999917
+Portugal,EV stock share,EV,2015,percent,0.05299999937
+Portugal,EV sales,BEV,2015,Vehicles,670.0
+Portugal,EV stock,BEV,2015,Vehicles,2000.0
+Portugal,EV sales,PHEV,2015,Vehicles,430.0
+Portugal,EV stock,PHEV,2015,Vehicles,530.0
+Portugal,EV sales share,EV,2015,percent,0.6200000048
+Portugal,EV sales share,EV,2016,percent,0.8700000048
+Portugal,EV stock,PHEV,2016,Vehicles,1600.0
+Portugal,EV sales,PHEV,2016,Vehicles,1000.0
+Portugal,EV stock,BEV,2016,Vehicles,2800.0
+Portugal,EV sales,BEV,2016,Vehicles,800.0
+Portugal,EV stock share,EV,2016,percent,0.09300000221
+Portugal,EV stock share,EV,2017,percent,0.1899999976
+Portugal,EV sales,BEV,2017,Vehicles,1900.0
+Portugal,EV stock,BEV,2017,Vehicles,4700.0
+Portugal,EV sales,PHEV,2017,Vehicles,2500.0
+Portugal,EV sales share,EV,2017,percent,2.0
+Portugal,EV stock,PHEV,2017,Vehicles,4100.0
+Portugal,EV stock,PHEV,2018,Vehicles,8000.0
+Portugal,EV sales share,EV,2018,percent,3.599999905
+Portugal,EV sales,PHEV,2018,Vehicles,3900.0
+Portugal,EV stock,BEV,2018,Vehicles,8700.0
+Portugal,EV sales,BEV,2018,Vehicles,4300.0
+Portugal,EV stock share,EV,2018,percent,0.3600000143
+Portugal,EV stock share,EV,2019,percent,0.6200000048
+Portugal,EV sales,BEV,2019,Vehicles,6800.0
+Portugal,EV stock,BEV,2019,Vehicles,16000.0
+Portugal,EV sales,PHEV,2019,Vehicles,5800.0
+Portugal,EV sales share,EV,2019,percent,5.599999905
+Portugal,EV stock,PHEV,2019,Vehicles,14000.0
+Portugal,EV stock,PHEV,2020,Vehicles,26000.0
+Portugal,EV sales share,EV,2020,percent,13.0
+Portugal,EV sales,PHEV,2020,Vehicles,12000.0
+Portugal,EV stock,BEV,2020,Vehicles,23000.0
+Portugal,EV sales,BEV,2020,Vehicles,7800.0
+Portugal,EV stock share,EV,2020,percent,1.100000024
+Portugal,EV stock share,EV,2021,percent,1.700000048
+Portugal,EV sales,BEV,2021,Vehicles,13000.0
+Portugal,EV stock,BEV,2021,Vehicles,37000.0
+Portugal,EV sales,PHEV,2021,Vehicles,16000.0
+Portugal,EV sales,FCEV,2021,Vehicles,1.0
+Portugal,EV sales share,EV,2021,percent,20.0
+Portugal,EV stock,FCEV,2021,Vehicles,3.0
+Portugal,EV stock,PHEV,2021,Vehicles,41000.0
+Rest of the world,Oil displacement Mbd,EV,2010,Milion barrels per day,6.1e-05
+Rest of the world,"Oil displacement, million lge",EV,2010,"Oil displacement, million lge",3.599999905
+Rest of the world,Electricity demand,EV,2010,GWh,0.1199999973
+Rest of the world,Electricity demand,EV,2011,GWh,890.0
+Rest of the world,EV sales share,EV,2011,percent,0.0003199999919
+Rest of the world,EV stock share,EV,2011,percent,0.0001900000061
+Rest of the world,Oil displacement Mbd,EV,2011,Milion barrels per day,0.0002899999963
+Rest of the world,"Oil displacement, million lge",EV,2011,"Oil displacement, million lge",17.0
+Rest of the world,EV sales,BEV,2011,Vehicles,42.0
+Rest of the world,EV stock,BEV,2011,Vehicles,240.0
+Rest of the world,EV stock,BEV,2012,Vehicles,530.0
+Rest of the world,EV sales,BEV,2012,Vehicles,380.0
+Rest of the world,Oil displacement Mbd,EV,2012,Milion barrels per day,0.000560000015
+Rest of the world,"Oil displacement, million lge",EV,2012,"Oil displacement, million lge",33.0
+Rest of the world,EV sales,PHEV,2012,Vehicles,68.0
+Rest of the world,EV stock,PHEV,2012,Vehicles,68.0
+Rest of the world,EV stock share,EV,2012,percent,0.0004299999855
+Rest of the world,EV sales share,EV,2012,percent,0.003599999938
+Rest of the world,Electricity demand,EV,2012,GWh,980.0
+Rest of the world,Electricity demand,EV,2013,GWh,1100.0
+Rest of the world,EV sales share,EV,2013,percent,0.001700000023
+Rest of the world,EV stock share,EV,2013,percent,0.000549999997
+Rest of the world,EV stock,PHEV,2013,Vehicles,88.0
+Rest of the world,EV sales,PHEV,2013,Vehicles,21.0
+Rest of the world,Oil displacement Mbd,EV,2013,Milion barrels per day,0.0008800000069
+Rest of the world,"Oil displacement, million lge",EV,2013,"Oil displacement, million lge",51.0
+Rest of the world,EV sales,BEV,2013,Vehicles,190.0
+Rest of the world,EV stock,BEV,2013,Vehicles,710.0
+Rest of the world,EV sales,BEV,2014,Vehicles,150.0
+Rest of the world,Oil displacement Mbd,EV,2014,Milion barrels per day,0.001200000057
+Rest of the world,"Oil displacement, million lge",EV,2014,"Oil displacement, million lge",71.0
+Rest of the world,EV sales,PHEV,2014,Vehicles,400.0
+Rest of the world,EV stock,BEV,2014,Vehicles,880.0
+Rest of the world,EV stock,PHEV,2014,Vehicles,490.0
+Rest of the world,EV stock share,EV,2014,percent,0.0008999999845
+Rest of the world,EV sales share,EV,2014,percent,0.004300000146
+Rest of the world,Electricity demand,EV,2014,GWh,1400.0
+Rest of the world,Electricity demand,EV,2015,GWh,1400.0
+Rest of the world,EV sales share,EV,2015,percent,0.03799999878
+Rest of the world,EV stock share,EV,2015,percent,0.00400000019
+Rest of the world,EV stock,PHEV,2015,Vehicles,1400.0
+Rest of the world,EV stock,BEV,2015,Vehicles,4900.0
+Rest of the world,EV sales,PHEV,2015,Vehicles,900.0
+Rest of the world,EV sales,BEV,2015,Vehicles,3400.0
+Rest of the world,Oil displacement Mbd,EV,2015,Milion barrels per day,0.001700000023
+Rest of the world,"Oil displacement, million lge",EV,2015,"Oil displacement, million lge",100.0
+Rest of the world,Oil displacement Mbd,EV,2016,Milion barrels per day,0.002400000114
+Rest of the world,"Oil displacement, million lge",EV,2016,"Oil displacement, million lge",140.0
+Rest of the world,EV sales,BEV,2016,Vehicles,880.0
+Rest of the world,EV sales,PHEV,2016,Vehicles,700.0
+Rest of the world,EV stock,BEV,2016,Vehicles,5600.0
+Rest of the world,EV stock,PHEV,2016,Vehicles,2100.0
+Rest of the world,EV stock share,EV,2016,percent,0.004800000228
+Rest of the world,EV sales share,EV,2016,percent,0.01600000076
+Rest of the world,Electricity demand,EV,2016,GWh,1400.0
+Rest of the world,Electricity demand,EV,2017,GWh,1400.0
+Rest of the world,EV sales share,EV,2017,percent,0.02300000004
+Rest of the world,EV stock share,EV,2017,percent,0.006000000052
+Rest of the world,EV stock,PHEV,2017,Vehicles,2600.0
+Rest of the world,EV stock,BEV,2017,Vehicles,7300.0
+Rest of the world,EV sales,PHEV,2017,Vehicles,570.0
+Rest of the world,EV sales,BEV,2017,Vehicles,1900.0
+Rest of the world,Oil displacement Mbd,EV,2017,Milion barrels per day,0.003500000108
+Rest of the world,"Oil displacement, million lge",EV,2017,"Oil displacement, million lge",200.0
+Rest of the world,Oil displacement Mbd,EV,2018,Milion barrels per day,0.005900000222
+Rest of the world,"Oil displacement, million lge",EV,2018,"Oil displacement, million lge",340.0
+Rest of the world,EV sales,BEV,2018,Vehicles,1700.0
+Rest of the world,EV sales,PHEV,2018,Vehicles,2300.0
+Rest of the world,EV stock,BEV,2018,Vehicles,8800.0
+Rest of the world,EV stock,PHEV,2018,Vehicles,4900.0
+Rest of the world,EV stock share,EV,2018,percent,0.00820000004
+Rest of the world,EV sales share,EV,2018,percent,0.03700000048
+Rest of the world,Electricity demand,EV,2018,GWh,1400.0
+Rest of the world,Electricity demand,EV,2019,GWh,1700.0
+Rest of the world,EV sales share,EV,2019,percent,0.08200000226
+Rest of the world,EV stock share,EV,2019,percent,0.01300000027
+Rest of the world,EV stock,PHEV,2019,Vehicles,7600.0
+Rest of the world,EV stock,BEV,2019,Vehicles,14000.0
+Rest of the world,EV sales,PHEV,2019,Vehicles,2800.0
+Rest of the world,EV sales,BEV,2019,Vehicles,5200.0
+Rest of the world,Oil displacement Mbd,EV,2019,Milion barrels per day,0.008999999613
+Rest of the world,"Oil displacement, million lge",EV,2019,"Oil displacement, million lge",520.0
+Rest of the world,Oil displacement Mbd,EV,2020,Milion barrels per day,0.01099999994
+Rest of the world,"Oil displacement, million lge",EV,2020,"Oil displacement, million lge",610.0
+Rest of the world,EV sales,BEV,2020,Vehicles,12000.0
+Rest of the world,EV sales,PHEV,2020,Vehicles,3200.0
+Rest of the world,EV sales,FCEV,2020,Vehicles,4.0
+Rest of the world,EV stock,BEV,2020,Vehicles,25000.0
+Rest of the world,EV stock,PHEV,2020,Vehicles,11000.0
+Rest of the world,EV stock,FCEV,2020,Vehicles,4.0
+Rest of the world,EV stock share,EV,2020,percent,0.02099999972
+Rest of the world,EV sales share,EV,2020,percent,0.1800000072
+Rest of the world,Electricity demand,EV,2020,GWh,1700.0
+Rest of the world,Electricity demand,EV,2021,GWh,1900.0
+Rest of the world,EV sales share,EV,2021,percent,0.2800000012
+Rest of the world,EV stock share,EV,2021,percent,0.03599999845
+Rest of the world,EV stock,FCEV,2021,Vehicles,4.0
+Rest of the world,EV stock,PHEV,2021,Vehicles,16000.0
+Rest of the world,EV stock,BEV,2021,Vehicles,46000.0
+Rest of the world,EV sales,PHEV,2021,Vehicles,5900.0
+Rest of the world,EV sales,BEV,2021,Vehicles,21000.0
+Rest of the world,Oil displacement Mbd,EV,2021,Milion barrels per day,0.01700000092
+Rest of the world,"Oil displacement, million lge",EV,2021,"Oil displacement, million lge",980.0
+Romania,EV sales share,EV,2015,percent,0.02999999933
+Romania,EV sales,BEV,2015,Vehicles,24.0
+Romania,EV sales,BEV,2016,Vehicles,74.0
+Romania,EV sales share,EV,2016,percent,0.07999999821
+Romania,EV sales share,EV,2017,percent,0.1800000072
+Romania,EV sales,BEV,2017,Vehicles,190.0
+Romania,EV sales,BEV,2018,Vehicles,600.0
+Romania,EV sales share,EV,2018,percent,0.4600000083
+Romania,EV sales share,EV,2019,percent,0.9300000072
+Romania,EV sales,BEV,2019,Vehicles,1500.0
+Romania,EV sales,BEV,2020,Vehicles,2800.0
+Romania,EV sales,PHEV,2020,Vehicles,1000.0
+Romania,EV sales share,EV,2020,percent,3.099999905
+Romania,EV sales share,EV,2021,percent,5.199999809
+Romania,EV sales,BEV,2021,Vehicles,6300.0
+Seychelles,EV sales,BEV,2015,Vehicles,3.0
+Seychelles,EV sales share,EV,2015,percent,0.150000006
+Seychelles,EV sales share,EV,2016,percent,0.6299999952
+Seychelles,EV sales,BEV,2016,Vehicles,12.0
+Seychelles,EV sales,BEV,2017,Vehicles,30.0
+Seychelles,EV sales share,EV,2017,percent,2.0
+Seychelles,EV sales share,EV,2018,percent,2.299999952
+Seychelles,EV sales,BEV,2018,Vehicles,32.0
+Seychelles,EV sales,BEV,2019,Vehicles,37.0
+Seychelles,EV sales share,EV,2019,percent,2.599999905
+Seychelles,EV sales share,EV,2020,percent,3.299999952
+Seychelles,EV sales,BEV,2020,Vehicles,26.0
+Seychelles,EV sales,BEV,2021,Vehicles,61.0
+Seychelles,EV sales share,EV,2021,percent,4.199999809
+Slovakia,EV sales,BEV,2015,Vehicles,52.0
+Slovakia,EV sales share,EV,2015,percent,0.0700000003
+Slovakia,EV sales share,EV,2016,percent,0.0700000003
+Slovakia,EV sales,BEV,2016,Vehicles,59.0
+Slovakia,EV sales,BEV,2017,Vehicles,210.0
+Slovakia,EV sales share,EV,2017,percent,0.2199999988
+Slovakia,EV sales share,EV,2018,percent,0.3000000119
+Slovakia,EV sales,BEV,2018,Vehicles,290.0
+Slovakia,EV sales,BEV,2019,Vehicles,160.0
+Slovakia,EV sales,PHEV,2019,Vehicles,200.0
+Slovakia,EV sales share,EV,2019,percent,0.3600000143
+Slovakia,EV sales share,EV,2020,percent,2.299999952
+Slovakia,EV sales,PHEV,2020,Vehicles,860.0
+Slovakia,EV sales,BEV,2020,Vehicles,920.0
+Slovakia,EV sales,BEV,2021,Vehicles,1100.0
+Slovakia,EV sales,PHEV,2021,Vehicles,1200.0
+Slovakia,EV sales share,EV,2021,percent,3.0
+Slovenia,EV sales share,EV,2016,percent,0.3199999928
+Slovenia,EV sales,PHEV,2016,Vehicles,46.0
+Slovenia,EV sales,BEV,2016,Vehicles,140.0
+Slovenia,EV sales,BEV,2017,Vehicles,290.0
+Slovenia,EV sales share,EV,2017,percent,0.6399999857
+Slovenia,EV sales,PHEV,2017,Vehicles,170.0
+Slovenia,EV sales,PHEV,2018,Vehicles,190.0
+Slovenia,EV sales share,EV,2018,percent,0.9100000262
+Slovenia,EV sales,BEV,2018,Vehicles,470.0
+Slovenia,EV sales,BEV,2019,Vehicles,190.0
+Slovenia,EV sales share,EV,2019,percent,0.2899999917
+Slovenia,EV sales,PHEV,2019,Vehicles,28.0
+Slovenia,EV sales,PHEV,2020,Vehicles,39.0
+Slovenia,EV sales share,EV,2020,percent,3.099999905
+Slovenia,EV sales,BEV,2020,Vehicles,1600.0
+Slovenia,EV sales,BEV,2021,Vehicles,1700.0
+Slovenia,EV sales share,EV,2021,percent,3.799999952
+Slovenia,EV sales,PHEV,2021,Vehicles,310.0
+South Africa,EV sales share,EV,2013,percent,0.007499999832
+South Africa,EV stock share,EV,2013,percent,0.0005200000014
+South Africa,EV sales,BEV,2013,Vehicles,34.0
+South Africa,EV stock,BEV,2013,Vehicles,34.0
+South Africa,EV stock,BEV,2014,Vehicles,48.0
+South Africa,EV sales,BEV,2014,Vehicles,14.0
+South Africa,EV sales,PHEV,2014,Vehicles,1.0
+South Africa,EV stock,PHEV,2014,Vehicles,1.0
+South Africa,EV stock share,EV,2014,percent,0.0007200000109
+South Africa,EV sales share,EV,2014,percent,0.003400000045
+South Africa,EV sales share,EV,2015,percent,0.05799999833
+South Africa,EV stock share,EV,2015,percent,0.00410000002
+South Africa,EV stock,PHEV,2015,Vehicles,120.0
+South Africa,EV sales,PHEV,2015,Vehicles,120.0
+South Africa,EV sales,BEV,2015,Vehicles,120.0
+South Africa,EV stock,BEV,2015,Vehicles,160.0
+South Africa,EV stock,BEV,2016,Vehicles,260.0
+South Africa,EV sales,BEV,2016,Vehicles,100.0
+South Africa,EV sales,PHEV,2016,Vehicles,280.0
+South Africa,EV stock,PHEV,2016,Vehicles,400.0
+South Africa,EV stock share,EV,2016,percent,0.009300000034
+South Africa,EV sales share,EV,2016,percent,0.1000000015
+South Africa,EV sales share,EV,2017,percent,0.05299999937
+South Africa,EV stock share,EV,2017,percent,0.0120000001
+South Africa,EV stock,PHEV,2017,Vehicles,530.0
+South Africa,EV sales,PHEV,2017,Vehicles,130.0
+South Africa,EV sales,BEV,2017,Vehicles,68.0
+South Africa,EV stock,BEV,2017,Vehicles,330.0
+South Africa,EV stock,BEV,2018,Vehicles,400.0
+South Africa,EV sales,BEV,2018,Vehicles,66.0
+South Africa,EV sales,PHEV,2018,Vehicles,82.0
+South Africa,EV stock,PHEV,2018,Vehicles,610.0
+South Africa,EV stock share,EV,2018,percent,0.01400000043
+South Africa,EV sales share,EV,2018,percent,0.04100000113
+South Africa,EV sales share,EV,2019,percent,0.06400000304
+South Africa,EV stock share,EV,2019,percent,0.01600000076
+South Africa,EV stock,PHEV,2019,Vehicles,680.0
+South Africa,EV sales,PHEV,2019,Vehicles,72.0
+South Africa,EV stock,BEV,2019,Vehicles,560.0
+South Africa,EV sales,BEV,2019,Vehicles,160.0
+South Africa,EV sales,BEV,2020,Vehicles,92.0
+South Africa,EV stock,BEV,2020,Vehicles,640.0
+South Africa,EV sales,PHEV,2020,Vehicles,150.0
+South Africa,EV stock,PHEV,2020,Vehicles,830.0
+South Africa,EV stock share,EV,2020,percent,0.01899999939
+South Africa,EV sales share,EV,2020,percent,0.09799999744
+South Africa,EV sales share,EV,2021,percent,0.08799999952
+South Africa,EV stock share,EV,2021,percent,0.02300000004
+South Africa,EV stock,PHEV,2021,Vehicles,880.0
+South Africa,EV sales,PHEV,2021,Vehicles,51.0
+South Africa,EV sales,FCEV,2021,Vehicles,1.0
+South Africa,EV stock,FCEV,2021,Vehicles,1.0
+South Africa,EV stock,BEV,2021,Vehicles,860.0
+South Africa,EV sales,BEV,2021,Vehicles,220.0
+Spain,EV sales,BEV,2010,Vehicles,76.0
+Spain,EV stock,BEV,2010,Vehicles,76.0
+Spain,EV sales share,EV,2010,percent,0.007699999958
+Spain,EV stock share,EV,2010,percent,0.0003399999987
+Spain,EV stock share,EV,2011,percent,0.002099999925
+Spain,EV sales share,EV,2011,percent,0.04899999872
+Spain,EV stock,BEV,2011,Vehicles,460.0
+Spain,EV sales,BEV,2011,Vehicles,390.0
+Spain,EV sales,PHEV,2011,Vehicles,8.0
+Spain,EV stock,PHEV,2011,Vehicles,8.0
+Spain,EV stock,PHEV,2012,Vehicles,120.0
+Spain,EV sales,PHEV,2012,Vehicles,110.0
+Spain,EV sales,BEV,2012,Vehicles,430.0
+Spain,EV stock,BEV,2012,Vehicles,890.0
+Spain,EV sales share,EV,2012,percent,0.07599999756
+Spain,EV stock share,EV,2012,percent,0.004499999806
+Spain,EV stock share,EV,2013,percent,0.008600000292
+Spain,EV sales share,EV,2013,percent,0.1199999973
+Spain,EV sales,BEV,2013,Vehicles,810.0
+Spain,EV sales,PHEV,2013,Vehicles,72.0
+Spain,EV stock,BEV,2013,Vehicles,1700.0
+Spain,EV stock,PHEV,2013,Vehicles,190.0
+Spain,EV stock,PHEV,2014,Vehicles,520.0
+Spain,EV stock,BEV,2014,Vehicles,3100.0
+Spain,EV sales,PHEV,2014,Vehicles,330.0
+Spain,EV sales,BEV,2014,Vehicles,1400.0
+Spain,EV sales share,EV,2014,percent,0.200000003
+Spain,EV stock share,EV,2014,percent,0.01600000076
+Spain,EV stock share,EV,2015,percent,0.02600000054
+Spain,EV sales share,EV,2015,percent,0.200000003
+Spain,EV sales,BEV,2015,Vehicles,1300.0
+Spain,EV sales,PHEV,2015,Vehicles,780.0
+Spain,EV stock,BEV,2015,Vehicles,4400.0
+Spain,EV stock,PHEV,2015,Vehicles,1300.0
+Spain,EV stock,PHEV,2016,Vehicles,2800.0
+Spain,EV stock,BEV,2016,Vehicles,6500.0
+Spain,EV sales,PHEV,2016,Vehicles,1500.0
+Spain,EV sales,BEV,2016,Vehicles,2000.0
+Spain,EV sales share,EV,2016,percent,0.3100000024
+Spain,EV stock share,EV,2016,percent,0.03999999911
+Spain,EV stock share,EV,2017,percent,0.07100000232
+Spain,EV sales share,EV,2017,percent,0.6000000238
+Spain,EV sales,BEV,2017,Vehicles,3900.0
+Spain,EV sales,PHEV,2017,Vehicles,3500.0
+Spain,EV stock,BEV,2017,Vehicles,10000.0
+Spain,EV stock,PHEV,2017,Vehicles,6300.0
+Spain,EV stock,PHEV,2018,Vehicles,12000.0
+Spain,EV stock,BEV,2018,Vehicles,16000.0
+Spain,EV sales,PHEV,2018,Vehicles,5600.0
+Spain,EV sales,FCEV,2018,Vehicles,1.0
+Spain,EV stock,FCEV,2018,Vehicles,1.0
+Spain,EV sales,BEV,2018,Vehicles,6000.0
+Spain,EV sales share,EV,2018,percent,0.8799999952
+Spain,EV stock share,EV,2018,percent,0.1199999973
+Spain,EV stock share,EV,2019,percent,0.1899999976
+Spain,EV sales share,EV,2019,percent,1.399999976
+Spain,EV sales,BEV,2019,Vehicles,10000.0
+Spain,EV stock,FCEV,2019,Vehicles,2.0
+Spain,EV sales,FCEV,2019,Vehicles,1.0
+Spain,EV sales,PHEV,2019,Vehicles,7400.0
+Spain,EV stock,BEV,2019,Vehicles,26000.0
+Spain,EV stock,PHEV,2019,Vehicles,19000.0
+Spain,EV stock,PHEV,2020,Vehicles,43000.0
+Spain,EV stock,BEV,2020,Vehicles,45000.0
+Spain,EV sales,PHEV,2020,Vehicles,24000.0
+Spain,EV sales,FCEV,2020,Vehicles,7.0
+Spain,EV stock,FCEV,2020,Vehicles,9.0
+Spain,EV sales,BEV,2020,Vehicles,18000.0
+Spain,EV sales share,EV,2020,percent,4.900000095
+Spain,EV stock share,EV,2020,percent,0.3600000143
+Spain,EV stock share,EV,2021,percent,0.6200000048
+Spain,EV sales share,EV,2021,percent,7.800000191
+Spain,EV sales,BEV,2021,Vehicles,24000.0
+Spain,EV stock,FCEV,2021,Vehicles,19.0
+Spain,EV sales,FCEV,2021,Vehicles,10.0
+Spain,EV sales,PHEV,2021,Vehicles,43000.0
+Spain,EV stock,BEV,2021,Vehicles,69000.0
+Spain,EV stock,PHEV,2021,Vehicles,86000.0
+Sweden,EV sales,BEV,2010,Vehicles,4.0
+Sweden,EV stock,BEV,2010,Vehicles,4.0
+Sweden,EV sales share,EV,2010,percent,0.001300000004
+Sweden,EV stock share,EV,2010,percent,9.2e-05
+Sweden,EV stock share,EV,2011,percent,0.00410000002
+Sweden,EV sales share,EV,2011,percent,0.0540000014
+Sweden,EV sales,BEV,2011,Vehicles,180.0
+Sweden,EV stock,BEV,2011,Vehicles,180.0
+Sweden,EV stock,BEV,2012,Vehicles,600.0
+Sweden,EV sales,PHEV,2012,Vehicles,660.0
+Sweden,EV stock,PHEV,2012,Vehicles,650.0
+Sweden,EV sales,BEV,2012,Vehicles,270.0
+Sweden,EV sales share,EV,2012,percent,0.3100000024
+Sweden,EV stock share,EV,2012,percent,0.02800000086
+Sweden,EV stock share,EV,2013,percent,0.05799999833
+Sweden,EV sales share,EV,2013,percent,0.5299999714
+Sweden,EV sales,BEV,2013,Vehicles,430.0
+Sweden,EV stock,PHEV,2013,Vehicles,1600.0
+Sweden,EV sales,PHEV,2013,Vehicles,1100.0
+Sweden,EV stock,BEV,2013,Vehicles,1000.0
+Sweden,EV sales,FCEV,2013,Vehicles,3.0
+Sweden,EV stock,FCEV,2013,Vehicles,3.0
+Sweden,EV stock,FCEV,2014,Vehicles,3.0
+Sweden,EV stock,BEV,2014,Vehicles,2200.0
+Sweden,EV sales,PHEV,2014,Vehicles,3400.0
+Sweden,EV stock,PHEV,2014,Vehicles,4900.0
+Sweden,EV sales,BEV,2014,Vehicles,1200.0
+Sweden,EV sales share,EV,2014,percent,1.399999976
+Sweden,EV stock share,EV,2014,percent,0.150000006
+Sweden,EV stock share,EV,2015,percent,0.3100000024
+Sweden,EV sales share,EV,2015,percent,2.400000095
+Sweden,EV sales,BEV,2015,Vehicles,3000.0
+Sweden,EV stock,PHEV,2015,Vehicles,9800.0
+Sweden,EV sales,PHEV,2015,Vehicles,5700.0
+Sweden,EV stock,BEV,2015,Vehicles,4800.0
+Sweden,EV stock,FCEV,2015,Vehicles,4.0
+Sweden,EV sales,FCEV,2015,Vehicles,1.0
+Sweden,EV sales,FCEV,2016,Vehicles,3.0
+Sweden,EV stock,FCEV,2016,Vehicles,7.0
+Sweden,EV stock,BEV,2016,Vehicles,7500.0
+Sweden,EV sales,PHEV,2016,Vehicles,10000.0
+Sweden,EV stock,PHEV,2016,Vehicles,19000.0
+Sweden,EV sales,BEV,2016,Vehicles,2900.0
+Sweden,EV sales share,EV,2016,percent,3.400000095
+Sweden,EV stock share,EV,2016,percent,0.5500000119
+Sweden,EV stock share,EV,2017,percent,0.8899999857
+Sweden,EV sales share,EV,2017,percent,5.099999905
+Sweden,EV sales,BEV,2017,Vehicles,4400.0
+Sweden,EV stock,PHEV,2017,Vehicles,32000.0
+Sweden,EV sales,PHEV,2017,Vehicles,16000.0
+Sweden,EV stock,BEV,2017,Vehicles,11000.0
+Sweden,EV stock,FCEV,2017,Vehicles,21.0
+Sweden,EV sales,FCEV,2017,Vehicles,14.0
+Sweden,EV stock,FCEV,2018,Vehicles,21.0
+Sweden,EV stock,BEV,2018,Vehicles,17000.0
+Sweden,EV sales,PHEV,2018,Vehicles,22000.0
+Sweden,EV stock,PHEV,2018,Vehicles,49000.0
+Sweden,EV sales,BEV,2018,Vehicles,7100.0
+Sweden,EV sales share,EV,2018,percent,7.599999905
+Sweden,EV stock share,EV,2018,percent,1.299999952
+Sweden,EV stock share,EV,2019,percent,2.0
+Sweden,EV sales share,EV,2019,percent,11.0
+Sweden,EV sales,BEV,2019,Vehicles,16000.0
+Sweden,EV stock,PHEV,2019,Vehicles,67000.0
+Sweden,EV sales,PHEV,2019,Vehicles,25000.0
+Sweden,EV stock,BEV,2019,Vehicles,30000.0
+Sweden,EV stock,FCEV,2019,Vehicles,42.0
+Sweden,EV sales,FCEV,2019,Vehicles,2.0
+Sweden,EV sales,FCEV,2020,Vehicles,5.0
+Sweden,EV stock,FCEV,2020,Vehicles,47.0
+Sweden,EV stock,BEV,2020,Vehicles,56000.0
+Sweden,EV sales,PHEV,2020,Vehicles,66000.0
+Sweden,EV stock,PHEV,2020,Vehicles,120000.0
+Sweden,EV sales,BEV,2020,Vehicles,28000.0
+Sweden,EV sales share,EV,2020,percent,32.0
+Sweden,EV stock share,EV,2020,percent,3.599999905
+Sweden,EV stock share,EV,2021,percent,6.0
+Sweden,EV sales share,EV,2021,percent,43.0
+Sweden,EV sales,BEV,2021,Vehicles,57000.0
+Sweden,EV stock,PHEV,2021,Vehicles,190000.0
+Sweden,EV sales,PHEV,2021,Vehicles,78000.0
+Sweden,EV stock,BEV,2021,Vehicles,110000.0
+Sweden,EV stock,FCEV,2021,Vehicles,63.0
+Sweden,EV sales,FCEV,2021,Vehicles,16.0
+Switzerland,EV sales,BEV,2011,Vehicles,400.0
+Switzerland,EV stock,BEV,2011,Vehicles,400.0
+Switzerland,EV stock,PHEV,2011,Vehicles,41.0
+Switzerland,EV sales,PHEV,2011,Vehicles,41.0
+Switzerland,EV sales share,EV,2011,percent,0.1400000006
+Switzerland,EV stock share,EV,2011,percent,0.009999999776
+Switzerland,EV stock share,EV,2012,percent,0.02800000086
+Switzerland,EV sales share,EV,2012,percent,0.2300000042
+Switzerland,EV sales,PHEV,2012,Vehicles,400.0
+Switzerland,EV stock,PHEV,2012,Vehicles,440.0
+Switzerland,EV stock,BEV,2012,Vehicles,740.0
+Switzerland,EV sales,BEV,2012,Vehicles,340.0
+Switzerland,EV sales,BEV,2013,Vehicles,1200.0
+Switzerland,EV stock,BEV,2013,Vehicles,1900.0
+Switzerland,EV stock,PHEV,2013,Vehicles,600.0
+Switzerland,EV sales,PHEV,2013,Vehicles,170.0
+Switzerland,EV sales share,EV,2013,percent,0.4300000072
+Switzerland,EV stock share,EV,2013,percent,0.05799999833
+Switzerland,EV stock share,EV,2014,percent,0.1199999973
+Switzerland,EV sales share,EV,2014,percent,0.9599999785
+Switzerland,EV sales,PHEV,2014,Vehicles,200.0
+Switzerland,EV stock,PHEV,2014,Vehicles,810.0
+Switzerland,EV stock,BEV,2014,Vehicles,4600.0
+Switzerland,EV sales,BEV,2014,Vehicles,2700.0
+Switzerland,EV sales,BEV,2015,Vehicles,3300.0
+Switzerland,EV stock,BEV,2015,Vehicles,7800.0
+Switzerland,EV sales,FCEV,2015,Vehicles,10.0
+Switzerland,EV stock,PHEV,2015,Vehicles,3200.0
+Switzerland,EV sales,PHEV,2015,Vehicles,2400.0
+Switzerland,EV stock,FCEV,2015,Vehicles,10.0
+Switzerland,EV sales share,EV,2015,percent,1.700000048
+Switzerland,EV stock share,EV,2015,percent,0.25
+Switzerland,EV stock share,EV,2016,percent,0.3600000143
+Switzerland,EV sales share,EV,2016,percent,1.899999976
+Switzerland,EV stock,FCEV,2016,Vehicles,36.0
+Switzerland,EV sales,PHEV,2016,Vehicles,2800.0
+Switzerland,EV stock,PHEV,2016,Vehicles,5000.0
+Switzerland,EV sales,FCEV,2016,Vehicles,26.0
+Switzerland,EV stock,BEV,2016,Vehicles,11000.0
+Switzerland,EV sales,BEV,2016,Vehicles,3300.0
+Switzerland,EV sales,BEV,2017,Vehicles,4800.0
+Switzerland,EV stock,BEV,2017,Vehicles,16000.0
+Switzerland,EV sales,FCEV,2017,Vehicles,1.0
+Switzerland,EV stock,PHEV,2017,Vehicles,9000.0
+Switzerland,EV sales,PHEV,2017,Vehicles,3600.0
+Switzerland,EV stock,FCEV,2017,Vehicles,37.0
+Switzerland,EV sales share,EV,2017,percent,2.700000048
+Switzerland,EV stock share,EV,2017,percent,0.5400000215
+Switzerland,EV stock share,EV,2018,percent,0.7699999809
+Switzerland,EV sales share,EV,2018,percent,3.200000048
+Switzerland,EV stock,FCEV,2018,Vehicles,59.0
+Switzerland,EV sales,PHEV,2018,Vehicles,4400.0
+Switzerland,EV stock,PHEV,2018,Vehicles,14000.0
+Switzerland,EV sales,FCEV,2018,Vehicles,22.0
+Switzerland,EV stock,BEV,2018,Vehicles,21000.0
+Switzerland,EV sales,BEV,2018,Vehicles,5100.0
+Switzerland,EV sales,BEV,2019,Vehicles,13000.0
+Switzerland,EV stock,BEV,2019,Vehicles,34000.0
+Switzerland,EV sales,FCEV,2019,Vehicles,25.0
+Switzerland,EV stock,PHEV,2019,Vehicles,16000.0
+Switzerland,EV sales,PHEV,2019,Vehicles,4300.0
+Switzerland,EV stock,FCEV,2019,Vehicles,84.0
+Switzerland,EV sales share,EV,2019,percent,5.599999905
+Switzerland,EV stock share,EV,2019,percent,1.100000024
+Switzerland,EV stock share,EV,2020,percent,1.799999952
+Switzerland,EV sales share,EV,2020,percent,14.0
+Switzerland,EV stock,FCEV,2020,Vehicles,84.0
+Switzerland,EV sales,PHEV,2020,Vehicles,14000.0
+Switzerland,EV stock,PHEV,2020,Vehicles,30000.0
+Switzerland,EV stock,BEV,2020,Vehicles,54000.0
+Switzerland,EV sales,BEV,2020,Vehicles,20000.0
+Switzerland,EV sales,BEV,2021,Vehicles,32000.0
+Switzerland,EV stock,BEV,2021,Vehicles,86000.0
+Switzerland,EV sales,FCEV,2021,Vehicles,56.0
+Switzerland,EV stock,PHEV,2021,Vehicles,53000.0
+Switzerland,EV sales,PHEV,2021,Vehicles,22000.0
+Switzerland,EV stock,FCEV,2021,Vehicles,140.0
+Switzerland,EV sales share,EV,2021,percent,23.0
+Switzerland,EV stock share,EV,2021,percent,2.900000095
+Turkiye,EV sales share,EV,2012,percent,0.01600000076
+Turkiye,EV sales,BEV,2012,Vehicles,92.0
+Turkiye,EV sales,PHEV,2013,Vehicles,1.0
+Turkiye,EV stock,BEV,2013,Vehicles,230.0
+Turkiye,EV sales share,EV,2013,percent,0.000119999997
+Turkiye,EV stock share,EV,2013,percent,0.002499999944
+Turkiye,EV stock share,EV,2014,percent,0.00270000007
+Turkiye,EV sales share,EV,2014,percent,0.0120000001
+Turkiye,EV stock,BEV,2014,Vehicles,260.0
+Turkiye,EV sales,PHEV,2014,Vehicles,22.0
+Turkiye,EV sales,BEV,2014,Vehicles,46.0
+Turkiye,EV sales,PHEV,2015,Vehicles,110.0
+Turkiye,EV stock,BEV,2015,Vehicles,370.0
+Turkiye,EV sales,BEV,2015,Vehicles,120.0
+Turkiye,EV sales share,EV,2015,percent,0.03099999949
+Turkiye,EV stock share,EV,2015,percent,0.003800000064
+Turkiye,EV stock share,EV,2016,percent,0.006000000052
+Turkiye,EV sales share,EV,2016,percent,0.01300000027
+Turkiye,EV sales,BEV,2016,Vehicles,44.0
+Turkiye,EV stock,BEV,2016,Vehicles,420.0
+Turkiye,EV stock,PHEV,2016,Vehicles,210.0
+Turkiye,EV sales,PHEV,2016,Vehicles,83.0
+Turkiye,EV sales,PHEV,2017,Vehicles,34.0
+Turkiye,EV stock,PHEV,2017,Vehicles,240.0
+Turkiye,EV stock,BEV,2017,Vehicles,500.0
+Turkiye,EV sales,BEV,2017,Vehicles,77.0
+Turkiye,EV sales share,EV,2017,percent,0.01099999994
+Turkiye,EV stock share,EV,2017,percent,0.006599999964
+Turkiye,EV stock share,EV,2018,percent,0.00820000004
+Turkiye,EV sales share,EV,2018,percent,0.04399999976
+Turkiye,EV sales,BEV,2018,Vehicles,190.0
+Turkiye,EV stock,BEV,2018,Vehicles,650.0
+Turkiye,EV stock,PHEV,2018,Vehicles,280.0
+Turkiye,EV sales,PHEV,2018,Vehicles,45.0
+Turkiye,EV sales,PHEV,2019,Vehicles,94.0
+Turkiye,EV stock,PHEV,2019,Vehicles,540.0
+Turkiye,EV stock,BEV,2019,Vehicles,1300.0
+Turkiye,EV sales,BEV,2019,Vehicles,230.0
+Turkiye,EV sales share,EV,2019,percent,0.06700000167
+Turkiye,EV stock share,EV,2019,percent,0.01600000076
+Turkiye,EV stock share,EV,2020,percent,0.03299999982
+Turkiye,EV sales share,EV,2020,percent,0.1700000018
+Turkiye,EV sales,BEV,2020,Vehicles,890.0
+Turkiye,EV stock,BEV,2020,Vehicles,2900.0
+Turkiye,EV stock,PHEV,2020,Vehicles,1000.0
+Turkiye,EV sales,PHEV,2020,Vehicles,400.0
+Turkiye,EV sales,PHEV,2021,Vehicles,920.0
+Turkiye,EV stock,PHEV,2021,Vehicles,1800.0
+Turkiye,EV stock,BEV,2021,Vehicles,6800.0
+Turkiye,EV sales,BEV,2021,Vehicles,3000.0
+Turkiye,EV sales share,EV,2021,percent,0.5500000119
+Turkiye,EV stock share,EV,2021,percent,0.06899999827
+United Arab Emirates,EV sales share,EV,2018,percent,0.02500000037
+United Arab Emirates,EV sales,PHEV,2018,Vehicles,60.0
+United Arab Emirates,EV sales,BEV,2018,Vehicles,59.0
+United Arab Emirates,EV sales,BEV,2019,Vehicles,33.0
+United Arab Emirates,EV sales,PHEV,2019,Vehicles,61.0
+United Arab Emirates,EV sales share,EV,2019,percent,0.02600000054
+United Arab Emirates,EV sales share,EV,2020,percent,0.5299999714
+United Arab Emirates,EV sales,PHEV,2020,Vehicles,61.0
+United Arab Emirates,EV sales,BEV,2020,Vehicles,630.0
+United Arab Emirates,EV sales,BEV,2021,Vehicles,2100.0
+United Arab Emirates,EV sales,PHEV,2021,Vehicles,2000.0
+United Arab Emirates,EV sales share,EV,2021,percent,2.599999905
+United Kingdom,EV sales,BEV,2010,Vehicles,240.0
+United Kingdom,EV stock,BEV,2010,Vehicles,1500.0
+United Kingdom,EV sales,PHEV,2010,Vehicles,21.0
+United Kingdom,EV stock,PHEV,2010,Vehicles,21.0
+United Kingdom,EV stock share,EV,2010,percent,0.005299999844
+United Kingdom,EV sales share,EV,2010,percent,0.01300000027
+United Kingdom,EV sales share,EV,2011,percent,0.06199999899
+United Kingdom,EV stock share,EV,2011,percent,0.008999999613
+United Kingdom,EV stock,PHEV,2011,Vehicles,28.0
+United Kingdom,EV sales,PHEV,2011,Vehicles,7.0
+United Kingdom,EV stock,BEV,2011,Vehicles,2600.0
+United Kingdom,EV sales,BEV,2011,Vehicles,1200.0
+United Kingdom,EV sales,BEV,2012,Vehicles,1600.0
+United Kingdom,EV stock,BEV,2012,Vehicles,4100.0
+United Kingdom,EV sales,PHEV,2012,Vehicles,970.0
+United Kingdom,EV stock,PHEV,2012,Vehicles,990.0
+United Kingdom,EV stock share,EV,2012,percent,0.01700000092
+United Kingdom,EV sales share,EV,2012,percent,0.1299999952
+United Kingdom,EV sales share,EV,2013,percent,0.1599999964
+United Kingdom,EV stock share,EV,2013,percent,0.0270000007
+United Kingdom,EV stock,PHEV,2013,Vehicles,2000.0
+United Kingdom,EV sales,PHEV,2013,Vehicles,1100.0
+United Kingdom,EV stock,BEV,2013,Vehicles,6200.0
+United Kingdom,EV sales,BEV,2013,Vehicles,2600.0
+United Kingdom,EV sales,BEV,2014,Vehicles,6700.0
+United Kingdom,EV stock,BEV,2014,Vehicles,12000.0
+United Kingdom,EV sales,PHEV,2014,Vehicles,7800.0
+United Kingdom,EV stock,PHEV,2014,Vehicles,9700.0
+United Kingdom,EV stock share,EV,2014,percent,0.0719999969
+United Kingdom,EV sales share,EV,2014,percent,0.5899999738
+United Kingdom,EV sales share,EV,2015,percent,1.100000024
+United Kingdom,EV stock share,EV,2015,percent,0.1599999964
+United Kingdom,EV stock,PHEV,2015,Vehicles,27000.0
+United Kingdom,EV sales,PHEV,2015,Vehicles,19000.0
+United Kingdom,EV stock,BEV,2015,Vehicles,21000.0
+United Kingdom,EV sales,FCEV,2015,Vehicles,11.0
+United Kingdom,EV sales,BEV,2015,Vehicles,10000.0
+United Kingdom,EV sales,BEV,2016,Vehicles,10000.0
+United Kingdom,EV sales,FCEV,2016,Vehicles,10.0
+United Kingdom,EV stock,BEV,2016,Vehicles,30000.0
+United Kingdom,EV sales,PHEV,2016,Vehicles,29000.0
+United Kingdom,EV stock,PHEV,2016,Vehicles,55000.0
+United Kingdom,EV stock share,EV,2016,percent,0.2700000107
+United Kingdom,EV sales share,EV,2016,percent,1.399999976
+United Kingdom,EV sales share,EV,2017,percent,1.899999976
+United Kingdom,EV stock share,EV,2017,percent,0.400000006
+United Kingdom,EV stock,PHEV,2017,Vehicles,87000.0
+United Kingdom,EV sales,PHEV,2017,Vehicles,35000.0
+United Kingdom,EV stock,FCEV,2017,Vehicles,34.0
+United Kingdom,EV stock,BEV,2017,Vehicles,42000.0
+United Kingdom,EV sales,FCEV,2017,Vehicles,34.0
+United Kingdom,EV sales,BEV,2017,Vehicles,14000.0
+United Kingdom,EV sales,BEV,2018,Vehicles,16000.0
+United Kingdom,EV sales,FCEV,2018,Vehicles,36.0
+United Kingdom,EV stock,BEV,2018,Vehicles,56000.0
+United Kingdom,EV stock,FCEV,2018,Vehicles,70.0
+United Kingdom,EV sales,PHEV,2018,Vehicles,46000.0
+United Kingdom,EV stock,PHEV,2018,Vehicles,130000.0
+United Kingdom,EV stock share,EV,2018,percent,0.5699999928
+United Kingdom,EV sales share,EV,2018,percent,2.599999905
+United Kingdom,EV sales share,EV,2019,percent,3.299999952
+United Kingdom,EV stock share,EV,2019,percent,0.7599999905
+United Kingdom,EV stock,PHEV,2019,Vehicles,160000.0
+United Kingdom,EV sales,PHEV,2019,Vehicles,37000.0
+United Kingdom,EV stock,FCEV,2019,Vehicles,170.0
+United Kingdom,EV stock,BEV,2019,Vehicles,91000.0
+United Kingdom,EV sales,FCEV,2019,Vehicles,68.0
+United Kingdom,EV sales,BEV,2019,Vehicles,38000.0
+United Kingdom,EV sales,BEV,2020,Vehicles,110000.0
+United Kingdom,EV sales,FCEV,2020,Vehicles,57.0
+United Kingdom,EV stock,BEV,2020,Vehicles,190000.0
+United Kingdom,EV stock,FCEV,2020,Vehicles,230.0
+United Kingdom,EV sales,PHEV,2020,Vehicles,68000.0
+United Kingdom,EV stock,PHEV,2020,Vehicles,220000.0
+United Kingdom,EV stock share,EV,2020,percent,1.299999952
+United Kingdom,EV sales share,EV,2020,percent,11.0
+United Kingdom,EV sales share,EV,2021,percent,19.0
+United Kingdom,EV stock share,EV,2021,percent,2.099999905
+United Kingdom,EV stock,PHEV,2021,Vehicles,330000.0
+United Kingdom,EV sales,PHEV,2021,Vehicles,120000.0
+United Kingdom,EV stock,FCEV,2021,Vehicles,240.0
+United Kingdom,EV stock,BEV,2021,Vehicles,380000.0
+United Kingdom,EV sales,FCEV,2021,Vehicles,12.0
+United Kingdom,EV sales,BEV,2021,Vehicles,190000.0
+USA,EV sales,BEV,2010,Vehicles,1200.0
+USA,EV stock,BEV,2010,Vehicles,3800.0
+USA,Oil displacement Mbd,EV,2010,Milion barrels per day,0.000159999996
+USA,"Oil displacement, million lge",EV,2010,"Oil displacement, million lge",9.399999619
+USA,Electricity demand,EV,2010,GWh,96.0
+USA,EV sales share,EV,2010,percent,0.0120000001
+USA,EV stock share,EV,2010,percent,0.001700000023
+USA,EV stock share,EV,2011,percent,0.009899999946
+USA,EV sales share,EV,2011,percent,0.150000006
+USA,Electricity demand,EV,2011,GWh,130.0
+USA,Oil displacement Mbd,EV,2011,Milion barrels per day,0.0006399999838
+USA,"Oil displacement, million lge",EV,2011,"Oil displacement, million lge",37.0
+USA,EV sales,PHEV,2011,Vehicles,8000.0
+USA,EV stock,PHEV,2011,Vehicles,8000.0
+USA,EV stock,BEV,2011,Vehicles,14000.0
+USA,EV sales,BEV,2011,Vehicles,9800.0
+USA,EV sales,BEV,2012,Vehicles,15000.0
+USA,EV stock,BEV,2012,Vehicles,28000.0
+USA,EV stock,PHEV,2012,Vehicles,47000.0
+USA,EV sales,PHEV,2012,Vehicles,39000.0
+USA,Oil displacement Mbd,EV,2012,Milion barrels per day,0.001500000013
+USA,"Oil displacement, million lge",EV,2012,"Oil displacement, million lge",89.0
+USA,Electricity demand,EV,2012,GWh,310.0
+USA,EV sales share,EV,2012,percent,0.4199999869
+USA,EV stock share,EV,2012,percent,0.03400000185
+USA,EV stock share,EV,2013,percent,0.07800000161
+USA,EV sales share,EV,2013,percent,0.7099999785
+USA,Electricity demand,EV,2013,GWh,560.0
+USA,Oil displacement Mbd,EV,2013,Milion barrels per day,0.004499999806
+USA,"Oil displacement, million lge",EV,2013,"Oil displacement, million lge",260.0
+USA,EV sales,PHEV,2013,Vehicles,49000.0
+USA,EV stock,PHEV,2013,Vehicles,96000.0
+USA,EV stock,BEV,2013,Vehicles,76000.0
+USA,EV sales,BEV,2013,Vehicles,48000.0
+USA,EV sales,BEV,2014,Vehicles,63000.0
+USA,EV stock,BEV,2014,Vehicles,140000.0
+USA,EV sales,FCEV,2014,Vehicles,55.0
+USA,EV stock,FCEV,2014,Vehicles,55.0
+USA,EV stock,PHEV,2014,Vehicles,150000.0
+USA,EV sales,PHEV,2014,Vehicles,55000.0
+USA,Oil displacement Mbd,EV,2014,Milion barrels per day,0.008500000462
+USA,"Oil displacement, million lge",EV,2014,"Oil displacement, million lge",490.0
+USA,Electricity demand,EV,2014,GWh,840.0
+USA,EV sales share,EV,2014,percent,0.7699999809
+USA,EV stock share,EV,2014,percent,0.1400000006
+USA,EV stock share,EV,2015,percent,0.1899999976
+USA,EV sales share,EV,2015,percent,0.6999999881
+USA,Electricity demand,EV,2015,GWh,1900.0
+USA,Oil displacement Mbd,EV,2015,Milion barrels per day,0.01099999994
+USA,"Oil displacement, million lge",EV,2015,"Oil displacement, million lge",640.0
+USA,EV sales,PHEV,2015,Vehicles,43000.0
+USA,EV stock,PHEV,2015,Vehicles,190000.0
+USA,EV stock,FCEV,2015,Vehicles,160.0
+USA,EV sales,FCEV,2015,Vehicles,100.0
+USA,EV stock,BEV,2015,Vehicles,210000.0
+USA,EV sales,BEV,2015,Vehicles,71000.0
+USA,EV sales,BEV,2016,Vehicles,87000.0
+USA,EV stock,BEV,2016,Vehicles,300000.0
+USA,EV sales,FCEV,2016,Vehicles,1100.0
+USA,EV stock,FCEV,2016,Vehicles,1200.0
+USA,EV stock,PHEV,2016,Vehicles,270000.0
+USA,EV sales,PHEV,2016,Vehicles,73000.0
+USA,Oil displacement Mbd,EV,2016,Milion barrels per day,0.01400000043
+USA,"Oil displacement, million lge",EV,2016,"Oil displacement, million lge",830.0
+USA,Electricity demand,EV,2016,GWh,3500.0
+USA,EV sales share,EV,2016,percent,0.9900000095
+USA,EV stock share,EV,2016,percent,0.2599999905
+USA,EV stock share,EV,2017,percent,0.3300000131
+USA,EV sales share,EV,2017,percent,1.299999952
+USA,Electricity demand,EV,2017,GWh,3700.0
+USA,Oil displacement Mbd,EV,2017,Milion barrels per day,0.01899999939
+USA,"Oil displacement, million lge",EV,2017,"Oil displacement, million lge",1100.0
+USA,EV sales,PHEV,2017,Vehicles,94000.0
+USA,EV stock,PHEV,2017,Vehicles,360000.0
+USA,EV stock,FCEV,2017,Vehicles,3500.0
+USA,EV sales,FCEV,2017,Vehicles,2300.0
+USA,EV stock,BEV,2017,Vehicles,400000.0
+USA,EV sales,BEV,2017,Vehicles,100000.0
+USA,EV sales,BEV,2018,Vehicles,240000.0
+USA,EV stock,BEV,2018,Vehicles,640000.0
+USA,EV sales,FCEV,2018,Vehicles,2700.0
+USA,EV stock,FCEV,2018,Vehicles,6200.0
+USA,EV stock,PHEV,2018,Vehicles,480000.0
+USA,EV sales,PHEV,2018,Vehicles,120000.0
+USA,Oil displacement Mbd,EV,2018,Milion barrels per day,0.02899999917
+USA,"Oil displacement, million lge",EV,2018,"Oil displacement, million lge",1700.0
+USA,Electricity demand,EV,2018,GWh,5000.0
+USA,EV sales share,EV,2018,percent,2.299999952
+USA,EV stock share,EV,2018,percent,0.4799999893
+USA,EV stock share,EV,2019,percent,0.6200000048
+USA,EV sales share,EV,2019,percent,2.099999905
+USA,Electricity demand,EV,2019,GWh,6300.0
+USA,Oil displacement Mbd,EV,2019,Milion barrels per day,0.0390000008
+USA,"Oil displacement, million lge",EV,2019,"Oil displacement, million lge",2200.0
+USA,EV sales,PHEV,2019,Vehicles,85000.0
+USA,EV stock,PHEV,2019,Vehicles,570000.0
+USA,EV stock,FCEV,2019,Vehicles,8200.0
+USA,EV sales,FCEV,2019,Vehicles,2000.0
+USA,EV stock,BEV,2019,Vehicles,880000.0
+USA,EV sales,BEV,2019,Vehicles,240000.0
+USA,EV sales,BEV,2020,Vehicles,230000.0
+USA,EV stock,BEV,2020,Vehicles,1100000.0
+USA,EV sales,FCEV,2020,Vehicles,1200.0
+USA,EV stock,FCEV,2020,Vehicles,9200.0
+USA,EV stock,PHEV,2020,Vehicles,640000.0
+USA,EV sales,PHEV,2020,Vehicles,64000.0
+USA,Oil displacement Mbd,EV,2020,Milion barrels per day,0.04300000146
+USA,"Oil displacement, million lge",EV,2020,"Oil displacement, million lge",2500.0
+USA,Electricity demand,EV,2020,GWh,5400.0
+USA,EV sales share,EV,2020,percent,2.299999952
+USA,EV stock share,EV,2020,percent,0.7699999809
+USA,EV stock share,EV,2021,percent,0.9499999881
+USA,EV sales share,EV,2021,percent,4.699999809
+USA,Electricity demand,EV,2021,GWh,7000.0
+USA,Oil displacement Mbd,EV,2021,Milion barrels per day,0.06899999827
+USA,"Oil displacement, million lge",EV,2021,"Oil displacement, million lge",4000.0
+USA,EV sales,PHEV,2021,Vehicles,160000.0
+USA,EV stock,PHEV,2021,Vehicles,720000.0
+USA,EV stock,FCEV,2021,Vehicles,12000.0
+USA,EV sales,FCEV,2021,Vehicles,3100.0
+USA,EV stock,BEV,2021,Vehicles,1500000.0
+USA,EV sales,BEV,2021,Vehicles,470000.0
+World,EV stock,PHEV,2010,Vehicles,400.0
+World,EV sales,PHEV,2010,Vehicles,450.0
+World,Oil displacement Mbd,EV,2010,Milion barrels per day,0.0003800000122
+World,"Oil displacement, million lge",EV,2010,"Oil displacement, million lge",22.0
+World,EV sales,BEV,2010,Vehicles,7000.0
+World,EV stock,BEV,2010,Vehicles,20000.0
+World,EV sales,FCEV,2010,Vehicles,29.0
+World,EV stock,FCEV,2010,Vehicles,45.0
+World,EV sales share,EV,2010,percent,0.01099999994
+World,EV stock share,EV,2010,percent,0.002300000051
+World,Electricity demand,EV,2010,GWh,440.0
+World,Electricity demand,EV,2011,GWh,1600.0
+World,EV stock share,EV,2011,percent,0.007499999832
+World,EV sales share,EV,2011,percent,0.0680000037
+World,EV stock,FCEV,2011,Vehicles,83.0
+World,EV sales,FCEV,2011,Vehicles,38.0
+World,EV stock,BEV,2011,Vehicles,58000.0
+World,EV sales,BEV,2011,Vehicles,40000.0
+World,Oil displacement Mbd,EV,2011,Milion barrels per day,0.00139999995
+World,"Oil displacement, million lge",EV,2011,"Oil displacement, million lge",81.0
+World,EV sales,PHEV,2011,Vehicles,9000.0
+World,EV stock,PHEV,2011,Vehicles,9500.0
+World,EV stock,PHEV,2012,Vehicles,70000.0
+World,EV sales,PHEV,2012,Vehicles,61000.0
+World,Oil displacement Mbd,EV,2012,Milion barrels per day,0.003100000089
+World,"Oil displacement, million lge",EV,2012,"Oil displacement, million lge",180.0
+World,EV sales,BEV,2012,Vehicles,59000.0
+World,EV stock,BEV,2012,Vehicles,120000.0
+World,EV sales,FCEV,2012,Vehicles,30.0
+World,EV stock,FCEV,2012,Vehicles,110.0
+World,EV sales share,EV,2012,percent,0.1599999964
+World,EV stock share,EV,2012,percent,0.01999999955
+World,Electricity demand,EV,2012,GWh,1800.0
+World,Electricity demand,EV,2013,GWh,2600.0
+World,EV stock share,EV,2013,percent,0.03999999911
+World,EV sales share,EV,2013,percent,0.2700000107
+World,EV stock,FCEV,2013,Vehicles,140.0
+World,EV sales,FCEV,2013,Vehicles,46.0
+World,EV stock,BEV,2013,Vehicles,230000.0
+World,EV sales,BEV,2013,Vehicles,110000.0
+World,Oil displacement Mbd,EV,2013,Milion barrels per day,0.007400000002
+World,"Oil displacement, million lge",EV,2013,"Oil displacement, million lge",430.0
+World,EV sales,PHEV,2013,Vehicles,91000.0
+World,EV stock,PHEV,2013,Vehicles,160000.0
+World,EV stock,PHEV,2014,Vehicles,300000.0
+World,EV sales,PHEV,2014,Vehicles,130000.0
+World,Oil displacement Mbd,EV,2014,Milion barrels per day,0.01400000043
+World,"Oil displacement, million lge",EV,2014,"Oil displacement, million lge",800.0
+World,EV sales,BEV,2014,Vehicles,200000.0
+World,EV stock,BEV,2014,Vehicles,410000.0
+World,EV sales,FCEV,2014,Vehicles,94.0
+World,EV stock,FCEV,2014,Vehicles,210.0
+World,EV sales share,EV,2014,percent,0.4099999964
+World,EV stock share,EV,2014,percent,0.07100000232
+World,Electricity demand,EV,2014,GWh,3400.0
+World,Electricity demand,EV,2015,GWh,5700.0
+World,EV stock share,EV,2015,percent,0.1199999973
+World,EV sales share,EV,2015,percent,0.6800000072
+World,EV stock,FCEV,2015,Vehicles,910.0
+World,EV sales,FCEV,2015,Vehicles,710.0
+World,EV stock,BEV,2015,Vehicles,730000.0
+World,EV sales,BEV,2015,Vehicles,330000.0
+World,EV sales,PHEV,2015,Vehicles,220000.0
+World,EV stock,PHEV,2015,Vehicles,520000.0
+World,Oil displacement Mbd,EV,2015,Milion barrels per day,0.02199999988
+World,"Oil displacement, million lge",EV,2015,"Oil displacement, million lge",1300.0
+World,Oil displacement Mbd,EV,2016,Milion barrels per day,0.03200000152
+World,"Oil displacement, million lge",EV,2016,"Oil displacement, million lge",1900.0
+World,EV stock,PHEV,2016,Vehicles,810000.0
+World,EV sales,PHEV,2016,Vehicles,290000.0
+World,EV stock,FCEV,2016,Vehicles,3300.0
+World,EV sales,BEV,2016,Vehicles,470000.0
+World,EV stock,BEV,2016,Vehicles,1200000.0
+World,EV sales,FCEV,2016,Vehicles,2400.0
+World,EV sales share,EV,2016,percent,0.8999999762
+World,EV stock share,EV,2016,percent,0.1899999976
+World,Electricity demand,EV,2016,GWh,8400.0
+World,Electricity demand,EV,2017,GWh,10000.0
+World,EV stock share,EV,2017,percent,0.2800000012
+World,EV sales share,EV,2017,percent,1.399999976
+World,EV sales,FCEV,2017,Vehicles,3500.0
+World,EV stock,BEV,2017,Vehicles,1900000.0
+World,EV sales,BEV,2017,Vehicles,760000.0
+World,EV stock,FCEV,2017,Vehicles,6800.0
+World,EV sales,PHEV,2017,Vehicles,420000.0
+World,EV stock,PHEV,2017,Vehicles,1200000.0
+World,Oil displacement Mbd,EV,2017,Milion barrels per day,0.04800000042
+World,"Oil displacement, million lge",EV,2017,"Oil displacement, million lge",2800.0
+World,Oil displacement Mbd,EV,2018,Milion barrels per day,0.07900000364
+World,"Oil displacement, million lge",EV,2018,"Oil displacement, million lge",4600.0
+World,EV stock,PHEV,2018,Vehicles,1900000.0
+World,EV sales,PHEV,2018,Vehicles,660000.0
+World,EV stock,FCEV,2018,Vehicles,11000.0
+World,EV sales,BEV,2018,Vehicles,1400000.0
+World,EV stock,BEV,2018,Vehicles,3300000.0
+World,EV sales,FCEV,2018,Vehicles,4500.0
+World,EV sales share,EV,2018,percent,2.400000095
+World,EV stock share,EV,2018,percent,0.4399999976
+World,Electricity demand,EV,2018,GWh,15000.0
+World,Electricity demand,EV,2019,GWh,19000.0
+World,EV stock share,EV,2019,percent,0.6000000238
+World,EV sales share,EV,2019,percent,2.599999905
+World,EV sales,FCEV,2019,Vehicles,7500.0
+World,EV stock,BEV,2019,Vehicles,4800000.0
+World,EV sales,BEV,2019,Vehicles,1500000.0
+World,EV stock,FCEV,2019,Vehicles,19000.0
+World,EV sales,PHEV,2019,Vehicles,580000.0
+World,EV stock,PHEV,2019,Vehicles,2400000.0
+World,Oil displacement Mbd,EV,2019,Milion barrels per day,0.1099999994
+World,"Oil displacement, million lge",EV,2019,"Oil displacement, million lge",6600.0
+World,Oil displacement Mbd,EV,2020,Milion barrels per day,0.1400000006
+World,"Oil displacement, million lge",EV,2020,"Oil displacement, million lge",8000.0
+World,EV stock,PHEV,2020,Vehicles,3400000.0
+World,EV sales,PHEV,2020,Vehicles,980000.0
+World,EV stock,FCEV,2020,Vehicles,26000.0
+World,EV sales,BEV,2020,Vehicles,2000000.0
+World,EV stock,BEV,2020,Vehicles,6800000.0
+World,EV sales,FCEV,2020,Vehicles,7400.0
+World,EV sales share,EV,2020,percent,4.199999809
+World,EV stock share,EV,2020,percent,0.8399999738
+World,Electricity demand,EV,2020,GWh,21000.0
+World,Electricity demand,EV,2021,GWh,35000.0
+World,Oil displacement Mbd,EV,2021,Milion barrels per day,0.25
+World,"Oil displacement, million lge",EV,2021,"Oil displacement, million lge",14000.0
+World,EV stock share,EV,2021,percent,1.299999952
+World,EV sales share,EV,2021,percent,8.899999619
+World,EV sales,FCEV,2021,Vehicles,16000.0
+World,EV stock,BEV,2021,Vehicles,11000000.0
+World,EV sales,BEV,2021,Vehicles,4700000.0
+World,EV stock,FCEV,2021,Vehicles,42000.0
+World,EV sales,PHEV,2021,Vehicles,1900000.0
+World,EV stock,PHEV,2021,Vehicles,5300000.0
