@@ -769,40 +769,33 @@ colnames(combined_data[sapply(combined_data, function(x) (sum(is.na(x)))) != 0])
 write_csv(combined_data, "combined_data.csv")
 ```
 
+- With that out of the way, we can proceed with the actual machine learning analysis, where we split the data into train/test sets, perform LASSO, and the regression.
+
+- Maybe, we can also add extra variables that might be relevant. Namely, ratio of Renewable-to-Non-renewable and % of total electricity production that comes from renewables.
+
+
+```{r}
+set.seed(8897)
+
+
+# Total Renewables (Hydro, Geo, Solar, Wind, Other) = Hydro + Geo + Solar + Wind + Combustible Renewables + Other Renewables //
+# Total Combustible Fuels // = Combustible Renewables + Oil and Petroleum Products + Other Combustible Non-Renewables // + Coal, Peat and Manufactured Gases + Natural Gas
+# Electricity = Total Combustible Fuels + Total Renewables + Nuclear - Combustible Renewables
+
+combined_data = combined_data %>% 
+  mutate(percent_renewable_electricity = `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)` / `Electricity (Net_Produce)`) %>% 
+  mutate(non_renewable = `Electricity (Net_Produce)` - `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)`) %>%
+  mutate(ratio_renew_nonrenew = `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)` / non_renewable) %>%  
+  dplyr::select(-non_renewable)
+  
+
+
+```
 
 
 
 ############ END ###############
 
-
-```{r}
-# Calculating R-squared of data: 97.9% of the variance in the temperature measurements is explained by the independent variables in the model used.
-rss <- sum(weather$pred_error^2)
-tss <- sum((weather$observed_temp - mean(weather$observed_temp))^2)
-rsquared <- 1 - (rss / tss)
-rsquared
-
-
-ggplot(weather, aes(x = pred_error)) +
-  geom_histogram(fill = "lightblue", color = "black") +
-  xlim(-15, 15) +
-  labs(
-    x = "Prediction Error",
-    y = "Count"
-  ) +
-  ggtitle("Temperature Prediction Errors in USA", subtitle = "01/30/2021 - 05/30/2022")
-
-
-ggplot(weather, aes(x = pred_error)) +
-  geom_boxplot(fill = "lightblue", color = "black") +
-  labs(
-    x = "Prediction Error"
-  ) +
-  ggtitle("Distribution of Temperature Prediction Errors in USA", subtitle = "01/30/2021 - 05/30/2022")
-
-prediction_summary <- summary(weather$pred_error)
-prediction_summary
-```
 
 
 ### Logistic Model: Classifying Positive / Negative Outliers
