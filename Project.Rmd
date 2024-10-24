@@ -4,39 +4,36 @@ title: "Data Challenge"
 output: html_document
 ---
 
-Note: Please allow 5 minutes to run the whole code.
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 # Makes sure that the required packages are properly installed; if they are not installed, R helps to install them
 # Retrieved on 10/14/23 from - https://stackoverflow.com/questions/4090169/elegant-way-to-check-for-missing-packages-and-install-them
-required_packages <- c("tidyverse", "lubridate", "glmnet", "tidymodels", "caret", "car", "xgboost", "Metrics", "MASS", "Ckmeans.1d.dp", "pdp", "gridExtra", "usmap", "sp", "sf", "FSinR", "scales", "gganimate", "gifski")
+required_packages <- c("tidyverse", "glmnet", "tidymodels", "caret", "car", "xgboost", "Metrics", "MASS", "pdp", "usmap", "scales", "gganimate", "gifski", "patchwork", "randomForest",
+                       "kernlab", "caretEnsemble")
 new_packages <- required_packages[!(required_packages %in% installed.packages()[, "Package"])]
 if (length(new.packages)) {
   install.packages(new_packages)
 }
 
 library(tidyverse)
-library(lubridate)
 library(glmnet)
 library(tidymodels)
 library(xgboost)
-library(caret)
 library(Metrics)
 library(car)
+library(caret)
 library(MASS)
-library(Ckmeans.1d.dp)
 library(pdp)
-library(gridExtra)
 library(usmap)
-library(sp)
-library(sf)
-library(FSinR)
 library(scales)
 library(patchwork)
 library(gganimate)
 library(gifski)
+library(kernlab)
+library(randomForest)
+library(caretEnsemble)
 
 
 my_theme <- theme_minimal() +
@@ -47,8 +44,8 @@ my_theme <- theme_minimal() +
     legend.text = element_text(size = 16, color = "black"),
     legend.title = element_text(
       color = "black",
-      size = 16, margin =
-        margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+      size = 16,margin =
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
     ),
     strip.text = element_text(size = 20, color = "black"),
     panel.grid.minor = element_blank(),
@@ -123,7 +120,7 @@ p[["Total Vehicles"]] <- ev_data %>%
     legend.text = element_text(size = 13),
     legend.title = element_text(
       size = 15, margin =
-        margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
     ),
     strip.text = element_text(size = 15),
     legend.position = "right"
@@ -162,7 +159,7 @@ p[["Share"]] <- ev_data %>%
     legend.text = element_text(size = 13),
     legend.title = element_text(
       size = 15, margin =
-        margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
     ),
     legend.position = "right"
   )
@@ -236,16 +233,14 @@ animation <- base_map +
     subtitle = "Year: {frame_time}"
   )
 
-animate(animation,
-  nframes = num_years, fps = 0.7, renderer = gifski_renderer("sales_share.gif"), height = 768, width = 1366,
-  res = 150
-)
+# animate(animation,
+#   nframes = num_years, fps = 0.7, renderer = gifski_renderer("sales_share.gif"), height = 768, width = 1366,
+#   res = 150
+# )
 
-country_share %>% 
-  filter(country %in% c("Sweden", "Norway", "Finland", "Denmark")) %>% 
+country_share %>%
+  filter(country %in% c("Sweden", "Norway", "Finland", "Denmark")) %>%
   filter(year >= 2019)
-
-
 ```
 
 > **Observation:**
@@ -282,88 +277,92 @@ country_share %>%
 
 ```{r, fig.width = 8}
 # Setup
-ev_data = ev_data %>% 
+ev_data <- ev_data %>%
   filter(!country %in% c("World", "EU27", "Europe", "Rest of the world")) %>%
   mutate(country = replace(country, country == "Korea", "South Korea")) %>%
   mutate(country = replace(country, country == "Turkiye", "Turkey")) %>%
   mutate(country = replace(country, country == "United Kingdom", "UK"))
 
-energy_prod = energy_prod %>% 
-  filter(!country %in% c("OECD Americas", "OECD Asia Oceania", "OECD Europe", 
-                         "OECD Total", "IEA Total")) %>% 
+energy_prod <- energy_prod %>%
+  filter(!country %in% c(
+    "OECD Americas", "OECD Asia Oceania", "OECD Europe",
+    "OECD Total", "IEA Total"
+  )) %>%
   mutate(country = replace(country, country == "Korea", "South Korea")) %>%
   mutate(country = replace(country, country == "Republic of Turkiye", "Turkey")) %>%
-  mutate(country = replace(country, country == "United Kingdom", "UK")) %>% 
+  mutate(country = replace(country, country == "United Kingdom", "UK")) %>%
   mutate(country = replace(country, country == "United States", "USA")) %>%
   mutate(country = replace(country, country == "Slovak Republic", "Slovakia")) %>%
   mutate(country = replace(country, country == "People's Republic of China", "China"))
 
-eu = charging_stations %>% 
-  filter(country %in% c("EU27", "Austria", "Belgium", "Bulgaria", "Croatia",
-                        "Cyprus", "Czech Republic", "Denmark", "Estonia",
-                        "Finland", "France", "Germany", "Greece", "Hungary",
-                        "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
-                        "Malta", "Netherlands", "Poland", "Portugal", "Romania",
-                        "Slovakia", "Slovenia", "Spain", "Sweden"))
+eu <- charging_stations %>%
+  filter(country %in% c(
+    "EU27", "Austria", "Belgium", "Bulgaria", "Croatia",
+    "Cyprus", "Czech Republic", "Denmark", "Estonia",
+    "Finland", "France", "Germany", "Greece", "Hungary",
+    "Ireland", "Italy", "Latvia", "Lithuania", "Luxembourg",
+    "Malta", "Netherlands", "Poland", "Portugal", "Romania",
+    "Slovakia", "Slovenia", "Spain", "Sweden"
+  ))
 
 # Log-Linear interpolation: We have 0.1 charging points in Austria from 2011 - 2020. In 2021, there are 1600 charging points in Austria. So, this means that
 # there are some mising data. To carry out this imputation, let's start with 0 and end with 1600. In between, set the values to be NA (because log-linear interpolation only works when there is missing data). By cross checking with EU27 as a whole and summing up the charging points in individual EU countries for 2011, we can deduce that starting with 0 is valid (EU27 and summation of charging points across individual countries are exactly equal in 2011, so if we change 0.1 to 0 for Austria, the data won't make any difference at all)
-eu %>% 
+eu %>%
   mutate(eu = case_when(
     country == "EU27" ~ "EU",
     .default = "Country"
-  )) %>% 
-  group_by(year, eu, powertrain) %>% 
-  summarize(total_stations = floor(sum(value))) %>% 
+  )) %>%
+  group_by(year, eu, powertrain) %>%
+  summarize(total_stations = floor(sum(value))) %>%
   filter(year == 2011)
 
 # Check to see if a log-linear relationship between years and # of charging ports is valid (Generally, it seems so!)
-eu %>% 
-  filter(!country %in% c("EU27", "Austria")) %>% 
+eu %>%
+  filter(!country %in% c("EU27", "Austria")) %>%
   ggplot(aes(x = year, y = log(value), color = country)) +
   geom_point() +
   geom_line() +
-  facet_wrap(~ powertrain, scales = "free_y") +
-  labs(y = "ln(Chg. Stations)", x = "", color = "Country", 
-       title = "Growth of EV Charging Ports in EU")
+  facet_wrap(~powertrain, scales = "free_y") +
+  labs(
+    y = "ln(Chg. Stations)", x = "", color = "Country",
+    title = "Growth of EV Charging Ports in EU"
+  )
 
 # Perform the interpolations
-austria_fast = charging_stations %>% 
+austria_fast <- charging_stations %>%
   filter(country == "Austria" & powertrain == "Publicly available fast") %>%
   mutate(value = case_when(
     year == 2011 ~ 1, # 1 because log(1) = 0
     year == 2021 ~ value,
     .default = NA
-  )) %>% 
-  mutate(log_val = log(value)) %>% 
-  mutate(log_val = approx(x = year, y = log_val, xout = year, rule = 2)$y) %>% 
-  mutate(value = round(exp(log_val))) %>% 
+  )) %>%
+  mutate(log_val = log(value)) %>%
+  mutate(log_val = approx(x = year, y = log_val, xout = year, rule = 2)$y) %>%
+  mutate(value = round(exp(log_val))) %>%
   dplyr::select(-log_val)
 
-austria_slow = charging_stations %>% 
+austria_slow <- charging_stations %>%
   filter(country == "Austria" & powertrain == "Publicly available slow") %>%
   mutate(value = case_when(
     year == 2011 ~ 1, # 1 because log(1) = 0
     year == 2021 ~ value,
     .default = NA
-  )) %>% 
-  mutate(log_val = log(value)) %>% 
-  mutate(log_val = approx(x = year, y = log_val, xout = year, rule = 2)$y) %>% 
-  mutate(value = round(exp(log_val))) %>% 
+  )) %>%
+  mutate(log_val = log(value)) %>%
+  mutate(log_val = approx(x = year, y = log_val, xout = year, rule = 2)$y) %>%
+  mutate(value = round(exp(log_val))) %>%
   dplyr::select(-log_val)
 
 # Fix the original charging_stations df
-charging_stations = charging_stations %>% 
-  filter(!country %in% c("Europe", "World")) %>% 
+charging_stations <- charging_stations %>%
+  filter(!country %in% c("Europe", "World")) %>%
   mutate(country = replace(country, country == "Korea", "South Korea")) %>%
   mutate(country = replace(country, country == "Turkiye", "Turkey")) %>%
-  mutate(country = replace(country, country == "United Kingdom", "UK")) %>% 
-  filter(country != "Austria") %>% 
-  bind_rows(austria_fast) %>% 
-  bind_rows(austria_slow) %>% 
+  mutate(country = replace(country, country == "United Kingdom", "UK")) %>%
+  filter(country != "Austria") %>%
+  bind_rows(austria_fast) %>%
+  bind_rows(austria_slow) %>%
   arrange(country)
-
-
 ```
 
 - Moving on, we transform the datasets into a wide format respectively to obtain the variables that we want to regress against in our model.  
@@ -372,14 +371,16 @@ charging_stations = charging_stations %>%
 
 ```{r}
 # Pivot wider
-wide_cs = charging_stations %>% 
-  dplyr::select(-unit) %>% 
-  pivot_wider(names_from = "powertrain", values_from = value)
+wide_cs <- charging_stations %>%
+  dplyr::select(-unit) %>%
+  pivot_wider(names_from = "powertrain", values_from = value) %>% 
+  rename(charging_sttns_fast = `Publicly available fast`,
+         charging_sttns_slow = `Publicly available slow`)
 
 
 # Data for Oil Displacement / EV Electricity Demand is almost non-existent; perhaps we can remove them later
-wide_ev = ev_data %>% 
-  mutate(stock_sales = paste0(parameter, "_", powertrain)) %>% 
+wide_ev <- ev_data %>%
+  mutate(stock_sales = paste0(parameter, "_", powertrain)) %>%
   mutate(stock_sales = case_when(
     stock_sales == "EV sales share_EV" ~ "Total_Sales",
     stock_sales == "EV stock share_EV" ~ "Total_Stocks",
@@ -392,22 +393,22 @@ wide_ev = ev_data %>%
     stock_sales == "Oil displacement Mbd_EV" ~ "Oil_Disp_MBD",
     stock_sales == "Oil displacement, million lge_EV" ~ "Oil_Disp_mil_lge",
     stock_sales == "Electricity demand_EV" ~ "EV_Elec_Demand_GWh"
-  )) %>% 
-  dplyr::select(-parameter, -powertrain, -unit) %>% 
+  )) %>%
+  dplyr::select(-parameter, -powertrain, -unit) %>%
   pivot_wider(names_from = "stock_sales", values_from = "value")
-  
+
 
 # Net Electricity Production:
 # Total Renewables (Hydro, Geo, Solar, Wind, Other) = Hydro + Geo + Solar + Wind + Combustible Renewables + Other Renewables //
 # Total Combustible Fuels // = Combustible Renewables + Oil and Petroleum Products + Other Combustible Non-Renewables // + Coal, Peat and Manufactured Gases + Natural Gas
 # Electricity = Total Combustible Fuels + Total Renewables + Nuclear - Combustible Renewables
 # Remove some of these variables to prevent multi-collinearity
-wide_energy_prod = energy_prod %>% 
-  group_by(country, balance, product, year) %>% 
-  summarize(total = sum(value)) %>% 
-  ungroup() %>% 
-  filter(!(balance == "Net Electricity Production" & product %in% c("Total Combustible Fuels", "Not Specified", "Other Combustible Non-Renewables", "Other Renewables"))) %>% 
-  mutate(variables = paste0(balance, "_", product)) %>% 
+wide_energy_prod <- energy_prod %>%
+  group_by(country, balance, product, year) %>%
+  summarize(total = sum(value)) %>%
+  ungroup() %>%
+  filter(!(balance == "Net Electricity Production" & product %in% c("Total Combustible Fuels", "Not Specified", "Other Combustible Non-Renewables", "Other Renewables"))) %>%
+  mutate(variables = paste0(balance, "_", product)) %>%
   mutate(variables = case_when(
     str_starts(variables, "Net Electricity Production_") ~ paste0(product, " (Net_Produce)"),
     variables == "Final Consumption (Calculated)_Electricity" ~ "Electricity_Cons",
@@ -416,7 +417,7 @@ wide_energy_prod = energy_prod %>%
     variables == "Total Exports_Electricity" ~ "Electricity_Exports",
     variables == "Total Imports_Electricity" ~ "Electricity_Imports"
   )) %>%
-  dplyr::select(-balance, -product) %>% 
+  dplyr::select(-balance, -product) %>%
   pivot_wider(names_from = "variables", values_from = "total")
 
 ```
@@ -425,195 +426,205 @@ wide_energy_prod = energy_prod %>%
 - Looking at the combined dataset, there seems to be missing values in several columns. While it is easy to just do drop_na(), we only have < 300 rows of data. Perhaps, imputing them might yield a more accurate model later.
 
 ```{r}
-
 # More imputations
 
 # 1. Net Electricity Production
-combined_data = wide_ev %>% 
-  inner_join(wide_energy_prod, by = c("country", "year")) %>% 
-  inner_join(wide_cs, by = c("country", "year")) %>% 
+combined_data <- wide_ev %>%
+  inner_join(wide_energy_prod, by = c("country", "year")) %>%
+  inner_join(wide_cs, by = c("country", "year")) %>%
   dplyr::select(-EV_Elec_Demand_GWh, -Oil_Disp_mil_lge, -Oil_Disp_MBD) %>% # Remove columns because data is on available for USA, India, China
-  mutate(`Geothermal (Net_Produce)` = ifelse(is.na(`Geothermal (Net_Produce)`), 0, `Geothermal (Net_Produce)`)) %>% 
-  mutate(`Coal, Peat and Manufactured Gases (Net_Produce)` = ifelse(is.na(`Coal, Peat and Manufactured Gases (Net_Produce)`), 0, `Coal, Peat and Manufactured Gases (Net_Produce)`)) %>% 
-  mutate(`Nuclear (Net_Produce)` = ifelse(is.na(`Nuclear (Net_Produce)`), 0, `Nuclear (Net_Produce)`)) %>% 
-  mutate(`Solar (Net_Produce)` = ifelse(is.na(`Solar (Net_Produce)`), 0, `Solar (Net_Produce)`)) %>% 
-  mutate(`Solar (Net_Produce)` = ifelse(is.na(`Solar (Net_Produce)`), 0, `Solar (Net_Produce)`)) %>% 
+  mutate(`Geothermal (Net_Produce)` = ifelse(is.na(`Geothermal (Net_Produce)`), 0, `Geothermal (Net_Produce)`)) %>%
+  mutate(`Coal, Peat and Manufactured Gases (Net_Produce)` = ifelse(is.na(`Coal, Peat and Manufactured Gases (Net_Produce)`), 0, `Coal, Peat and Manufactured Gases (Net_Produce)`)) %>%
+  mutate(`Nuclear (Net_Produce)` = ifelse(is.na(`Nuclear (Net_Produce)`), 0, `Nuclear (Net_Produce)`)) %>%
+  mutate(`Solar (Net_Produce)` = ifelse(is.na(`Solar (Net_Produce)`), 0, `Solar (Net_Produce)`)) %>%
+  mutate(`Solar (Net_Produce)` = ifelse(is.na(`Solar (Net_Produce)`), 0, `Solar (Net_Produce)`)) %>%
   mutate(`Natural Gas (Net_Produce)` = ifelse(is.na(`Natural Gas (Net_Produce)`), 0, `Natural Gas (Net_Produce)`)) %>%
   mutate(`Combustible Renewables (Net_Produce)` = ifelse(is.na(`Combustible Renewables (Net_Produce)`), 0, `Combustible Renewables (Net_Produce)`))
 
 
+combined_data = combined_data %>% 
+  rename(Coal_Share = `Coal, Peat and Manufactured Gases (Net_Produce)`,
+         Combust_Renew_Share = `Combustible Renewables (Net_Produce)`,
+         Electricity_Prod = `Electricity (Net_Produce)`,
+         Geothermal_Share = `Geothermal (Net_Produce)`,
+         Hydro_Share = `Hydro (Net_Produce)`,
+         NaturalGas_Share = `Natural Gas (Net_Produce)`,
+         Nuclear_Share = `Nuclear (Net_Produce)`,
+         OilPetrol_Share = `Oil and Petroleum Products (Net_Produce)`,
+         Solar_Share = `Solar (Net_Produce)`,
+         Renewables_Share = `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)`,
+         Wind_Share = `Wind (Net_Produce)`)
 ```
 
 
 ```{r}
-
 # 2. Charging Stations
 
 # AUS - Interpolation because NA values are between available data
-aus = combined_data %>%
+aus <- combined_data %>%
   filter(country == "Australia") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`)) %>% 
-  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+  mutate(log_pub_fast = log(charging_sttns_fast)) %>%
+  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
 
 # GRE - Backfill since only 1 NA
-gre = combined_data %>%
+gre <- combined_data %>%
   filter(country == "Greece") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`)) %>% 
-  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+  mutate(log_pub_fast = log(charging_sttns_fast)) %>%
+  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
 
 
 # MEX - Backfill since only 1 NA
-mex = combined_data %>%
+mex <- combined_data %>%
   filter(country == "Mexico") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`)) %>% 
-  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+  mutate(log_pub_fast = log(charging_sttns_fast)) %>%
+  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
 
 
 # NED - Backfill since only 2 NAs and small values
-ned = combined_data %>%
+ned <- combined_data %>%
   filter(country == "Netherlands") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`)) %>% 
-  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+  mutate(log_pub_fast = log(charging_sttns_fast)) %>%
+  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
 
 
 # NOR - Backfill since only 1 NA
-nor = combined_data %>%
+nor <- combined_data %>%
   filter(country == "Norway") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`)) %>% 
-  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+  mutate(log_pub_fast = log(charging_sttns_fast)) %>%
+  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
 
 
 # ESP - Backfill since only 1 NA
-esp = combined_data %>%
+esp <- combined_data %>%
   filter(country == "Spain") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`)) %>% 
-  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+  mutate(log_pub_fast = log(charging_sttns_fast)) %>%
+  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
 
 
 # UK - Backfill since only 1 NA
-uk = combined_data %>%
+uk <- combined_data %>%
   filter(country == "UK") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`)) %>% 
-  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+  mutate(log_pub_fast = log(charging_sttns_fast)) %>%
+  mutate(log_pub_fast = approx(x = year, y = log_pub_fast, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
 
 
 # USA - Extrapolate using linear regression
-usa = combined_data %>%
+usa <- combined_data %>%
   filter(country == "USA") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`))
+  mutate(log_pub_fast = log(charging_sttns_fast))
 
-predict_usa = usa %>% 
-  dplyr::select(year, log_pub_fast) %>% 
-  filter(is.na(log_pub_fast)) %>% 
+predict_usa <- usa %>%
+  dplyr::select(year, log_pub_fast) %>%
+  filter(is.na(log_pub_fast)) %>%
   dplyr::select(-log_pub_fast)
 
-lm_usa = lm(log_pub_fast ~ year, data = usa)
-usa$log_pub_fast[is.na(usa$log_pub_fast)] = predict(lm_usa, predict_usa)
-usa = usa %>%  
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+lm_usa <- lm(log_pub_fast ~ year, data = usa)
+usa$log_pub_fast[is.na(usa$log_pub_fast)] <- predict(lm_usa, predict_usa)
+usa <- usa %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
 
 
 # SWE - Extrapolate using linear regression
-swe = combined_data %>% 
+swe <- combined_data %>%
   filter(country == "Sweden") %>%
-  mutate(log_pub_fast =  log(`Publicly available fast`))
+  mutate(log_pub_fast = log(charging_sttns_fast))
 
-predict_swe = swe %>% 
-  dplyr::select(year, log_pub_fast) %>% 
-  filter(is.na(log_pub_fast)) %>% 
+predict_swe <- swe %>%
+  dplyr::select(year, log_pub_fast) %>%
+  filter(is.na(log_pub_fast)) %>%
   dplyr::select(-log_pub_fast)
 
-lm_swe = lm(log_pub_fast ~ year, data = swe)
-swe$log_pub_fast[is.na(swe$log_pub_fast)] = predict(lm_swe, predict_swe)
-swe = swe %>%  
-  mutate(`Publicly available fast` = round(exp(log_pub_fast))) %>% 
+lm_swe <- lm(log_pub_fast ~ year, data = swe)
+swe$log_pub_fast[is.na(swe$log_pub_fast)] <- predict(lm_swe, predict_swe)
+swe <- swe %>%
+  mutate(charging_sttns_fast = round(exp(log_pub_fast))) %>%
   dplyr::select(-log_pub_fast)
-  
-  
-combined_data = combined_data %>% 
-  filter(!country %in% c("Australia", "Greece", "Mexico", "Netherlands", "Norway",
-                         "Spain", "UK", "USA", "Sweden")) %>% 
+
+
+combined_data <- combined_data %>%
+  filter(!country %in% c(
+    "Australia", "Greece", "Mexico", "Netherlands", "Norway",
+    "Spain", "UK", "USA", "Sweden"
+  )) %>%
   bind_rows(aus, gre, mex, ned, nor, esp, uk, usa, swe)
 
 
 # ISL - Backfill since only 1 NA
-isl = combined_data %>%
+isl <- combined_data %>%
   filter(country == "Iceland") %>%
-  mutate(log_pub_slow =  log(`Publicly available slow`)) %>% 
-  mutate(log_pub_slow = approx(x = year, y = log_pub_slow, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available slow` = round(exp(log_pub_slow))) %>% 
+  mutate(log_pub_slow = log(charging_sttns_slow)) %>%
+  mutate(log_pub_slow = approx(x = year, y = log_pub_slow, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_slow = round(exp(log_pub_slow))) %>%
   dplyr::select(-log_pub_slow)
 
 
 # IND - Backfill since only 1 NA
-ind = combined_data %>%
+ind <- combined_data %>%
   filter(country == "India") %>%
-  mutate(log_pub_slow =  log(`Publicly available slow`)) %>% 
-  mutate(log_pub_slow = approx(x = year, y = log_pub_slow, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available slow` = round(exp(log_pub_slow))) %>% 
+  mutate(log_pub_slow = log(charging_sttns_slow)) %>%
+  mutate(log_pub_slow = approx(x = year, y = log_pub_slow, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_slow = round(exp(log_pub_slow))) %>%
   dplyr::select(-log_pub_slow)
 
 
 # JPN - Using linear regression was a little inaccurate, but the rate of change for both types of charging port is quite similar, so use rate of change
-jpn = combined_data %>% 
+jpn <- combined_data %>%
   filter(country == "Japan") %>%
   mutate(
-    rate_change_fast = 1 + (`Publicly available fast` - lag(`Publicly available fast`)) / lag(`Publicly available fast`),
-    rate_change_slow = 1 + (`Publicly available slow` - lag(`Publicly available slow`)) / lag(`Publicly available slow`)
+    rate_change_fast = 1 + (charging_sttns_fast - lag(charging_sttns_fast)) / lag(charging_sttns_fast),
+    rate_change_slow = 1 + (charging_sttns_slow - lag(charging_sttns_slow)) / lag(charging_sttns_slow)
   )
 
 
 # Fill in the missing values in `publicly_available_slow` using rate_change_fast
-for (i in sum(is.na(jpn$`Publicly available slow`)):1) {
-  jpn$`Publicly available slow`[i] = jpn$`Publicly available slow`[i + 1] / jpn$rate_change_fast[i + 1]
+for (i in sum(is.na(jpn$charging_sttns_slow)):1) {
+  jpn$charging_sttns_slow[i] <- jpn$charging_sttns_slow[i + 1] / jpn$rate_change_fast[i + 1]
 }
-  
-jpn = jpn %>% 
-  dplyr::select(-c(rate_change_fast, rate_change_slow)) %>% 
-  mutate(`Publicly available slow` = round(`Publicly available slow`))
+
+jpn <- jpn %>%
+  dplyr::select(-c(rate_change_fast, rate_change_slow)) %>%
+  mutate(charging_sttns_slow = round(charging_sttns_slow))
 
 
 # NZL - Backfill since only 1 NA
-nzl = combined_data %>%
+nzl <- combined_data %>%
   filter(country == "New Zealand") %>%
-  mutate(log_pub_slow =  log(`Publicly available slow`)) %>% 
-  mutate(log_pub_slow = approx(x = year, y = log_pub_slow, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available slow` = round(exp(log_pub_slow))) %>% 
+  mutate(log_pub_slow = log(charging_sttns_slow)) %>%
+  mutate(log_pub_slow = approx(x = year, y = log_pub_slow, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_slow = round(exp(log_pub_slow))) %>%
   dplyr::select(-log_pub_slow)
 
 
 # TUR - Backfill (# of charging ports is considerably small for any prediction methods to work well)
-tur = combined_data %>%
+tur <- combined_data %>%
   filter(country == "Turkey") %>%
-  mutate(log_pub_slow =  log(`Publicly available slow`)) %>% 
-  mutate(log_pub_slow = approx(x = year, y = log_pub_slow, xout = year, rule = 2)$y) %>% 
-  mutate(`Publicly available slow` = round(exp(log_pub_slow))) %>% 
+  mutate(log_pub_slow = log(charging_sttns_slow)) %>%
+  mutate(log_pub_slow = approx(x = year, y = log_pub_slow, xout = year, rule = 2)$y) %>%
+  mutate(charging_sttns_slow = round(exp(log_pub_slow))) %>%
   dplyr::select(-log_pub_slow)
 
-combined_data = combined_data %>% 
-  filter(!country %in% c("Iceland", "India", "Japan", "New Zealand", "Turkey")) %>% 
+combined_data <- combined_data %>%
+  filter(!country %in% c("Iceland", "India", "Japan", "New Zealand", "Turkey")) %>%
   bind_rows(isl, ind, jpn, nzl, tur)
-
 ```
 
 
 ```{r}
-
 # 3. Electricity Consumption / Distribution Loss
 
 # Electricity (Produced) = Distribution Loss + Consumption + Exports - Imports + Pumped Storage //
@@ -621,42 +632,40 @@ combined_data = combined_data %>%
 # https://www.ceicdata.com/en/brazil/environmental-energy-production-and-consumption/br-electric-power-transmission-and-distribution-losses--of-output
 # https://www.statista.com/statistics/302292/china-electric-power-transmission-loss/#:~:text=China's%20power%20transmission%20losses%20amount,follows%20years%20of%20network%20improvement.
 # https://www.statista.com/statistics/1233002/transmission-losses-share-electricity-by-region-india/
-# Electricity Distribution Loss - 
+# Electricity Distribution Loss -
 # China: 5%
 # Brazil: 15.5%
 # India: 20%
 
-# Electricity Consumption - 
+# Electricity Consumption -
 # China: 5%
 # Brazil: 15.5%
 # India: 20%
 
-loss_cons = combined_data %>%
-  filter(is.na(Electricity_Distrib_Loss)) %>% 
+loss_cons <- combined_data %>%
+  filter(is.na(Electricity_Distrib_Loss)) %>%
   mutate(Electricity_Distrib_Loss = case_when(
-    country == "Brazil" ~ 0.155 * `Electricity (Net_Produce)`,
-    country == "China" ~ 0.05 * `Electricity (Net_Produce)`,
-    country == "India" ~ 0.2 * `Electricity (Net_Produce)`
-  )) 
-combined_data %>% 
-  filter(country == "Brazil")
+    country == "Brazil" ~ 0.155 * Electricity_Prod,
+    country == "China" ~ 0.05 * Electricity_Prod,
+    country == "India" ~ 0.2 * Electricity_Prod
+  ))
+
 
 # https://www.eia.gov/international/data/world/electricity/electricity-consumption?pd=2&p=0000002&u=0&f=A&v=mapbubble&a=-&i=none&vo=value&t=C&g=00000000000000000000000000000000000000000000000001&l=249-ruvvvvvfvtvnvv1vrvvvvfvvvvvvfvvvou20evvvvvvvvvvnvvvs0008&s=315532800000&e=1546300800000&
 # Electricity Consumption
 
-brazil_cons = c(543, 551, 547, 570) * 1e3
-china_cons = c(5510, 5826, 6323, 6734, 7097, 7386, 8110) * 1e3
-india_cons = c(1133, 1173, 1215, 1261, 1201, 1352) * 1e3
+brazil_cons <- c(543, 551, 547, 570) * 1e3
+china_cons <- c(5510, 5826, 6323, 6734, 7097, 7386, 8110) * 1e3
+india_cons <- c(1133, 1173, 1215, 1261, 1201, 1352) * 1e3
 
-loss_cons[loss_cons$country == "Brazil", ]$Electricity_Cons = brazil_cons
-loss_cons[loss_cons$country == "China", ]$Electricity_Cons = china_cons
-loss_cons[loss_cons$country == "India", ]$Electricity_Cons = india_cons
+loss_cons[loss_cons$country == "Brazil", ]$Electricity_Cons <- brazil_cons
+loss_cons[loss_cons$country == "China", ]$Electricity_Cons <- china_cons
+loss_cons[loss_cons$country == "India", ]$Electricity_Cons <- india_cons
 
 # Fix original data
-combined_data = combined_data %>% 
-  filter(!country %in% c("China", "Brazil", "India")) %>% 
+combined_data <- combined_data %>%
+  filter(!country %in% c("China", "Brazil", "India")) %>%
   bind_rows(loss_cons)
-    
 ```
 
 
@@ -664,253 +673,541 @@ combined_data = combined_data %>%
 # 4. Electricity Imports/Exports
 # https://www.eia.gov/international/data/world/electricity/electricity-imports?pd=2&p=0000000000002&u=0&f=A&v=mapbubble&a=-&i=none&vo=value&&t=C&g=00000000000000000000000000000000000000000000000001&l=249-ruvvvvvfvtvnvv1vrvvvvfvvvvvvfvvvou20evvvvvvvvvvnvvvs0008&s=315532800000&e=1672531200000
 
-exp = combined_data %>%
+exp <- combined_data %>%
   filter(is.na(Electricity_Exports))
 
-chile_exp = c(0.7, 0, 0, 0, 0) * 1e3
-korea_exp = c(0, 0) * 1e3
-aus_exp = c(0) * 1e3
-isl_exp = c(0, 0, 0, 0) * 1e3
-jpn_exp = c(0, 0, 0, 0, 0, 0, 0, 0) * 1e3
-brazil_exp = c(0, 0.2, 0.4, 0) * 1e3
-china_exp = c(19, 19, 19, 21, 22, 22, 20) * 1e3
-india_exp = c(6.7, 7.2, 8.5, 9.5, 9.4, 9.6) * 1e3
+chile_exp <- c(0.7, 0, 0, 0, 0) * 1e3
+korea_exp <- c(0, 0) * 1e3
+aus_exp <- c(0) * 1e3
+isl_exp <- c(0, 0, 0, 0) * 1e3
+jpn_exp <- c(0, 0, 0, 0, 0, 0, 0, 0) * 1e3
+brazil_exp <- c(0, 0.2, 0.4, 0) * 1e3
+china_exp <- c(19, 19, 19, 21, 22, 22, 20) * 1e3
+india_exp <- c(6.7, 7.2, 8.5, 9.5, 9.4, 9.6) * 1e3
 
-exp[exp$country == "Chile", ]$Electricity_Exports = chile_exp
-exp[exp$country == "South Korea", ]$Electricity_Exports = korea_exp
-exp[exp$country == "Australia", ]$Electricity_Exports = aus_exp
-exp[exp$country == "Iceland", ]$Electricity_Exports = isl_exp
-exp[exp$country == "Japan", ]$Electricity_Exports = jpn_exp
-exp[exp$country == "Brazil", ]$Electricity_Exports = brazil_exp
-exp[exp$country == "China", ]$Electricity_Exports = china_exp
-exp[exp$country == "India", ]$Electricity_Exports = india_exp
+exp[exp$country == "Chile", ]$Electricity_Exports <- chile_exp
+exp[exp$country == "South Korea", ]$Electricity_Exports <- korea_exp
+exp[exp$country == "Australia", ]$Electricity_Exports <- aus_exp
+exp[exp$country == "Iceland", ]$Electricity_Exports <- isl_exp
+exp[exp$country == "Japan", ]$Electricity_Exports <- jpn_exp
+exp[exp$country == "Brazil", ]$Electricity_Exports <- brazil_exp
+exp[exp$country == "China", ]$Electricity_Exports <- china_exp
+exp[exp$country == "India", ]$Electricity_Exports <- india_exp
 
-combined_data = combined_data %>% 
-  filter(!is.na(Electricity_Exports)) %>% 
+combined_data <- combined_data %>%
+  filter(!is.na(Electricity_Exports)) %>%
   bind_rows(exp)
 
-imp = combined_data %>%
+imp <- combined_data %>%
   filter(is.na(Electricity_Imports))
 
-chile_imp = c(0, 0, 0, 0) * 1e3
-korea_imp = c(0, 0) * 1e3
-aus_imp = c(0) * 1e3
-isl_imp = c(0, 0, 0, 0) * 1e3
-jpn_imp = c(0, 0, 0, 0, 0, 0, 0, 0) * 1e3
-brazil_imp = c(35, 25, 25, 23) * 1e3
-china_imp = c(6.2, 6.2, 6.4, 5.7, 4.9, 4.8, 5.9) * 1e3
-india_imp = c(5.6, 5.6, 4.7, 6.4, 9.3, 9.5) * 1e3
+chile_imp <- c(0, 0, 0, 0) * 1e3
+korea_imp <- c(0, 0) * 1e3
+aus_imp <- c(0) * 1e3
+isl_imp <- c(0, 0, 0, 0) * 1e3
+jpn_imp <- c(0, 0, 0, 0, 0, 0, 0, 0) * 1e3
+brazil_imp <- c(35, 25, 25, 23) * 1e3
+china_imp <- c(6.2, 6.2, 6.4, 5.7, 4.9, 4.8, 5.9) * 1e3
+india_imp <- c(5.6, 5.6, 4.7, 6.4, 9.3, 9.5) * 1e3
 
-imp[imp$country == "Chile", ]$Electricity_Imports = chile_imp
-imp[imp$country == "South Korea", ]$Electricity_Imports = korea_imp
-imp[imp$country == "Australia", ]$Electricity_Imports = aus_imp
-imp[imp$country == "Iceland", ]$Electricity_Imports = isl_imp
-imp[imp$country == "Japan", ]$Electricity_Imports = jpn_imp
-imp[imp$country == "Brazil", ]$Electricity_Imports = brazil_imp
-imp[imp$country == "China", ]$Electricity_Imports = china_imp
-imp[imp$country == "India", ]$Electricity_Imports = india_imp
+imp[imp$country == "Chile", ]$Electricity_Imports <- chile_imp
+imp[imp$country == "South Korea", ]$Electricity_Imports <- korea_imp
+imp[imp$country == "Australia", ]$Electricity_Imports <- aus_imp
+imp[imp$country == "Iceland", ]$Electricity_Imports <- isl_imp
+imp[imp$country == "Japan", ]$Electricity_Imports <- jpn_imp
+imp[imp$country == "Brazil", ]$Electricity_Imports <- brazil_imp
+imp[imp$country == "China", ]$Electricity_Imports <- china_imp
+imp[imp$country == "India", ]$Electricity_Imports <- india_imp
 
-combined_data = combined_data %>% 
-  filter(!is.na(Electricity_Imports)) %>% 
-  bind_rows(imp) %>% 
+combined_data <- combined_data %>%
+  filter(!is.na(Electricity_Imports)) %>%
+  bind_rows(imp) %>%
   dplyr::select(-Electricity_Pumped_Storage)
-
 ```
 
 ```{r}
 # 5. Total EV Sales and Stocks
 
 # 5a. EV Sales
-austria_sales = combined_data %>%
+austria_sales <- combined_data %>%
   filter(country == "Austria") %>%
-  mutate(log_sales =  log(Total_Sales))
+  mutate(log_sales = log(Total_Sales))
 
-predict_austria = austria_sales %>% 
-  dplyr::select(year, log_sales) %>% 
-  filter(is.na(log_sales)) %>% 
+predict_austria <- austria_sales %>%
+  dplyr::select(year, log_sales) %>%
+  filter(is.na(log_sales)) %>%
   dplyr::select(-log_sales)
 
-lm_austria = lm(log_sales ~ year, data = austria_sales)
-austria_sales$log_sales[is.na(austria_sales$log_sales)] = predict(lm_austria, predict_austria)
-austria_sales = austria_sales %>%  
-  mutate(Total_Sales = round(exp(log_sales), 3)) %>% 
+lm_austria <- lm(log_sales ~ year, data = austria_sales)
+austria_sales$log_sales[is.na(austria_sales$log_sales)] <- predict(lm_austria, predict_austria)
+austria_sales <- austria_sales %>%
+  mutate(Total_Sales = round(exp(log_sales), 3)) %>%
   dplyr::select(-log_sales)
 
-combined_data = combined_data %>% 
-  filter(!country %in% c("Austria")) %>% 
+combined_data <- combined_data %>%
+  filter(!country %in% c("Austria")) %>%
   bind_rows(austria_sales)
 
 
 # 5b. EV Stocks
-poland_stocks = combined_data %>% 
-  filter(country == "Poland") %>% 
+poland_stocks <- combined_data %>%
+  filter(country == "Poland") %>%
   mutate(log_stocks = log(Total_Stocks))
 
-predict_poland = poland_stocks %>% 
-  dplyr::select(year, log_stocks) %>% 
-  filter(is.na(log_stocks)) %>% 
+predict_poland <- poland_stocks %>%
+  dplyr::select(year, log_stocks) %>%
+  filter(is.na(log_stocks)) %>%
   dplyr::select(-log_stocks)
 
-lm_poland = lm(log_stocks ~ year, data = poland_stocks)
-poland_stocks$log_stocks[is.na(poland_stocks$log_stocks)] = predict(lm_poland, predict_poland)
-poland_stocks = poland_stocks %>%  
-  mutate(Total_Stocks = round(exp(log_stocks), 3)) %>% 
+lm_poland <- lm(log_stocks ~ year, data = poland_stocks)
+poland_stocks$log_stocks[is.na(poland_stocks$log_stocks)] <- predict(lm_poland, predict_poland)
+poland_stocks <- poland_stocks %>%
+  mutate(Total_Stocks = round(exp(log_stocks), 3)) %>%
   dplyr::select(-log_stocks)
 
-combined_data = combined_data %>% 
-  filter(!country %in% c("Poland")) %>% 
+combined_data <- combined_data %>%
+  filter(!country %in% c("Poland")) %>%
   bind_rows(poland_stocks)
 
 
 sapply(combined_data, function(x) (sum(is.na(x))))
 
 colnames(combined_data[sapply(combined_data, function(x) (sum(is.na(x)))) != 0])
-
-write_csv(combined_data, "combined_data.csv")
 ```
 
-- With that out of the way, we can proceed with the actual machine learning analysis, where we split the data into train/test sets, perform LASSO, and the regression.
+
+##### More Setup: Additional Features, Splitting, and LASSO
+
+- With that out of the way, we can proceed with the actual machine learning analysis, where we split the data into train/test sets, apply standard scaling on all numerical variables, and perform LASSO regularization to determine the best features. Finally, we can fit the regression model and do bidirectional stepwise selection.
 
 - Maybe, we can also add extra variables that might be relevant. Namely, ratio of Renewable-to-Non-renewable and % of total electricity production that comes from renewables.
 
+- Also, maybe temperature is a possible variable that affects EV usage. We suspect that too high or too low of a temperature could impact the batteries powering EVs and also the miles that the car could drive.
+
 
 ```{r}
-set.seed(8897)
-
-
+# Remember:
 # Total Renewables (Hydro, Geo, Solar, Wind, Other) = Hydro + Geo + Solar + Wind + Combustible Renewables + Other Renewables //
 # Total Combustible Fuels // = Combustible Renewables + Oil and Petroleum Products + Other Combustible Non-Renewables // + Coal, Peat and Manufactured Gases + Natural Gas
 # Electricity = Total Combustible Fuels + Total Renewables + Nuclear - Combustible Renewables
 
+combined_data <- combined_data %>%
+  mutate(percent_renewable_electricity = Renewables_Share / Electricity_Prod) %>%
+  mutate(Non_Renewables_Share = Electricity_Prod - Renewables_Share) %>%
+  mutate(ratio_renew_nonrenew = Renewables_Share / Non_Renewables_Share) %>%
+  dplyr::select(-Non_Renewables_Share)
+
+# Average temperature
+temp <- read_csv("https://uwmadison.box.com/shared/static/cp4ialsg0ma771oip7hf0aujym2ktmtg.csv") %>%
+  filter(Country %in% c(
+    "Belgium", "Denmark", "Finland", "France", "Germany", "Italy", "Portugal",
+    "Switzerland", "Greece", "Netherlands", "Norway", "Spain", "United Kingdom", "Sweden", "Iceland",
+    "Austria", "Poland", "Canada", "Chile", "United States", "Mexico", "Brazil",
+    "Korea, Rep.", "Australia", "Japan", "New Zealand", "Turkey", "China", "India"
+  )) %>%
+  mutate(Country = replace(Country, Country == "United Kingdom", "UK")) %>%
+  mutate(Country = replace(Country, Country == "United States", "USA")) %>%
+  mutate(Country = replace(Country, Country == "Korea, Rep.", "South Korea")) %>%
+  rename(country = Country) %>%
+  rename(year = Year) %>%
+  rename(annual_tavg = `Annual Mean`) %>%
+  dplyr::select(country, year, annual_tavg)
+
+combined_data <- combined_data %>%
+  mutate(region = case_when(
+    country %in% c(
+      "Belgium", "Denmark", "Finland", "France", "Germany", "Italy", "Portugal",
+      "Switzerland", "Greece", "Netherlands", "Norway", "Spain", "UK", "Sweden", "Iceland",
+      "Austria", "Poland"
+    ) ~ "Europe",
+    country %in% c("Canada", "USA", "Mexico") ~ "North America",
+    country %in% c("Chile", "Brazil") ~ "South America",
+    country %in% c("South Korea", "Japan", "Turkey", "China", "India") ~ "Asia",
+    country %in% c("Australia", "New Zealand") ~ "Oceania"
+  )) %>%
+  left_join(temp, by = c("country", "year"))
+
+# https://climateknowledgeportal.worldbank.org/
+combined_data[combined_data$country == "China", ]$annual_tavg <- c(
+  7.97, 7.93,
+  8.12, 7.77,
+  8.01, 7.9,
+  8.21
+)
+combined_data[combined_data$country == "India", ]$annual_tavg <- c(
+  25.37, 25.26,
+  25.11, 25.05,
+  24.9, 25.09
+)
+
+write_csv(combined_data, "combined_data.csv")
+
+# combined_data = combined_data %>% 
+#   mutate(annual_tavg = case_when(
+#     annual_tavg > 25 ~ "Hot",
+#     annual_tavg >= 16 & annual_tavg < 25 ~ "Moderate",
+#     annual_tavg < 16 ~ "Cold"
+#   ))
+# t = combined_data
+# 
+# combined_data = t
+
 combined_data = combined_data %>% 
-  mutate(percent_renewable_electricity = `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)` / `Electricity (Net_Produce)`) %>% 
-  mutate(non_renewable = `Electricity (Net_Produce)` - `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)`) %>%
-  mutate(ratio_renew_nonrenew = `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)` / non_renewable) %>%  
-  dplyr::select(-non_renewable)
+  mutate(Non_Renewables_Share = Electricity_Prod - Renewables_Share) %>%
+  #mutate(fast_slow_charge_sttns = charging_sttns_fast / charging_sttns_slow) %>% 
+  mutate(charge_sttns = charging_sttns_fast + charging_sttns_slow) %>% 
+  dplyr::select(-c(charging_sttns_fast, charging_sttns_slow))
   
 
-
 ```
-
-
-
-############ END ###############
-
-
-
-### Logistic Model: Classifying Positive / Negative Outliers
-
-- First, we try to create a logistic model on the outliers. The reason being is we want to identify the factors that lead to overestimation and underestimation. Notice that this now becomes a binary classification problem, where we set 1 = Overestimation and 0 = Underestimation.
-
-- The idea is we first split the dataset into training and test datasets, apply standard scaling on all numerical variables, and perform LASSO regularization to determine the best features. Then, we fit a logistic model and perform bidirectional stepwise selection to get our final model. 
-
-
-```{r, fig.height=5}
-set.seed(8897)
-
-# Extracting the outliers
-iqr_error <- IQR(weather$pred_error)
-upper_fence <- prediction_summary[["3rd Qu."]] + (1.5 * iqr_error)
-lower_fence <- prediction_summary[["1st Qu."]] - (1.5 * iqr_error)
-outlier_weather <- weather[which((weather$pred_error < lower_fence) | (weather$pred_error > upper_fence)), ]
-
-
-# Perform some data wrangling
-outlier_weather <- outlier_weather %>%
-  mutate(month = lubridate::month(date, label = TRUE)) %>%
-  mutate(season = case_when(
-    month %in% c("Sep", "Oct", "Nov") ~ "Fall",
-    month %in% c("Dec", "Jan", "Feb") ~ "Winter",
-    month %in% c("Mar", "Apr", "May") ~ "Spring",
-    month %in% c("Jun", "Jul", "Aug") ~ "Summer"
-  )) %>%
-  dplyr::select(date, month, season, everything()) %>%
-  mutate(season = fct_relevel(season, c("Fall", "Winter", "Spring", "Summer")))
-
-outlier_weather <- outlier_weather %>%
-  mutate(error_positive = ifelse(pred_error >= 0, 1, 0))
-
-# Convert all character-type columns into factor-type
-character_cols <- names(outlier_weather)[sapply(outlier_weather, is.character)]
-outlier_weather[character_cols] <- lapply(outlier_weather[character_cols], as.factor)
-
-# Splitting into training and testing datasets
-split <- initial_split(outlier_weather, prop = 0.75)
-train_outlier <- split %>%
-  training()
-test_outlier <- split %>%
-  testing()
-
-# Feature scaling: Logistic Regression loves standardization
-train_outlier <- train_outlier %>%
-  dplyr::select(-pred_error, -date) %>%
-  mutate_at(vars(-c("month", "season", "state", "city", "region", "high_or_low", "forecast_outlook", "koppen", "error_positive")), scale)
-
-test_outlier <- test_outlier %>%
-  dplyr::select(-pred_error, -date) %>%
-  mutate_at(vars(-c("month", "season", "state", "city", "region", "high_or_low", "forecast_outlook", "koppen", "error_positive")), scale)
-```
-
-- Before proceeding further with choosing the predictor variables, it is best to analyze them one-by-one. We can ignore columns such as `date` as we have already a `month` and a `season` column. We can also omit `observed_temp`, `forecast_temp`, and `pred_error` as our response variable is derived from these three. `observed_precip`, although could be useful, seems illogical for us to include it in our model as the forecasts are made prior to any rain observations. We feel that `avg_annual_precip` can also be dropped as there is not any significant relationship between annual data and daily (temperature) data. 
-
-- `koppen` can also be ignored. Through some research, we found that the Koppen climate classification system ignores variations in temperature. As we are trying to build our model around temperature, including `koppen` would cause issues when fitting.
-
-- Now that we know which variables to include and vice versa, we can proceed further with fitting a logistic regression model.
 
 ```{r}
-set.seed(8897)
-y <- train_outlier$error_positive
-x <- data.matrix(train_outlier[, c("month", "city", "state", "region", "high_or_low", "forecast_hours_before", "forecast_outlook", "lon", "lat", "elevation", "distance_to_coast", "wind", "elevation_change_four", "elevation_change_eight")]) # Using month instead of season yields better results
+set.seed(3431)
+
+# Train/test split
+split <- initial_split(combined_data, prop = c(0.7), strata = "country")
+train_data <- split %>%
+  training()
+
+test_data <- split %>%
+  testing()
 
 
-# LASSO Regression - Feature selection
-cv_model <- cv.glmnet(x, y, alpha = 1, family = "binomial")
+# Feature scaling
+train_data <- train_data %>%
+  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) 
+
+
+train_data$Nuclear_Share = c(scale(train_data$Nuclear_Share))
+train_data$percent_renewable_electricity = c(scale(train_data$percent_renewable_electricity))
+train_data$annual_tavg = c(scale(train_data$annual_tavg))
+train_data$charge_sttns = c(scale(train_data$charge_sttns))
+train_data$ratio_renew_nonrenew = c(scale(train_data$ratio_renew_nonrenew))
+
+
+
+str(train_data)
+
+
+
+  dplyr::select(country, year, Total_Sales, Total_Stocks, region, everything())
+
+test_data <- test_data %>%
+  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) %>%
+  dplyr::mutate_at(vars(-c("country", "year", "Total_Sales", "Total_Stocks", "region")), scale) 
+```
+
+```{r}
+set.seed(3431)
+
+y = train_data$Total_Sales
+x = data.matrix(train_data[, colnames(train_data)[5:ncol(train_data)]])
+
+# LASSO - Feature selection
+cv_model <- cv.glmnet(x, y, alpha = 1)
 best_lambda <- cv_model$lambda.min
 plot(cv_model)
 
-coefficient_model <- coef(glmnet(x, y, alpha = 1, family = "binomial", lambda = best_lambda))
-
-# Feature selection: According to best_lambda, we can exclude the city, forecast_hours_before,
-# distance_to_coast, and elevation_change_eight variables (these got reduced to 0)
-coefficient_model
+# Feature selection: According to best_lambda, we can exclude the '.' variables (these got reduced to 0)
+coefficient_model <- coef(glmnet(x, y, alpha = 1, lambda = best_lambda))
 selected_features <- rownames(coefficient_model)[coefficient_model@i[-1] + 1]
+
+selected_features
+
+str(train_data)
 ```
 
-```{r Model 1}
-set.seed(8897)
+- After the LASSO feature selection algorithm, we are just left with `region`, `Nuclear_share`, `percent_renewable_electricity`, `ratio_renew_nonrenew`, `annual_tavg`, and `charge_sttns`. 
 
-# A. Fitting a logistic regression model with the selected variables above, optimized by bi-directional step-wise selection
-formula_model <- as.formula(paste("as.factor(error_positive) ~ 1 +", paste(selected_features, collapse = " + ")))
-model_lm <- glm(formula_model, data = train_outlier, family = binomial) %>%
+- With the potentially important features being identified, we can fit the (log-)linear model.
+
+
+##### Model 1: Linear Regression + Bi-directional Stepwise Selection
+
+```{r}
+set.seed(3431)
+
+# Fitting a linear regression model with the selected variables above, optimized by bi-directional step-wise selection
+formula_model <- as.formula(paste("log(Total_Sales) ~ 1 +", paste(selected_features, collapse = " + ")))
+model_lm <- lm(formula_model, data = train_data) %>%
   stepAIC(direction = "both", trace = F)
 summary(model_lm)
 
 vif(model_lm)
+
 ```
 
-- We are left with just `month`, `state`, `high_or_low`, and `forecast_outlook` variables after performing all those variable selections. In a model, it is important for us to check if there is any presence of multicollinearity as it could cause overfitting. 
+- Going a step further, we also include run bi-directional stepwise selection to further nail the most significant factors. 
 
-- We use vif() to identify any correlations between the variables. Think of it as the number that represents the strength of the relationship between two or more variables. The higher the number, the more correlated those variables are.
+- In a model, it is important for us to check if there is any presence of multicollinearity as it could cause stability issues among coefficients. To do so, we use vif().
 
-Based on the GVIF^2(1/(2*Df)) metric (Generalized Variance Inflation Factor or Generalized Collinearity Diagnostics), it looks like `month`, `state`, `high_or_low`, and `forecast_outlook` have GVIF values very close to 1, thus this implies that there are minimal correlation for these variables. This is good news, indicating that our model sets a great benchmark for any further improvements. 
+- Based on the $GVIF^{(\frac{1}{2*{DF}})}$ metric (Generalized Variance Inflation Factor or Generalized Collinearity Diagnostics), it appears that all the variables have values very close to 1. Thus, this implies that there are minimal correlation among the predictors. Very good news! Our model sets a great benchmark for further improvements.
 
-- We proceed with predicting unseen test data with our newly-created Logistic Regression model.
+- Let's look at the residual plot and unearth how this model fares against the validation and test set. 
 
 ```{r}
-# B. Predictions
-prob_predictions <- model_lm %>%
-  predict(test_outlier, type = "response") # To get probability
-predictions <- ifelse(unname(prob_predictions) > 0.5, 1, 0)
-observed_predictions <- test_outlier$error_positive
-mean(predictions == observed_predictions) # Accuracy of ~67.5%!
-
-proba_lm <- predict(model_lm, test_outlier, type = "response")
-auc(observed_predictions, proba_lm) # ~0.708!
+plot(model_lm, which = 1, main = "Model Fit")
 ```
 
-- We obtained an accuracy of ~67.5% and an AUC (Area Under the Curve) score of ~0.71 against the unseen test data. This might be a good enough accuracy, but let us try building a model that has an improved accuracy and fit.  
+```{r}
+# Looking at Test set
+set.seed(3431)
 
-- Also, we do not have any `lat` or `lon` variables in our final model. These two variables might be good additions as they are known to affect temperature predictions.
+predictions <- predict(model_lm, newdata = test_data)
+actuals <- log(test_data$Total_Sales)  
+
+# Mean Absolute Error (MAE)
+mae <- mean(abs(predictions - actuals))
+
+# Mean Squared Error (MSE)
+mse <- mean((predictions - actuals)^2)
+
+# Root Mean Squared Error (RMSE)
+rmse <- sqrt(mse)
+
+# R^2
+rss <- sum((predictions - actuals)^2)  
+tss <- sum((actuals - mean(actuals))^2)
+r_squared <- 1 - (rss / tss)
+
+# Print results
+cat("MAE: ", mae, "\n")
+cat("MSE: ", mse, "\n")
+cat("RMSE: ", rmse, "\n")
+cat("R-squared: ", r_squared, "\n")
+```
+
+- Our residual plot tells us that the log-linear model is a suitable fit. E(e) = 0, the errors are distributed normally, and they generally have constant variance.
+
+- Our R-squared for the test set is very similar to the training data. This is a sign that our model generalizes fairly well to unseen data.
+
+- An $R^2$ score of around 0.4 is moderate, but we believe it is a very reasonable score because the response variable deals with a mixture of consumer behavior (income, preferences, etc.) and market conditions. These are difficult to accurately predict with just a linear model.
+
+- Therefore, we will try to use an ensemble learning algorithm next to see if we can improve on our scores. Perhaps, the underlying relationship isn't all that monotonous, which is not captured by this model.
+
+
+##### Model 2: Extreme Gradient Boosting Regressor
+
+```{r}
+
+NMC = 50
+R_squared_all = rep(0, NMC)
+rmse_all = rep(0, NMC)
+mae_all = rep(0, NMC)
+seeds = 3431:3480
+
+
+for (i in 1:NMC){
+  set.seed(seeds[i])
+  # Perform cross validation
+  formula_model <- as.formula(paste("log(Total_Sales) ~ 1 +", paste(selected_features, collapse = " + ")))
+  fit_control <- trainControl(method = "cv", number = 5)
+  gbm_fit1 <- train(formula_model, data = train_data, method = "rf", trControl = fit_control, verbose = FALSE, verbosity = 0,
+                    tuneLength = 5)
+  
+  # 1. Generate predictions on the test data
+  predictions <- predict(gbm_fit1, newdata = test_data)
+  
+  # 2. Extract the actual Total_Sales values
+  actuals <- log(test_data$Total_Sales)
+  
+  # 3. Calculate performance metrics
+  
+  # RMSE
+  rmse_all[i] <- sqrt(mean((predictions - actuals)^2))
+  
+  # MAE
+  mae_all[i] <- mean(abs(predictions - actuals))
+  
+  # R-squared
+  rss <- sum((predictions - actuals)^2)  # Residual sum of squares
+  tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
+  R_squared_all[i] <- 1 - (rss / tss)
+}
+
+
+max(R_squared_all[R_squared_all > 0])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+set.seed(3431)
+
+# Perform cross validation
+formula_model <- as.formula(paste("log(Total_Sales) ~ 1 +", paste(selected_features, collapse = " + ")))
+fit_control <- trainControl(method = "cv", number = 5)
+gbm_fit1 <- train(formula_model, data = train_data, method = "rf", trControl = fit_control, verbose = FALSE, verbosity = 0,
+                  tuneLength = 5)
+
+# best_model_params <- gbm_fit1$bestTune
+# model_results <- gbm_fit1$results %>% 
+#   filter(eta == best_model_params$eta,
+#          max_depth == best_model_params$max_depth,
+#          gamma == best_model_params$gamma, 
+#          min_child_weight == best_model_params$min_child_weight,
+#          subsample == best_model_params$subsample,
+#          nrounds == best_model_params$nrounds,
+#          colsample_bytree == best_model_params$colsample_bytree)
+
+# gbm_fit1$results %>% 
+#   arrange(desc(Rsquared))
+
+#model_results
+```
+
+```{r}
+# SVM Radial Basis Kernel
+
+set.seed(3431)
+
+# Perform cross validation
+formula_model <- as.formula(paste("log(Total_Sales) ~ 1 +", paste(selected_features, collapse = " + ")))
+fit_control <- trainControl(method = "cv", number = 5, savePredictions = "final")
+gbm_fit1 <- train(formula_model, data = train_data, method = "svmRadial", trControl = fit_control, verbose = FALSE, verbosity = 0,
+                    tuneLength = 5)
+
+  
+gbm_fit1$bestTune
+
+# 1. Generate predictions on the test data
+predictions <- predict(gbm_fit1, newdata = test_data)
+  
+# 2. Extract the actual Total_Sales values
+actuals <- log(test_data$Total_Sales)
+sqrt(mean((predictions - actuals)^2))
+mean(abs(predictions - actuals))
+rss <- sum((predictions - actuals)^2)  # Residual sum of squares
+tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
+1 - (rss / tss)
+
+```
+
+
+```{r}
+set.seed(3431)
+
+fit_control <- trainControl(method = "cv", number = 5, savePredictions = "final")
+all_in_one <-
+  caretList(formula_model,
+            data = train_data,
+            trControl = fit_control,
+            tuneLength = 5,
+            methodList=c("rf"),
+            verbose = F,
+            verbosity = 0) 
+
+rbind(getTrainPerf(all_in_one$"svmRadial"),
+      getTrainPerf(all_in_one$"rf"),
+      getTrainPerf(all_in_one$"xgbTree"))
+
+str(train_data)
+str(test_data)
+```
+
+
+```{r}
+all_models_ensemble <- caretEnsemble(all_in_one)
+all_models_ensemble 
+
+summary(all_models_ensemble) # print a bit more detail
+
+
+t = test_data %>% 
+  dplyr::select(c("Total_Sales", "region", "Nuclear_Share", "percent_renewable_electricity", "ratio_renew_nonrenew",
+                  "annual_tavg", "charge_sttns"))
+
+# 1. Generate predictions on the test data
+predictions <- predict(all_models_ensemble, t)
+  
+# 2. Extract the actual Total_Sales values
+actuals <- log(test_data$Total_Sales)
+sqrt(mean((predictions - actuals)^2))
+mean(abs(predictions - actuals))
+rss <- sum((predictions - actuals)^2)  # Residual sum of squares
+tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
+1 - (rss / tss)
+
+
+library(caretEnsemble)
+```
+
+
+
+
+
+
+
+```{r}
+# Assuming the model was trained on the original Total_Sales values
+
+# 1. Generate predictions on the test data
+predictions <- predict(gbm_fit1, newdata = test_data)
+
+# 2. Extract the actual Total_Sales values
+actuals <- log(test_data$Total_Sales)
+
+# 3. Calculate performance metrics
+
+# RMSE
+rmse <- sqrt(mean((predictions - actuals)^2))
+
+# MAE
+mae <- mean(abs(predictions - actuals))
+
+# R-squared
+rss <- sum((predictions - actuals)^2)  # Residual sum of squares
+tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
+r_squared <- 1 - (rss / tss)
+
+# 4. Print performance metrics
+cat("Performance on Test Data:\n")
+cat("RMSE: ", rmse, "\n")
+cat("MAE: ", mae, "\n")
+cat("R-squared: ", r_squared, "\n")
+```
+
+```{r}
+# Assuming the model was trained on the original Total_Sales values
+
+# 1. Generate predictions on the test data
+predictions <- predict(gbm_fit1, newdata = validation_data)
+
+# 2. Extract the actual Total_Sales values
+actuals <- log(validation_data$Total_Sales)
+
+# 3. Calculate performance metrics
+
+# RMSE
+rmse <- sqrt(mean((predictions - actuals)^2))
+
+# MAE
+mae <- mean(abs(predictions - actuals))
+
+# R-squared
+rss <- sum((predictions - actuals)^2)  # Residual sum of squares
+tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
+r_squared <- 1 - (rss / tss)
+
+# 4. Print performance metrics
+cat("Performance on Test Data:\n")
+cat("RMSE: ", rmse, "\n")
+cat("MAE: ", mae, "\n")
+cat("R-squared: ", r_squared, "\n")
+```
+
+
+
 
 ---
 
