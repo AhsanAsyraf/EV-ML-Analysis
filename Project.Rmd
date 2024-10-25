@@ -10,8 +10,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 # Makes sure that the required packages are properly installed; if they are not installed, R helps to install them
 # Retrieved on 10/14/23 from - https://stackoverflow.com/questions/4090169/elegant-way-to-check-for-missing-packages-and-install-them
-required_packages <- c("tidyverse", "glmnet", "tidymodels", "caret", "car", "xgboost", "Metrics", "MASS", "pdp", "usmap", "scales", "gganimate", "gifski", "patchwork", "randomForest",
-                       "kernlab", "caretEnsemble")
+required_packages <- c("tidyverse", "glmnet", "tidymodels", "caret", "car", "xgboost", "Metrics", "MASS", "pdp", "usmap", "scales", "gganimate", "gifski", "patchwork", "randomForest","kernlab", "caretEnsemble", "vip")
 new_packages <- required_packages[!(required_packages %in% installed.packages()[, "Package"])]
 if (length(new.packages)) {
   install.packages(new_packages)
@@ -32,15 +31,15 @@ library(patchwork)
 library(gganimate)
 library(gifski)
 library(kernlab)
-library(randomForest)
 library(caretEnsemble)
+library(vip)
 
 
 my_theme <- theme_minimal() +
   theme(
     axis.text = element_text(size = 16, color = "black"),
-    axis.title = element_text(size = 18, color = "black"),
-    title = element_text(size = 18, color = "black"),
+    axis.title = element_text(size = 18, color = "black", face = "plain"),
+    title = element_text(size = 18, color = "black", face = "bold"),
     legend.text = element_text(size = 16, color = "black"),
     legend.title = element_text(
       color = "black",
@@ -233,10 +232,10 @@ animation <- base_map +
     subtitle = "Year: {frame_time}"
   )
 
-# animate(animation,
-#   nframes = num_years, fps = 0.7, renderer = gifski_renderer("sales_share.gif"), height = 768, width = 1366,
-#   res = 150
-# )
+animate(animation,
+  nframes = num_years, fps = 0.7, renderer = gifski_renderer("sales_share.gif"), height = 768, width = 1366,
+  res = 150
+)
 
 country_share %>%
   filter(country %in% c("Sweden", "Norway", "Finland", "Denmark")) %>%
@@ -1022,18 +1021,19 @@ cat("R-squared: ", r_squared, "\n")
 
 - Stacking is exactly like it sounds: we stack different models on top of one another to build a meta-model whose input is the output of other base algorithms.
 
-- We first create a list of models we want to use. Namely, k-Nearest Neighbors, Support Vector Machine with a radial basis kernel, and our normal linear regression.
+- We first create a list of models we want to use. Namely, k-Nearest Neighbors, Support Vector Machine with a radial basis kernel, and ridge.
 
-- We chose kNN and SVM because on their own, they perform better than linear regression. Perhaps, combining them can provide a more optimized final model.
+- We chose kNN and SVM because on their own, they perform better than linear regression. Perhaps, combining them can provide a more optimized final model. Ridge is to regularize our model.
 
 - Of course, to further improve the model, we have to perform hyperparameter tuning. Luckily for us, caretEnsemble's caretList() discretely does this for us, as specified by the tuneLength parameter.
 
-- The caretEnsemble takes our list of base algorithms and runs a linear model on it to create a stacked model. 
+- The caretStack takes our list of base algorithms and runs a glm (generalized linear model) on it to create a stacked model. 
 
 ```{r}
 set.seed(3431)
 
 fit_control <- trainControl(method = "cv", number = 5, savePredictions = "final")
+
 all_in_one <-
   caretList(formula_model,
             data = train_data,
@@ -1042,16 +1042,12 @@ all_in_one <-
             verbosity = 0,
             tuneList = list(svmRadial = caretModelSpec(method = "svmRadial", tuneLength = 5),
                             knn = caretModelSpec(method = "kknn", tuneLength = 5),
-                            lm = caretModelSpec(method = "lm", tuneLength = 5))) 
-
-rbind(getTrainPerf(all_in_one$"svmRadial"),
-      getTrainPerf(all_in_one$"knn"),
-      getTrainPerf(all_in_one$"lm"))
+                            ridge = caretModelSpec(method = "ridge", tuneLength = 5))) 
 
 
-ensemble_ctrl <- trainControl(method = "cv", repeats = 5) 
+ensemble_ctrl <- trainControl(method = "repeatedcv", number = 3, repeats = 5, savePredictions = "final") 
 
-all_models_ensemble <- caretEnsemble(all_in_one, tuneLength = 5, trControl = ensemble_ctrl)
+all_models_ensemble <- caretStack(all_in_one, method = "glm", tuneLength = 5, trControl = ensemble_ctrl)
 
 #all_models_ensemble
 
@@ -1072,101 +1068,79 @@ cat("R-squared: ", r_squared, "\n")
 
 ```
 
-- The results look promising! All goodness-of-fit metrics perform even better with our stacking model vs. our previous linear regression model. Our $R^2$ alone rose up by 35% from 0.42 to 0.57. 
+- The results look promising! All goodness-of-fit metrics perform even better with our stacking model vs. our previous linear regression model. Our $R^2$ alone rose up by 38% from 0.42 to 0.58. 
 
 - While it is not quite 0.8 or 0.9, we are satisfied because, to reiterate, consumer behavior and market conditions (which are very hard to quantify) also affect total EV sales share.   
 
 - Thus, we would prefer to use this algorithm to find out, what factors are the best predictors of future EV adoption?
 
 
+##### Feature Importance and PDP Plots
+
+```{r, fig.height = 5, fig.width = 8}
+
+# Since our stacking model does not provide a varImp() function straight out-of-the-box, we pivot by calculating individual
+# variable importance and then average it out
+pfun <- function(object, newdata) {
+  # Need vector of predicted class probabilities when using  log-loss metric
+  predict(object, newdata = newdata)
+}
+
+vi_1 = vi(all_in_one$svmRadial,
+  method = "permute", nsim = 10,
+  target = "Total_Sales", metric = "RMSE",
+  pred_wrapper = pfun, 
+  train = train_data
+) %>% 
+  dplyr::select(-StDev)
+
+vi_2 = vi(all_in_one$knn,
+  method = "permute", nsim = 10,
+  target = "Total_Sales", metric = "RMSE",
+  pred_wrapper = pfun, 
+  train = train_data
+) %>% 
+  rename(Importance_2 = Importance) %>% 
+  dplyr::select(-StDev)
+
+vi_3 = vi(all_in_one$ridge,
+  method = "permute", nsim = 10,
+  target = "Total_Sales", metric = "RMSE",
+  pred_wrapper = pfun, 
+  train = train_data
+) %>% 
+  rename(Importance_3 = Importance) %>% 
+  dplyr::select(-StDev)
 
 
+feature_importance = vi_1 %>% 
+  inner_join(vi_2, by = "Variable") %>% 
+  inner_join(vi_3, by = "Variable") %>% 
+  mutate(Importance = (Importance + Importance_2 + Importance_3) / 3)  %>% 
+  dplyr::select(-Importance_2, -Importance_3) %>% 
+  filter(Importance > 0) %>% 
+  mutate(Importance = round(Importance / sum(Importance) * 100, 2)) %>% 
+  mutate(Variable = replace(Variable, Variable == "percent_renewable_electricity", "Renewable Energy / Electricity (%)")) %>%
+  mutate(Variable = replace(Variable, Variable == "annual_tavg", "Annual Mean Temp.")) %>% 
+  mutate(Variable = replace(Variable, Variable == "region", "Region")) %>% 
+  mutate(Variable = replace(Variable, Variable == "charge_sttns", "Charge Stations")) %>% 
+  mutate(Variable = replace(Variable, Variable == "Nuclear_Share", "Nuclear (Electricity Production)")) %>% 
+  mutate(Variable = replace(Variable, Variable == "ratio_renew_nonrenew", "Renewable-to-Nonrenewable"))
+  
+# Plot feature importance
+feature_importance %>% 
+  ggplot(aes(y = reorder(Variable, -Importance, desc), x = Importance)) +
+  geom_col(color = "black", fill = "deepskyblue4", alpha = 0.8) +
+  labs(y = "", title = "Feature Importance", x = "Importance (%)") +
+  xlim(c(0, 50)) +
+  scale_x_continuous(expand = c(0, 0, 0.2, 0.1))
 
-
-
-
-
-
-###### END #############
-
-
-
-
-
-
-
-- We can use the bestTune parameters from the model above to identify the best iteration when performing a cross-validated Extreme Gradient Boosting training model.
-
-- Using the bestTune parameters and the newly-identified best iteration, we can create a similarly-configured xgb model that allows us to obtain a plot of feature importance. 
-
-```{r}
-set.seed(8897)
-
-# Parameters to find feature importance from the extreme gradient boosting classifier
-gbm_params <- list(
-  "eta" = gbm_fit1$bestTune$eta,
-  "max_depth" = gbm_fit1$bestTune$max_depth,
-  "gamma" = gbm_fit1$bestTune$gamma,
-  "min_child_weight" = gbm_fit1$bestTune$min_child_weight,
-  "nthread" = 4,
-  "objective" = "binary:logistic"
-)
-
-
-# Data Preprocessing of training and testing data for final extreme gradient boosting model
-sumwpos <- sum(test_outlier$error_positive == 1)
-sumwneg <- sum(test_outlier$error_positive == 0)
-
-train_data <- train_outlier[, !(names(train_outlier) %in% "error_positive") & names(train_outlier) %in% selected_features]
-train_label <- train_outlier$error_positive
-train_data <- sparse.model.matrix(~ . - 1, data = train_data)
-
-test_data <- test_outlier[, !(names(test_outlier) %in% "error_positive") & names(test_outlier) %in% selected_features]
-test_label <- test_outlier$error_positive
-test_data <- sparse.model.matrix(~ . - 1, data = test_data)
-
-# Another cross validation based on the best tune parameters; the reason we performed another cross validation is to obtain the best iteration that produces a model with the highest accuracy
-xgb_cross_val <- xgb.cv(
-  params = gbm_params,
-  data = train_data,
-  nrounds = 500,
-  nfold = 10,
-  showsd = TRUE,
-  label = train_label,
-  metrics = "auc",
-  stratified = TRUE,
-  verbose = FALSE,
-  early_stopping_rounds = 50,
-  print_every_n = 1L,
-  scale_pos_weight = sumwneg / sumwpos
-)
-
-
-# Train an optimized xgb model from the best tune parameters and best iteration to allow us to plot feature importance
-# We do this to obtain a model as similar as possible to the evaluated xgb classifier in the previous chunk
-xgb_model <- xgboost(
-  data = train_data,
-  label = train_label,
-  max.depth = gbm_fit1$bestTune$max_depth,
-  eta = gbm_fit1$bestTune$eta,
-  nthread = 4,
-  min_child_weight = gbm_fit1$bestTune$min_child_weight,
-  scale_pos_weight = sumwneg / sumwpos,
-  eval_metric = "auc",
-  nrounds = xgb_cross_val$best_iteration,
-  verbose = FALSE,
-  objective = "binary:logistic"
-)
-
-xgb_importance <- xgb.importance(feature_names = colnames(train_data), model = xgb_model)
-
-gg <- xgb.ggplot.importance(importance_matrix = xgb_importance[1:10, ])
-
-gg +
-  geom_bar(aes(x = reorder(Feature, Importance), y = Importance), stat = "identity", fill = "lightblue", color = "black") +
-  theme(legend.position = "none") +
-  ggtitle("Feature Importance")
 ```
+
+
+------------- END ---------------------------
+
+
 
 - It looks like `high_or_low`, `longitude`, `latitude`, `elevation_change_four`, `elevation`, `wind`, a Sunny `forecast_outlook` and `month` of February, January, and March are the most important features. Let us do further analysis to understand how these features contribute to overestimation / underestimation of forecast temperatures.  
 
