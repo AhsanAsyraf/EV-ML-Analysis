@@ -875,26 +875,59 @@ test_data <- split %>%
 
 # Feature scaling
 train_data <- train_data %>%
-  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) 
-
+  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) %>% 
+  dplyr::select(country, year, Total_Sales, Total_Stocks, region, everything())
 
 train_data$Nuclear_Share = c(scale(train_data$Nuclear_Share))
 train_data$percent_renewable_electricity = c(scale(train_data$percent_renewable_electricity))
 train_data$annual_tavg = c(scale(train_data$annual_tavg))
 train_data$charge_sttns = c(scale(train_data$charge_sttns))
 train_data$ratio_renew_nonrenew = c(scale(train_data$ratio_renew_nonrenew))
+train_data$Coal_Share = c(scale(train_data$Coal_Share))
+train_data$Combust_Renew_Share = c(scale(train_data$Combust_Renew_Share))
+train_data$Electricity_Prod = c(scale(train_data$Electricity_Prod))
+train_data$Geothermal_Share = c(scale(train_data$Geothermal_Share))
+train_data$Hydro_Share = c(scale(train_data$Hydro_Share))
+train_data$NaturalGas_Share = c(scale(train_data$NaturalGas_Share))
+train_data$OilPetrol_Share = c(scale(train_data$OilPetrol_Share))
+train_data$Solar_Share = c(scale(train_data$Solar_Share))
+train_data$Renewables_Share = c(scale(train_data$Renewables_Share))
+train_data$Wind_Share = c(scale(train_data$Wind_Share))
+train_data$Electricity_Distrib_Loss = c(scale(train_data$Electricity_Distrib_Loss))
+train_data$Electricity_Cons = c(scale(train_data$Electricity_Cons))
+train_data$Electricity_Exports = c(scale(train_data$Electricity_Exports))
+train_data$Electricity_Imports = c(scale(train_data$Electricity_Imports))
+train_data$Non_Renewables_Share = c(scale(train_data$Non_Renewables_Share))
 
-
-
-str(train_data)
-
-
-
-  dplyr::select(country, year, Total_Sales, Total_Stocks, region, everything())
 
 test_data <- test_data %>%
-  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) %>%
-  dplyr::mutate_at(vars(-c("country", "year", "Total_Sales", "Total_Stocks", "region")), scale) 
+  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) %>% 
+  dplyr::select(country, year, Total_Sales, Total_Stocks, region, everything())
+
+
+test_data$Nuclear_Share = c(scale(test_data$Nuclear_Share))
+test_data$percent_renewable_electricity = c(scale(test_data$percent_renewable_electricity))
+test_data$annual_tavg = c(scale(test_data$annual_tavg))
+test_data$charge_sttns = c(scale(test_data$charge_sttns))
+test_data$ratio_renew_nonrenew = c(scale(test_data$ratio_renew_nonrenew))
+test_data$Coal_Share = c(scale(test_data$Coal_Share))
+test_data$Combust_Renew_Share = c(scale(test_data$Combust_Renew_Share))
+test_data$Electricity_Prod = c(scale(test_data$Electricity_Prod))
+test_data$Geothermal_Share = c(scale(test_data$Geothermal_Share))
+test_data$Hydro_Share = c(scale(test_data$Hydro_Share))
+test_data$NaturalGas_Share = c(scale(test_data$NaturalGas_Share))
+test_data$OilPetrol_Share = c(scale(test_data$OilPetrol_Share))
+test_data$Solar_Share = c(scale(test_data$Solar_Share))
+test_data$Renewables_Share = c(scale(test_data$Renewables_Share))
+test_data$Wind_Share = c(scale(test_data$Wind_Share))
+test_data$Electricity_Distrib_Loss = c(scale(test_data$Electricity_Distrib_Loss))
+test_data$Electricity_Cons = c(scale(test_data$Electricity_Cons))
+test_data$Electricity_Exports = c(scale(test_data$Electricity_Exports))
+test_data$Electricity_Imports = c(scale(test_data$Electricity_Imports))
+test_data$Non_Renewables_Share = c(scale(test_data$Non_Renewables_Share))
+
+
+
 ```
 
 ```{r}
@@ -914,7 +947,6 @@ selected_features <- rownames(coefficient_model)[coefficient_model@i[-1] + 1]
 
 selected_features
 
-str(train_data)
 ```
 
 - After the LASSO feature selection algorithm, we are just left with `region`, `Nuclear_share`, `percent_renewable_electricity`, `ratio_renew_nonrenew`, `annual_tavg`, and `charge_sttns`. 
@@ -983,116 +1015,20 @@ cat("R-squared: ", r_squared, "\n")
 
 - An $R^2$ score of around 0.4 is moderate, but we believe it is a very reasonable score because the response variable deals with a mixture of consumer behavior (income, preferences, etc.) and market conditions. These are difficult to accurately predict with just a linear model.
 
-- Therefore, we will try to use an ensemble learning algorithm next to see if we can improve on our scores. Perhaps, the underlying relationship isn't all that monotonous, which is not captured by this model.
+- Therefore, we will try to use a more advanced model next to see if we can improve on our scores. Perhaps, the underlying relationship isn't all that monotonous, which is not captured by this model.
 
 
-##### Model 2: Extreme Gradient Boosting Regressor
+##### Model 2: Stacking
 
-```{r}
+- Stacking is exactly like it sounds: we stack different models on top of one another to build a meta-model whose input is the output of other base algorithms.
 
-NMC = 50
-R_squared_all = rep(0, NMC)
-rmse_all = rep(0, NMC)
-mae_all = rep(0, NMC)
-seeds = 3431:3480
+- We first create a list of models we want to use. Namely, k-Nearest Neighbors, Support Vector Machine with a radial basis kernel, and our normal linear regression.
 
+- We chose kNN and SVM because on their own, they perform better than linear regression. Perhaps, combining them can provide a more optimized final model.
 
-for (i in 1:NMC){
-  set.seed(seeds[i])
-  # Perform cross validation
-  formula_model <- as.formula(paste("log(Total_Sales) ~ 1 +", paste(selected_features, collapse = " + ")))
-  fit_control <- trainControl(method = "cv", number = 5)
-  gbm_fit1 <- train(formula_model, data = train_data, method = "rf", trControl = fit_control, verbose = FALSE, verbosity = 0,
-                    tuneLength = 5)
-  
-  # 1. Generate predictions on the test data
-  predictions <- predict(gbm_fit1, newdata = test_data)
-  
-  # 2. Extract the actual Total_Sales values
-  actuals <- log(test_data$Total_Sales)
-  
-  # 3. Calculate performance metrics
-  
-  # RMSE
-  rmse_all[i] <- sqrt(mean((predictions - actuals)^2))
-  
-  # MAE
-  mae_all[i] <- mean(abs(predictions - actuals))
-  
-  # R-squared
-  rss <- sum((predictions - actuals)^2)  # Residual sum of squares
-  tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
-  R_squared_all[i] <- 1 - (rss / tss)
-}
+- Of course, to further improve the model, we have to perform hyperparameter tuning. Luckily for us, caretEnsemble's caretList() discretely does this for us, as specified by the tuneLength parameter.
 
-
-max(R_squared_all[R_squared_all > 0])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-set.seed(3431)
-
-# Perform cross validation
-formula_model <- as.formula(paste("log(Total_Sales) ~ 1 +", paste(selected_features, collapse = " + ")))
-fit_control <- trainControl(method = "cv", number = 5)
-gbm_fit1 <- train(formula_model, data = train_data, method = "rf", trControl = fit_control, verbose = FALSE, verbosity = 0,
-                  tuneLength = 5)
-
-# best_model_params <- gbm_fit1$bestTune
-# model_results <- gbm_fit1$results %>% 
-#   filter(eta == best_model_params$eta,
-#          max_depth == best_model_params$max_depth,
-#          gamma == best_model_params$gamma, 
-#          min_child_weight == best_model_params$min_child_weight,
-#          subsample == best_model_params$subsample,
-#          nrounds == best_model_params$nrounds,
-#          colsample_bytree == best_model_params$colsample_bytree)
-
-# gbm_fit1$results %>% 
-#   arrange(desc(Rsquared))
-
-#model_results
-```
-
-```{r}
-# SVM Radial Basis Kernel
-
-set.seed(3431)
-
-# Perform cross validation
-formula_model <- as.formula(paste("log(Total_Sales) ~ 1 +", paste(selected_features, collapse = " + ")))
-fit_control <- trainControl(method = "cv", number = 5, savePredictions = "final")
-gbm_fit1 <- train(formula_model, data = train_data, method = "svmRadial", trControl = fit_control, verbose = FALSE, verbosity = 0,
-                    tuneLength = 5)
-
-  
-gbm_fit1$bestTune
-
-# 1. Generate predictions on the test data
-predictions <- predict(gbm_fit1, newdata = test_data)
-  
-# 2. Extract the actual Total_Sales values
-actuals <- log(test_data$Total_Sales)
-sqrt(mean((predictions - actuals)^2))
-mean(abs(predictions - actuals))
-rss <- sum((predictions - actuals)^2)  # Residual sum of squares
-tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
-1 - (rss / tss)
-
-```
-
+- The caretEnsemble takes our list of base algorithms and runs a linear model on it to create a stacked model. 
 
 ```{r}
 set.seed(3431)
@@ -1102,144 +1038,62 @@ all_in_one <-
   caretList(formula_model,
             data = train_data,
             trControl = fit_control,
-            tuneLength = 5,
-            methodList=c("rf"),
             verbose = F,
-            verbosity = 0) 
+            verbosity = 0,
+            tuneList = list(svmRadial = caretModelSpec(method = "svmRadial", tuneLength = 5),
+                            knn = caretModelSpec(method = "kknn", tuneLength = 5),
+                            lm = caretModelSpec(method = "lm", tuneLength = 5))) 
 
 rbind(getTrainPerf(all_in_one$"svmRadial"),
-      getTrainPerf(all_in_one$"rf"),
-      getTrainPerf(all_in_one$"xgbTree"))
-
-str(train_data)
-str(test_data)
-```
+      getTrainPerf(all_in_one$"knn"),
+      getTrainPerf(all_in_one$"lm"))
 
 
-```{r}
-all_models_ensemble <- caretEnsemble(all_in_one)
-all_models_ensemble 
+ensemble_ctrl <- trainControl(method = "cv", repeats = 5) 
 
-summary(all_models_ensemble) # print a bit more detail
+all_models_ensemble <- caretEnsemble(all_in_one, tuneLength = 5, trControl = ensemble_ctrl)
 
+#all_models_ensemble
 
-t = test_data %>% 
-  dplyr::select(c("Total_Sales", "region", "Nuclear_Share", "percent_renewable_electricity", "ratio_renew_nonrenew",
-                  "annual_tavg", "charge_sttns"))
-
-# 1. Generate predictions on the test data
-predictions <- predict(all_models_ensemble, t)
-  
-# 2. Extract the actual Total_Sales values
-actuals <- log(test_data$Total_Sales)
-sqrt(mean((predictions - actuals)^2))
-mean(abs(predictions - actuals))
-rss <- sum((predictions - actuals)^2)  # Residual sum of squares
-tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
-1 - (rss / tss)
-
-
-library(caretEnsemble)
-```
-
-
-
-
-
-
-
-```{r}
-# Assuming the model was trained on the original Total_Sales values
-
-# 1. Generate predictions on the test data
-predictions <- predict(gbm_fit1, newdata = test_data)
-
-# 2. Extract the actual Total_Sales values
+predictions <- predict(all_models_ensemble, test_data)
 actuals <- log(test_data$Total_Sales)
 
-# 3. Calculate performance metrics
-
-# RMSE
-rmse <- sqrt(mean((predictions - actuals)^2))
-
-# MAE
-mae <- mean(abs(predictions - actuals))
-
-# R-squared
-rss <- sum((predictions - actuals)^2)  # Residual sum of squares
-tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
+mse <- sum((predictions - actuals)^2) / nrow(predictions)
+rmse <- sqrt(mse)
+mae <- mean(abs(predictions$pred - actuals))
+rss <- sum((predictions - actuals)^2) 
+tss <- sum((actuals - mean(actuals))^2)
 r_squared <- 1 - (rss / tss)
 
-# 4. Print performance metrics
-cat("Performance on Test Data:\n")
-cat("RMSE: ", rmse, "\n")
 cat("MAE: ", mae, "\n")
-cat("R-squared: ", r_squared, "\n")
-```
-
-```{r}
-# Assuming the model was trained on the original Total_Sales values
-
-# 1. Generate predictions on the test data
-predictions <- predict(gbm_fit1, newdata = validation_data)
-
-# 2. Extract the actual Total_Sales values
-actuals <- log(validation_data$Total_Sales)
-
-# 3. Calculate performance metrics
-
-# RMSE
-rmse <- sqrt(mean((predictions - actuals)^2))
-
-# MAE
-mae <- mean(abs(predictions - actuals))
-
-# R-squared
-rss <- sum((predictions - actuals)^2)  # Residual sum of squares
-tss <- sum((actuals - mean(actuals))^2)  # Total sum of squares
-r_squared <- 1 - (rss / tss)
-
-# 4. Print performance metrics
-cat("Performance on Test Data:\n")
+cat("MSE: ", mse, "\n")
 cat("RMSE: ", rmse, "\n")
-cat("MAE: ", mae, "\n")
 cat("R-squared: ", r_squared, "\n")
+
 ```
 
+- The results look promising! All goodness-of-fit metrics perform even better with our stacking model vs. our previous linear regression model. Our $R^2$ alone rose up by 35% from 0.42 to 0.57. 
+
+- While it is not quite 0.8 or 0.9, we are satisfied because, to reiterate, consumer behavior and market conditions (which are very hard to quantify) also affect total EV sales share.   
+
+- Thus, we would prefer to use this algorithm to find out, what factors are the best predictors of future EV adoption?
 
 
 
----
 
-### Using Extreme Gradient Boosting Classifier to Improve on Previous Model
 
-- Gradient boosting is a machine learning algorithm that trains multiple weak models with the ultimate aim of creating the best final model based on the aforementioned algorithms. An extreme gradient boosting classifier is a regularized form of the existing gradient-boosting algorithm.
 
-- We first perform repeated cross validation on an Extreme Gradient Boosting model to obtain the best configuration.
 
-- Next, we evaluate the model using AUC to understand how much better can this model discriminate between 1s and 0s. We also calculate the model accuracy on unseen data to obtain additional perspective on model performance. 
 
-```{r Model 2}
-set.seed(8897)
 
-# A better model - Extreme Gradient Boosting classifier
-# Adapted from: https://amirali-n.github.io/ExtremeGradientBoosting/
 
-# Perform cross validation
-fit_control <- trainControl(method = "repeatedcv", number = 3, repeats = 3)
-gbm_fit1 <- train(formula_model, data = train_outlier, method = "xgbTree", trControl = fit_control, verbose = FALSE, verbosity = 0)
+###### END #############
 
-# Understanding model performance
-predicted_proba_outlier <- predict(gbm_fit1, test_outlier, type = "prob")[, 2]
-predicted_outlier <- predict(gbm_fit1, test_outlier)
 
-auc(test_outlier$error_positive, predicted_proba_outlier) # Better AUC:  0.768
-mean(observed_predictions == predicted_outlier) # Better accuracy: 70.4%
-```
 
-- An AUC score of 0.768 and accuracy of 70.4% means that this model is a big improvement compared to the previous model. Thus, we would prefer to use this algorithm to find out when do the forecasters make underestimations/ overestimations of temperature.
 
-- Now the question is, how do we identify which variables are the most important? How do we come to understand which of those variables lead to forecast underestimations/ overestimations?
+
+
 
 - We can use the bestTune parameters from the model above to identify the best iteration when performing a cross-validated Extreme Gradient Boosting training model.
 
