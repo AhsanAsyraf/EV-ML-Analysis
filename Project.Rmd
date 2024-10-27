@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 
 # Makes sure that the required packages are properly installed; if they are not installed, R helps to install them
 # Retrieved on 10/14/23 from - https://stackoverflow.com/questions/4090169/elegant-way-to-check-for-missing-packages-and-install-them
-required_packages <- c("tidyverse", "glmnet", "tidymodels", "caret", "car", "xgboost", "Metrics", "MASS", "pdp", "usmap", "scales", "gganimate", "gifski", "patchwork", "randomForest","kernlab", "caretEnsemble", "vip")
+required_packages <- c("tidyverse", "glmnet", "tidymodels", "caret", "car", "Metrics", "MASS", "pdp", "scales", "gganimate", "gifski", "patchwork", "randomForest", "kernlab", "caretEnsemble", "vip", "gridExtra")
 new_packages <- required_packages[!(required_packages %in% installed.packages()[, "Package"])]
 if (length(new.packages)) {
   install.packages(new_packages)
@@ -19,7 +19,6 @@ if (length(new.packages)) {
 library(tidyverse)
 library(glmnet)
 library(tidymodels)
-library(xgboost)
 library(Metrics)
 library(car)
 library(caret)
@@ -33,6 +32,7 @@ library(gifski)
 library(kernlab)
 library(caretEnsemble)
 library(vip)
+library(gridExtra)
 
 
 my_theme <- theme_minimal() +
@@ -43,7 +43,7 @@ my_theme <- theme_minimal() +
     legend.text = element_text(size = 16, color = "black"),
     legend.title = element_text(
       color = "black",
-      size = 16,margin =
+      size = 16, margin =
         ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
     ),
     strip.text = element_text(size = 20, color = "black"),
@@ -372,9 +372,11 @@ charging_stations <- charging_stations %>%
 # Pivot wider
 wide_cs <- charging_stations %>%
   dplyr::select(-unit) %>%
-  pivot_wider(names_from = "powertrain", values_from = value) %>% 
-  rename(charging_sttns_fast = `Publicly available fast`,
-         charging_sttns_slow = `Publicly available slow`)
+  pivot_wider(names_from = "powertrain", values_from = value) %>%
+  rename(
+    charging_sttns_fast = `Publicly available fast`,
+    charging_sttns_slow = `Publicly available slow`
+  )
 
 
 # Data for Oil Displacement / EV Electricity Demand is almost non-existent; perhaps we can remove them later
@@ -418,7 +420,6 @@ wide_energy_prod <- energy_prod %>%
   )) %>%
   dplyr::select(-balance, -product) %>%
   pivot_wider(names_from = "variables", values_from = "total")
-
 ```
 
 
@@ -441,18 +442,20 @@ combined_data <- wide_ev %>%
   mutate(`Combustible Renewables (Net_Produce)` = ifelse(is.na(`Combustible Renewables (Net_Produce)`), 0, `Combustible Renewables (Net_Produce)`))
 
 
-combined_data = combined_data %>% 
-  rename(Coal_Share = `Coal, Peat and Manufactured Gases (Net_Produce)`,
-         Combust_Renew_Share = `Combustible Renewables (Net_Produce)`,
-         Electricity_Prod = `Electricity (Net_Produce)`,
-         Geothermal_Share = `Geothermal (Net_Produce)`,
-         Hydro_Share = `Hydro (Net_Produce)`,
-         NaturalGas_Share = `Natural Gas (Net_Produce)`,
-         Nuclear_Share = `Nuclear (Net_Produce)`,
-         OilPetrol_Share = `Oil and Petroleum Products (Net_Produce)`,
-         Solar_Share = `Solar (Net_Produce)`,
-         Renewables_Share = `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)`,
-         Wind_Share = `Wind (Net_Produce)`)
+combined_data <- combined_data %>%
+  rename(
+    Coal_Share = `Coal, Peat and Manufactured Gases (Net_Produce)`,
+    Combust_Renew_Share = `Combustible Renewables (Net_Produce)`,
+    Electricity_Prod = `Electricity (Net_Produce)`,
+    Geothermal_Share = `Geothermal (Net_Produce)`,
+    Hydro_Share = `Hydro (Net_Produce)`,
+    NaturalGas_Share = `Natural Gas (Net_Produce)`,
+    Nuclear_Share = `Nuclear (Net_Produce)`,
+    OilPetrol_Share = `Oil and Petroleum Products (Net_Produce)`,
+    Solar_Share = `Solar (Net_Produce)`,
+    Renewables_Share = `Total Renewables (Hydro, Geo, Solar, Wind, Other) (Net_Produce)`,
+    Wind_Share = `Wind (Net_Produce)`
+  )
 ```
 
 
@@ -841,23 +844,22 @@ combined_data[combined_data$country == "India", ]$annual_tavg <- c(
 
 write_csv(combined_data, "combined_data.csv")
 
-# combined_data = combined_data %>% 
+# combined_data = combined_data %>%
 #   mutate(annual_tavg = case_when(
 #     annual_tavg > 25 ~ "Hot",
 #     annual_tavg >= 16 & annual_tavg < 25 ~ "Moderate",
 #     annual_tavg < 16 ~ "Cold"
 #   ))
 # t = combined_data
-# 
+#
 # combined_data = t
 
-combined_data = combined_data %>% 
+combined_data <- combined_data %>%
   mutate(Non_Renewables_Share = Electricity_Prod - Renewables_Share) %>%
-  #mutate(fast_slow_charge_sttns = charging_sttns_fast / charging_sttns_slow) %>% 
-  mutate(charge_sttns = charging_sttns_fast + charging_sttns_slow) %>% 
+  # mutate(fast_slow_charge_sttns = charging_sttns_fast / charging_sttns_slow) %>%
+  mutate(charge_sttns = charging_sttns_fast + charging_sttns_slow) %>%
   dplyr::select(-c(charging_sttns_fast, charging_sttns_slow))
-  
-
+combined_data
 ```
 
 ```{r}
@@ -874,66 +876,63 @@ test_data <- split %>%
 
 # Feature scaling
 train_data <- train_data %>%
-  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) %>% 
+  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) %>%
   dplyr::select(country, year, Total_Sales, Total_Stocks, region, everything())
 
-train_data$Nuclear_Share = c(scale(train_data$Nuclear_Share))
-train_data$percent_renewable_electricity = c(scale(train_data$percent_renewable_electricity))
-train_data$annual_tavg = c(scale(train_data$annual_tavg))
-train_data$charge_sttns = c(scale(train_data$charge_sttns))
-train_data$ratio_renew_nonrenew = c(scale(train_data$ratio_renew_nonrenew))
-train_data$Coal_Share = c(scale(train_data$Coal_Share))
-train_data$Combust_Renew_Share = c(scale(train_data$Combust_Renew_Share))
-train_data$Electricity_Prod = c(scale(train_data$Electricity_Prod))
-train_data$Geothermal_Share = c(scale(train_data$Geothermal_Share))
-train_data$Hydro_Share = c(scale(train_data$Hydro_Share))
-train_data$NaturalGas_Share = c(scale(train_data$NaturalGas_Share))
-train_data$OilPetrol_Share = c(scale(train_data$OilPetrol_Share))
-train_data$Solar_Share = c(scale(train_data$Solar_Share))
-train_data$Renewables_Share = c(scale(train_data$Renewables_Share))
-train_data$Wind_Share = c(scale(train_data$Wind_Share))
-train_data$Electricity_Distrib_Loss = c(scale(train_data$Electricity_Distrib_Loss))
-train_data$Electricity_Cons = c(scale(train_data$Electricity_Cons))
-train_data$Electricity_Exports = c(scale(train_data$Electricity_Exports))
-train_data$Electricity_Imports = c(scale(train_data$Electricity_Imports))
-train_data$Non_Renewables_Share = c(scale(train_data$Non_Renewables_Share))
+train_data$Nuclear_Share <- c(scale(train_data$Nuclear_Share))
+train_data$percent_renewable_electricity <- c(scale(train_data$percent_renewable_electricity))
+train_data$annual_tavg <- c(scale(train_data$annual_tavg))
+train_data$charge_sttns <- c(scale(train_data$charge_sttns))
+train_data$ratio_renew_nonrenew <- c(scale(train_data$ratio_renew_nonrenew))
+train_data$Coal_Share <- c(scale(train_data$Coal_Share))
+train_data$Combust_Renew_Share <- c(scale(train_data$Combust_Renew_Share))
+train_data$Electricity_Prod <- c(scale(train_data$Electricity_Prod))
+train_data$Geothermal_Share <- c(scale(train_data$Geothermal_Share))
+train_data$Hydro_Share <- c(scale(train_data$Hydro_Share))
+train_data$NaturalGas_Share <- c(scale(train_data$NaturalGas_Share))
+train_data$OilPetrol_Share <- c(scale(train_data$OilPetrol_Share))
+train_data$Solar_Share <- c(scale(train_data$Solar_Share))
+train_data$Renewables_Share <- c(scale(train_data$Renewables_Share))
+train_data$Wind_Share <- c(scale(train_data$Wind_Share))
+train_data$Electricity_Distrib_Loss <- c(scale(train_data$Electricity_Distrib_Loss))
+train_data$Electricity_Cons <- c(scale(train_data$Electricity_Cons))
+train_data$Electricity_Exports <- c(scale(train_data$Electricity_Exports))
+train_data$Electricity_Imports <- c(scale(train_data$Electricity_Imports))
+train_data$Non_Renewables_Share <- c(scale(train_data$Non_Renewables_Share))
 
 
 test_data <- test_data %>%
-  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) %>% 
+  dplyr::select(-c(BEV_Sales, BEV_Stock, PHEV_Stock, PHEV_Sales, FCEV_Stock, FCEV_Sales)) %>%
   dplyr::select(country, year, Total_Sales, Total_Stocks, region, everything())
 
 
-test_data$Nuclear_Share = c(scale(test_data$Nuclear_Share))
-test_data$percent_renewable_electricity = c(scale(test_data$percent_renewable_electricity))
-test_data$annual_tavg = c(scale(test_data$annual_tavg))
-test_data$charge_sttns = c(scale(test_data$charge_sttns))
-test_data$ratio_renew_nonrenew = c(scale(test_data$ratio_renew_nonrenew))
-test_data$Coal_Share = c(scale(test_data$Coal_Share))
-test_data$Combust_Renew_Share = c(scale(test_data$Combust_Renew_Share))
-test_data$Electricity_Prod = c(scale(test_data$Electricity_Prod))
-test_data$Geothermal_Share = c(scale(test_data$Geothermal_Share))
-test_data$Hydro_Share = c(scale(test_data$Hydro_Share))
-test_data$NaturalGas_Share = c(scale(test_data$NaturalGas_Share))
-test_data$OilPetrol_Share = c(scale(test_data$OilPetrol_Share))
-test_data$Solar_Share = c(scale(test_data$Solar_Share))
-test_data$Renewables_Share = c(scale(test_data$Renewables_Share))
-test_data$Wind_Share = c(scale(test_data$Wind_Share))
-test_data$Electricity_Distrib_Loss = c(scale(test_data$Electricity_Distrib_Loss))
-test_data$Electricity_Cons = c(scale(test_data$Electricity_Cons))
-test_data$Electricity_Exports = c(scale(test_data$Electricity_Exports))
-test_data$Electricity_Imports = c(scale(test_data$Electricity_Imports))
-test_data$Non_Renewables_Share = c(scale(test_data$Non_Renewables_Share))
-
-
-
+test_data$Nuclear_Share <- c(scale(test_data$Nuclear_Share))
+test_data$percent_renewable_electricity <- c(scale(test_data$percent_renewable_electricity))
+test_data$annual_tavg <- c(scale(test_data$annual_tavg))
+test_data$charge_sttns <- c(scale(test_data$charge_sttns))
+test_data$ratio_renew_nonrenew <- c(scale(test_data$ratio_renew_nonrenew))
+test_data$Coal_Share <- c(scale(test_data$Coal_Share))
+test_data$Combust_Renew_Share <- c(scale(test_data$Combust_Renew_Share))
+test_data$Electricity_Prod <- c(scale(test_data$Electricity_Prod))
+test_data$Geothermal_Share <- c(scale(test_data$Geothermal_Share))
+test_data$Hydro_Share <- c(scale(test_data$Hydro_Share))
+test_data$NaturalGas_Share <- c(scale(test_data$NaturalGas_Share))
+test_data$OilPetrol_Share <- c(scale(test_data$OilPetrol_Share))
+test_data$Solar_Share <- c(scale(test_data$Solar_Share))
+test_data$Renewables_Share <- c(scale(test_data$Renewables_Share))
+test_data$Wind_Share <- c(scale(test_data$Wind_Share))
+test_data$Electricity_Distrib_Loss <- c(scale(test_data$Electricity_Distrib_Loss))
+test_data$Electricity_Cons <- c(scale(test_data$Electricity_Cons))
+test_data$Electricity_Exports <- c(scale(test_data$Electricity_Exports))
+test_data$Electricity_Imports <- c(scale(test_data$Electricity_Imports))
+test_data$Non_Renewables_Share <- c(scale(test_data$Non_Renewables_Share))
 ```
 
 ```{r}
 set.seed(3431)
 
-y = train_data$Total_Sales
-x = data.matrix(train_data[, colnames(train_data)[5:ncol(train_data)]])
+y <- train_data$Total_Sales
+x <- data.matrix(train_data[, colnames(train_data)[5:ncol(train_data)]])
 
 # LASSO - Feature selection
 cv_model <- cv.glmnet(x, y, alpha = 1)
@@ -945,7 +944,6 @@ coefficient_model <- coef(glmnet(x, y, alpha = 1, lambda = best_lambda))
 selected_features <- rownames(coefficient_model)[coefficient_model@i[-1] + 1]
 
 selected_features
-
 ```
 
 - After the LASSO feature selection algorithm, we are just left with `region`, `Nuclear_share`, `percent_renewable_electricity`, `ratio_renew_nonrenew`, `annual_tavg`, and `charge_sttns`. 
@@ -965,7 +963,6 @@ model_lm <- lm(formula_model, data = train_data) %>%
 summary(model_lm)
 
 vif(model_lm)
-
 ```
 
 - Going a step further, we also include run bi-directional stepwise selection to further nail the most significant factors. 
@@ -985,7 +982,7 @@ plot(model_lm, which = 1, main = "Model Fit")
 set.seed(3431)
 
 predictions <- predict(model_lm, newdata = test_data)
-actuals <- log(test_data$Total_Sales)  
+actuals <- log(test_data$Total_Sales)
 
 # Mean Absolute Error (MAE)
 mae <- mean(abs(predictions - actuals))
@@ -997,7 +994,7 @@ mse <- mean((predictions - actuals)^2)
 rmse <- sqrt(mse)
 
 # R^2
-rss <- sum((predictions - actuals)^2)  
+rss <- sum((predictions - actuals)^2)
 tss <- sum((actuals - mean(actuals))^2)
 r_squared <- 1 - (rss / tss)
 
@@ -1036,20 +1033,23 @@ fit_control <- trainControl(method = "cv", number = 5, savePredictions = "final"
 
 all_in_one <-
   caretList(formula_model,
-            data = train_data,
-            trControl = fit_control,
-            verbose = F,
-            verbosity = 0,
-            tuneList = list(svmRadial = caretModelSpec(method = "svmRadial", tuneLength = 5),
-                            knn = caretModelSpec(method = "kknn", tuneLength = 5),
-                            ridge = caretModelSpec(method = "ridge", tuneLength = 5))) 
+    data = train_data,
+    trControl = fit_control,
+    verbose = F,
+    verbosity = 0,
+    tuneList = list(
+      svmRadial = caretModelSpec(method = "svmRadial", tuneLength = 5),
+      knn = caretModelSpec(method = "kknn", tuneLength = 5),
+      ridge = caretModelSpec(method = "ridge", tuneLength = 5)
+    )
+  )
 
 
-ensemble_ctrl <- trainControl(method = "repeatedcv", number = 3, repeats = 5, savePredictions = "final") 
+ensemble_ctrl <- trainControl(method = "repeatedcv", number = 3, repeats = 5, savePredictions = "final")
 
 all_models_ensemble <- caretStack(all_in_one, method = "glm", tuneLength = 5, trControl = ensemble_ctrl)
 
-#all_models_ensemble
+# all_models_ensemble
 
 predictions <- predict(all_models_ensemble, test_data)
 actuals <- log(test_data$Total_Sales)
@@ -1057,7 +1057,7 @@ actuals <- log(test_data$Total_Sales)
 mse <- sum((predictions - actuals)^2) / nrow(predictions)
 rmse <- sqrt(mse)
 mae <- mean(abs(predictions$pred - actuals))
-rss <- sum((predictions - actuals)^2) 
+rss <- sum((predictions - actuals)^2)
 tss <- sum((actuals - mean(actuals))^2)
 r_squared <- 1 - (rss / tss)
 
@@ -1065,7 +1065,6 @@ cat("MAE: ", mae, "\n")
 cat("MSE: ", mse, "\n")
 cat("RMSE: ", rmse, "\n")
 cat("R-squared: ", r_squared, "\n")
-
 ```
 
 - The results look promising! All goodness-of-fit metrics perform even better with our stacking model vs. our previous linear regression model. Our $R^2$ alone rose up by 38% from 0.42 to 0.58. 
@@ -1078,7 +1077,6 @@ cat("R-squared: ", r_squared, "\n")
 ##### Feature Importance and PDP Plots
 
 ```{r, fig.height = 5, fig.width = 8}
-
 # Since our stacking model does not provide a varImp() function straight out-of-the-box, we pivot by calculating individual
 # variable importance and then average it out
 pfun <- function(object, newdata) {
@@ -1086,73 +1084,66 @@ pfun <- function(object, newdata) {
   predict(object, newdata = newdata)
 }
 
-vi_1 = vi(all_in_one$svmRadial,
+vi_1 <- vi(all_in_one$svmRadial,
   method = "permute", nsim = 10,
   target = "Total_Sales", metric = "RMSE",
-  pred_wrapper = pfun, 
+  pred_wrapper = pfun,
   train = train_data
-) %>% 
+) %>%
   dplyr::select(-StDev)
 
-vi_2 = vi(all_in_one$knn,
+vi_2 <- vi(all_in_one$knn,
   method = "permute", nsim = 10,
   target = "Total_Sales", metric = "RMSE",
-  pred_wrapper = pfun, 
+  pred_wrapper = pfun,
   train = train_data
-) %>% 
-  rename(Importance_2 = Importance) %>% 
+) %>%
+  rename(Importance_2 = Importance) %>%
   dplyr::select(-StDev)
 
-vi_3 = vi(all_in_one$ridge,
+vi_3 <- vi(all_in_one$ridge,
   method = "permute", nsim = 10,
   target = "Total_Sales", metric = "RMSE",
-  pred_wrapper = pfun, 
+  pred_wrapper = pfun,
   train = train_data
-) %>% 
-  rename(Importance_3 = Importance) %>% 
+) %>%
+  rename(Importance_3 = Importance) %>%
   dplyr::select(-StDev)
 
 
-feature_importance = vi_1 %>% 
-  inner_join(vi_2, by = "Variable") %>% 
-  inner_join(vi_3, by = "Variable") %>% 
-  mutate(Importance = (Importance + Importance_2 + Importance_3) / 3)  %>% 
-  dplyr::select(-Importance_2, -Importance_3) %>% 
-  filter(Importance > 0) %>% 
-  mutate(Importance = round(Importance / sum(Importance) * 100, 2)) %>% 
+feature_importance <- vi_1 %>%
+  inner_join(vi_2, by = "Variable") %>%
+  inner_join(vi_3, by = "Variable") %>%
+  mutate(Importance = (Importance + Importance_2 + Importance_3) / 3) %>%
+  dplyr::select(-Importance_2, -Importance_3) %>%
+  filter(Importance > 0) %>%
+  mutate(Importance = round(Importance / sum(Importance) * 100, 2)) %>%
   mutate(Variable = replace(Variable, Variable == "percent_renewable_electricity", "Renewable Energy / Electricity (%)")) %>%
-  mutate(Variable = replace(Variable, Variable == "annual_tavg", "Annual Mean Temp.")) %>% 
-  mutate(Variable = replace(Variable, Variable == "region", "Region")) %>% 
-  mutate(Variable = replace(Variable, Variable == "charge_sttns", "Charge Stations")) %>% 
-  mutate(Variable = replace(Variable, Variable == "Nuclear_Share", "Nuclear (Electricity Production)")) %>% 
+  mutate(Variable = replace(Variable, Variable == "annual_tavg", "Annual Mean Temp.")) %>%
+  mutate(Variable = replace(Variable, Variable == "region", "Region")) %>%
+  mutate(Variable = replace(Variable, Variable == "charge_sttns", "Charge Stations")) %>%
+  mutate(Variable = replace(Variable, Variable == "Nuclear_Share", "Nuclear (Electricity Production)")) %>%
   mutate(Variable = replace(Variable, Variable == "ratio_renew_nonrenew", "Renewable-to-Nonrenewable"))
-  
+
 # Plot feature importance
-feature_importance %>% 
+feature_importance %>%
   ggplot(aes(y = reorder(Variable, -Importance, desc), x = Importance)) +
   geom_col(color = "black", fill = "deepskyblue4", alpha = 0.8) +
   labs(y = "", title = "Feature Importance", x = "Importance (%)") +
   xlim(c(0, 50)) +
   scale_x_continuous(expand = c(0, 0, 0.2, 0.1))
-
 ```
 
 
-------------- END ---------------------------
+- It looks like `Renewable Energy / Electricity (%)` is the most important feature, followed by `Annual Mean Temp.`, `Region`, `Charge Stations`, `Nuclear (Electricity Production)` and `Renewable-to-Nonrenewable` . Let us do further analysis to understand how these features contribute to EV adoption.
 
+- Here, we can use Partial Dependence Plots (PDPs). 
 
-
-- It looks like `high_or_low`, `longitude`, `latitude`, `elevation_change_four`, `elevation`, `wind`, a Sunny `forecast_outlook` and `month` of February, January, and March are the most important features. Let us do further analysis to understand how these features contribute to overestimation / underestimation of forecast temperatures.  
-
-- Here, we use a Partial Dependence Plot (PDP) to interpret how these important features contribute to the direction of our y (error_positive).
-
-- For further understanding, check out [https://rpubs.com/vishal1310/QuickIntroductiontoPartialDependencePlots] by Vishal Sharma.
-
-```{r, fig.height = 6, fig.width = 12}
+```{r, fig.height = 7, fig.width = 10}
 pdp_list <- list()
 
-for (i in xgb_importance$Feature[1:10]) {
-  pdp_obj <- partial(xgb_model,
+for (i in vi_2$Variable[1:6]) {
+  pdp_obj <- partial(all_models_ensemble,
     pred.var = c(i),
     train = train_data,
     grid.resolution = 100
@@ -1161,654 +1152,322 @@ for (i in xgb_importance$Feature[1:10]) {
   pdp_list[[i]] <- pdp_obj
 }
 
-# Plotting each variable's effects on our y value (error_positive)
-p1 <- autoplot(pdp_list[[1]], color = "cyan", size = 2)
-p2 <- autoplot(pdp_list[[2]], color = "red", size = 2)
-p3 <- autoplot(pdp_list[[3]], color = "cyan", size = 2)
-p4 <- autoplot(pdp_list[[4]], color = "red", size = 2)
-p5 <- autoplot(pdp_list[[5]], color = "cyan", size = 2)
-p6 <- autoplot(pdp_list[[6]], color = "cyan", size = 2)
-p7 <- autoplot(pdp_list[[7]], color = "cyan", size = 2)
-p8 <- autoplot(pdp_list[[8]], color = "red", size = 2)
-p9 <- autoplot(pdp_list[[9]], color = "cyan", size = 2)
-p10 <- autoplot(pdp_list[[10]], color = "cyan", size = 2)
+plot_1 <- pdp_list[[1]] %>%
+  rename(`Renewable Energy / Electricity (%)` = percent_renewable_electricity) %>%
+  rename(`Predicted EV Sales Share` = yhat) %>%
+  ggplot(aes(x = `Renewable Energy / Electricity (%)`, y = `Predicted EV Sales Share`)) +
+  geom_line(color = "deepskyblue4", size = 2, alpha = 0.8) +
+  scale_x_continuous(sec.axis = dup_axis()) +
+  theme(
+    axis.text = element_text(size = 13),
+    axis.text.x.top = element_blank(),
+    axis.title.x.bottom = element_blank(),
+    axis.title = element_text(size = 15),
+    title = element_text(size = 15),
+    legend.text = element_text(size = 13),
+    legend.title = element_text(
+      size = 15, margin =
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+    )
+  ) +
+  labs(y = "Pred. EV Sales Share")
 
-grid.arrange(p1, p2, p3, p4, p5,
-  p6, p7, p8, p9, p10,
-  ncol = 3, top = "How the 10 Most Important Features Affect Overestimation/Underestimation\n(Red = Tends to Higher yhat          Blue = Tends to Lower yhat)"
-)
+plot_2 <- pdp_list[[2]] %>%
+  rename(`Annual Mean Temp.` = annual_tavg) %>%
+  rename(`Predicted EV Sales Share` = yhat) %>%
+  ggplot(aes(x = `Annual Mean Temp.`, y = `Predicted EV Sales Share`)) +
+  geom_line(color = "orangered2", size = 2, alpha = 0.8) +
+  labs(y = "") +
+  scale_x_continuous(sec.axis = dup_axis()) +
+  theme(
+    axis.text = element_text(size = 13),
+    axis.text.x.top = element_blank(),
+    axis.title.x.bottom = element_blank(),
+    axis.title = element_text(size = 15),
+    title = element_text(size = 15),
+    legend.text = element_text(size = 13),
+    legend.title = element_text(
+      size = 15, margin =
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+    )
+  )
+
+plot_3 <- pdp_list[[3]] %>%
+  rename(Region = region) %>%
+  rename(`Predicted EV Sales Share` = yhat) %>%
+  mutate(region = row_number()) %>%
+  ggplot(aes(x = region, y = `Predicted EV Sales Share`)) +
+  geom_col(fill = "deepskyblue4", color = "black", alpha = 0.8) +
+  geom_hline(yintercept = 0, alpha = 0.8) +
+  labs(y = "", x = "Region") +
+  scale_x_continuous(sec.axis = dup_axis(), breaks = 1:5, labels = pdp_list[[3]]$region) +
+  theme(
+    axis.text = element_text(size = 13),
+    axis.text.x.top = element_blank(),
+    axis.title.x.bottom = element_blank(),
+    axis.title = element_text(size = 15),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    title = element_text(size = 15),
+    legend.text = element_text(size = 13),
+    legend.title = element_text(
+      size = 15, margin =
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+    )
+  )
+
+plot_4 <- pdp_list[[4]] %>%
+  rename(`Charge Stations` = charge_sttns) %>%
+  rename(`Predicted EV Sales Share` = yhat) %>%
+  ggplot(aes(x = `Charge Stations`, y = `Predicted EV Sales Share`)) +
+  geom_line(color = "orangered2", size = 2, alpha = 0.8) +
+  scale_x_continuous(sec.axis = dup_axis()) +
+  theme(
+    axis.text = element_text(size = 13),
+    axis.text.x.top = element_blank(),
+    axis.title.x.bottom = element_blank(),
+    axis.title = element_text(size = 15),
+    title = element_text(size = 15),
+    legend.text = element_text(size = 13),
+    legend.title = element_text(
+      size = 15, margin =
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+    )
+  ) +
+  labs(y = "Pred. EV Sales Share")
+
+plot_5 <- pdp_list[[5]] %>%
+  rename(`Nuclear (Electricity Production)` = Nuclear_Share) %>%
+  rename(`Predicted EV Sales Share` = yhat) %>%
+  ggplot(aes(x = `Nuclear (Electricity Production)`, y = `Predicted EV Sales Share`)) +
+  geom_line(color = "deepskyblue4", size = 2, alpha = 0.8) +
+  labs(y = "") +
+  scale_x_continuous(sec.axis = dup_axis()) +
+  theme(
+    axis.text = element_text(size = 13),
+    axis.text.x.top = element_blank(),
+    axis.title.x.bottom = element_blank(),
+    axis.title = element_text(size = 15),
+    title = element_text(size = 15),
+    legend.text = element_text(size = 13),
+    legend.title = element_text(
+      size = 15, margin =
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+    )
+  )
+
+
+plot_6 <- pdp_list[[6]] %>%
+  rename(`Renewable-to-Nonrenewable` = ratio_renew_nonrenew) %>%
+  rename(`Predicted EV Sales Share` = yhat) %>%
+  ggplot(aes(x = `Renewable-to-Nonrenewable`, y = `Predicted EV Sales Share`)) +
+  geom_line(color = "orangered2", size = 2, alpha = 0.8) +
+  labs(y = "") +
+  scale_x_continuous(sec.axis = dup_axis()) +
+  theme(
+    axis.text = element_text(size = 13),
+    axis.text.x.top = element_blank(),
+    axis.title.x.bottom = element_blank(),
+    axis.title = element_text(size = 15),
+    axis.title.x = element_text(size = 15),
+    title = element_text(size = 15),
+    legend.text = element_text(size = 13),
+    legend.title = element_text(
+      size = 15, margin =
+        ggplot2::margin(t = 0, r = 20, b = 0, l = 0, unit = "pt")
+    )
+  )
+
+
+(plot_1 + plot_2 + plot_3) / (plot_4 + plot_5 + plot_6) +
+  plot_annotation(title = "How the 6 Most Important Features Affect Total EV Sales Share")
 ```
 
-- From the graph above, we can see that forecasters, on average, tend to make overestimations when:
-  - the location has higher `longitude` and lower `latitude` 
-  - the forecast is for high temperature 
-  - the location has extremely high or lower `elevation_change_four`
-  - the location has medium-to-high `elevation` 
-  - the `wind` speed is higher or extremely low 
-  
-- In contrast, we can see that forecasters tend to make underestimations when:
-  - the forecast is for low temperature  
-  - the location has lower `longitude`
-  - the location has high `elevation_change_four`
-  - the location has extremely high `elevation` 
-  - the forecast is made on the `month` of January, February, or March (March has minimal effect on underestimations)
-  - the `forecast_outlook` is Sunny (Sunny also has minimal effect on underestimations)
+- The PDP plots reveal the direction of the relationship between the EV sales share predictors and the response.
+
+- From the graph above, we can see that EV sales share mainly rises when:
+  - the percentage of renewable energy as part of total electricity production is high
+  - the annual mean temperature is low
+  - the country is situated in Europe (and also Oceania)
+  - there are many charging station infrastructure (regardless of speed of charging)
+  - the ratio of renewable-to-nonrenewable energy is high
+
+- The `Nuclear (Electricity Production)` variable exhibits one of the more complex relationship. Too high then there is no impact to EV sales share, too low then there is a negative impact on EV adoption.
+
+- Now that the importance of the features and its influence on EV adoption has been revealed, let's charge onwards to our final task: to unearth the countries that are best positioned to embrace the transition to EVs.
+
+
+##### Countries best positioned to embrace the transition to EVs
+
+- We use multiple methods to answer this: our own scoring and K-means clustering.
+
+###### Method 1: Scoring 
 
 ```{r}
-# Splitting into overestimation and underestimation data
-positive_data <- outlier_weather %>%
-  filter(pred_error >= 0)
-
-negative_data <- outlier_weather %>%
-  filter(pred_error < 0)
-
-
-# Nailing our main point
-
-temp_outlier <- outlier_weather %>%
-  mutate(estimations = ifelse(pred_error >= 0, "Over-", "Under-")) %>%
-  mutate(estimations = as.factor(estimations))
-
-# 1. Proving high_or_low effects on estimation
-temp_outlier %>%
-  count(high_or_low, estimations) %>%
-  group_by(high_or_low) %>%
-  mutate(total = sum(n), proportion = n / total) %>%
-  # arrange(estimations) %>%
-  dplyr::select(-n, -total)
-
-
-# 2. Proving longitude / latitude effects on estimation
-
-# Longitude: Overestimations are made when longitude is higher. In contrast, underestimations tend to happen when longitude is lower
-# Latitude: Overestimations are made when latitude is lower
-negative_data %>%
-  summarize(lon_under = mean(lon), lat_under = mean(lat))
-
-positive_data %>%
-  summarize(lon_over = mean(lon), lat_over = mean(lat))
-
-ggplot(positive_data, aes(x = region)) +
-  geom_bar(fill = "red", color = "black") +
-  xlab("Region") +
-  ylab("Count") +
-  ggtitle("Proving that Overestimations Come from High Longitude, Low Latitude Areas")
-
-positive_data %>%
-  filter(region == "South") %>%
-  count(state) %>%
-  slice_max(n = 3, order_by = n)
-
-ggplot(negative_data, aes(x = region)) +
-  geom_bar(fill = "cyan", color = "black") +
-  xlab("Region") +
-  ylab("Count") +
-  ggtitle("Proving that Underestimations Come From Low Longitude Areas")
-
-negative_data %>%
-  filter(region == "West") %>%
-  count(state) %>%
-  slice_max(n = 3, order_by = n)
-
-states_over <- c("Texas", "North Carolina", "West Virginia")
-states_under <- c("Alaska", "Colorado", "Wyoming")
-usa <- us_map(regions = "states")
-all_states <- usa %>%
-  distinct(full) %>%
-  pull(full)
-usa <- usa %>%
-  mutate(estimation = case_when(
-    full %in% states_over ~ "over",
-    full %in% states_under ~ "under",
-    .default = "na"
-  )) %>%
-  group_by(abbr) %>%
-  mutate(centroid_x = mean(x), centroid_y = mean(y)) %>%
-  ungroup()
-
-# Convert XY coordinates to lat/lon (Adapted from https://stackoverflow.com/questions/59183384/how-to-convert-x-and-y-coordinates-into-latitude-and-longitude)
-# Convert usa data to sf object
-usa_sf <- st_as_sf(usa, coords = c("x", "y"), crs = usmap_crs())
-
-# Transform CRS to EPSG:4326 (4326 is the most commonly used CRS to translate XY-coordinates to longitude/latitude degrees)
-usa_latlon <- st_transform(usa_sf, crs = 4326)
-
-# Extract longitude and latitude after transformation
-usa_latlon <- usa_latlon %>%
+score = combined_data %>% 
+  dplyr::select(country, region, year, Total_Sales, percent_renewable_electricity, annual_tavg, charge_sttns, Nuclear_Share, ratio_renew_nonrenew) %>% 
+  mutate_at(c("percent_renewable_electricity", "annual_tavg", "charge_sttns", "Nuclear_Share", "ratio_renew_nonrenew"), scale) %>% 
+  mutate(region_based_scores = 
+           case_when(
+             region == "Europe" ~ 0.5,
+             region == "Oceania" ~ 0.4,
+             region == "North America" ~ 0.3,
+             region == "Asia" ~ 0.2,
+             region == "South America" ~ 0.1
+           )) %>% 
   mutate(
-    lon = st_coordinates(usa_latlon)[, 1],
-    lat = st_coordinates(usa_latlon)[, 2]
-  )
+    composite_scores = 
+      (0.39 * percent_renewable_electricity) +
+      (- 0.23 * annual_tavg) +
+      (0.2 * region_based_scores) +
+      (0.11 * charge_sttns) +
+      (0.04 * Nuclear_Share) +
+      (0.03 * ratio_renew_nonrenew)) %>% 
+  arrange(desc(composite_scores)) %>% 
+  group_by(country, region) %>% 
+  mutate(`Highest Score` = max(composite_scores), `Mean Score` = mean(composite_scores)) %>% 
+  ungroup() %>% 
+  filter(composite_scores > 0.5) %>% 
+  group_by(country, region) %>% 
+  dplyr::select(country, region, year, `Highest Score`, `Mean Score`) %>% 
+  mutate(`Ready Since` = min(year)) %>% 
+  dplyr::select(-year) %>% 
+  distinct() %>% 
+  rename(Country = country) %>% 
+  rename(Region = region) %>%
+  ungroup() %>% 
+  arrange(desc(`Mean Score`)) %>% 
+  dplyr::select(Country, Region, `Ready Since`, everything())
 
-# Doing the same for centroids
-centroid_usa_sf <- st_as_sf(usa, coords = c("centroid_x", "centroid_y"), crs = usmap_crs())
-centroid_usa_latlon <- st_transform(centroid_usa_sf, crs = 4326)
-centroid_usa_latlon <- centroid_usa_latlon %>%
-  mutate(
-    centroid_lon = st_coordinates(centroid_usa_latlon)[, 1],
-    centroid_lat = st_coordinates(centroid_usa_latlon)[, 2]
-  ) %>%
-  dplyr::select(centroid_lon, centroid_lat)
+score
+```
+  
 
-usa_latlon$centroid_lon <- centroid_usa_latlon$centroid_lon
-usa_latlon$centroid_lat <- centroid_usa_latlon$centroid_lat
+###### Method 2: Clustering
 
-# TX, WV, and NC all fall within the same latitude band (30N - 40N), and they have higher longitude than the states with
-# underestimated temperatures (said another way, AK, CO, and WY are all to the left of the top states with overestimated temperatures)
-ggplot(usa_latlon, aes(x = lon, y = lat, group = group, fill = factor(estimation))) +
-  geom_polygon(color = "black") +
-  geom_text(aes(x = centroid_lon, y = centroid_lat, label = abbr), check_overlap = TRUE) +
-  scale_fill_manual(values = c("white", "red", "cyan"), guide = "none") +
-  labs(
-    title = "Top US States in terms of Overestimations and Underestimations",
-    subtitle = "Blue = Underestimation    Red = Overestimation"
-  ) +
-  theme(panel.background = element_rect(color = "BLACK", fill = "GRAY")) +
-  xlab("Longitude") +
-  ylab("Latitude")
+```{r, fig.width = 12, fig.height = 6}
 
+set.seed(6969)
 
-# 3. Proof for elevation_change_four
-quantile(temp_outlier$elevation_change_four, probs = seq(0, 1, 0.2))
-
-over_elev_4 <- temp_outlier %>%
-  group_by(estimations) %>%
-  mutate(bin_elev_4 = case_when(
-    elevation_change_four >= 2.63 & elevation_change_four < 26.11 ~ "[2.63, 26.11)",
-    elevation_change_four >= 26.11 & elevation_change_four < 42.55 ~ "[26.11, 42.55)",
-    elevation_change_four >= 42.55 & elevation_change_four < 93.20 ~ "[42.55, 93.20)",
-    elevation_change_four >= 79.31 & elevation_change_four < 135.88 ~ "[93.20, 135.88)",
-    elevation_change_four >= 135.88 ~ "[135.88, inf)",
-  )) %>%
-  count(bin_elev_4) %>%
-  arrange(desc(bin_elev_4)) %>%
-  mutate(classification = case_when(
-    bin_elev_4 == "[2.63, 26.11)" ~ "extremely low",
-    bin_elev_4 == "[26.11, 42.55)" ~ "low",
-    bin_elev_4 == "[42.55, 93.20)" ~ "medium",
-    bin_elev_4 == "[93.20, 135.88)" ~ "high",
-    bin_elev_4 == "[135.88, inf)" ~ "extremely high",
-  )) %>%
-  filter(!(classification == "medium")) %>% # Since medium values are insignificant
-  mutate(
-    classification =
-      fct_relevel(
-        classification,
-        c(
-          "extremely low", "low",
-          "medium", "high", "extremely high"
-        )
-      )
-  )
-
-# Disregarding the medium values (since they do not influence y-hat as per the PDP plot), the graph proves that weathermen tend to overestimate
-# temperatures when elevation_change_four is lower / extremely high, and underestimate temperatures when elevation_change_four is high
-over_elev_4 %>%
-  ggplot(aes(x = classification, y = n, fill = estimations, color = estimations)) +
-  geom_col(position = position_dodge2(preserve = "single")) +
-  scale_fill_manual(values = c("red", "cyan")) +
-  scale_color_manual(values = c("black", "black")) +
-  xlab("Elevation Change Four") +
-  ylab("Count") +
-  ggtitle("Proving that Weathermen Tend to Overestimate Temperature \nwhen Elevation Change Four are Lower/Extremely High and\nUnderestimate when High")
+fit_cluster <- combined_data %>% 
+  dplyr::select(country, region, year, Total_Sales, percent_renewable_electricity, annual_tavg, charge_sttns, Nuclear_Share, ratio_renew_nonrenew)  %>% 
+  bind_cols(
+    predict(dummyVars("~ region", data = combined_data), newdata = combined_data) %>%
+      as.data.frame()
+  ) %>% 
+  dplyr::select(- c(region, country, year, Total_Sales)) %>% 
+  mutate_at(c("percent_renewable_electricity", "annual_tavg", "charge_sttns", "Nuclear_Share", "ratio_renew_nonrenew",
+              "regionAsia", "regionEurope", "regionNorth America", "regionOceania", "regionSouth America"), scale) %>% 
+  kmeans(centers = 3)
 
 
-# 4. Proof for elevation
-quantile(temp_outlier$elevation, probs = seq(0, 1, 0.2))
+clusters <- combined_data %>% 
+  dplyr::select(country, region, year, Total_Sales, percent_renewable_electricity, annual_tavg, charge_sttns, Nuclear_Share, ratio_renew_nonrenew)  %>% 
+  bind_cols(data.frame(fit_cluster$cluster)) %>%  
+  rename(Cluster = fit_cluster.cluster)
 
-proof_elev <- temp_outlier %>%
-  group_by(estimations) %>%
-  mutate(bin_elevation = case_when(
-    elevation >= 1.32 & elevation < 108.44 ~ "[1.32, 108.44)",
-    elevation >= 108.44 & elevation < 190.93 ~ "[108.44, 190.93)",
-    elevation >= 190.93 & elevation < 276.97 ~ "[190.93, 276.97)",
-    elevation >= 276.97 & elevation < 1117.24 ~ "[276.97, 1117.24)",
-    elevation >= 1117.24 ~ "[1117.24, inf)",
-  )) %>%
-  count(bin_elevation) %>%
-  mutate(classification = case_when(
-    bin_elevation == "[1.32, 108.44)" ~ "extremely low",
-    bin_elevation == "[108.44, 190.93)" ~ "low",
-    bin_elevation == "[190.93, 276.97)" ~ "medium",
-    bin_elevation == "[276.97, 1117.24)" ~ "high",
-    bin_elevation == "[1117.24, inf)" ~ "extremely high",
-  )) %>%
-  filter(!(classification %in% c("extremely low", "low"))) %>%
-  mutate(
-    classification =
-      fct_relevel(
-        classification,
-        c(
-          "extremely low", "low",
-          "medium", "high", "extremely high"
-        )
-      )
-  )
-
-# Disregarding the extremely low-low values (since they do not influence y-hat as per the PDP plot),
-# the graph proves that overestimations are usually made when elevation is medium-high and temperatures are usually underestimated when elevation is extremely high
-proof_elev %>%
-  ggplot(aes(x = classification, y = n, fill = estimations, color = estimations)) +
-  geom_col(position = position_dodge2(preserve = "single")) +
-  scale_fill_manual(values = c("red", "cyan")) +
-  scale_color_manual(values = c("black", "black")) +
-  xlab("Elevation") +
-  ylab("Count") +
-  ggtitle("Proving that Overestimations are Usually Made when Elevation is Medium-High \nand Underestimations when Elevation is Extremely High")
+centroids <- data.frame(fit_cluster$centers) %>%
+  rownames_to_column("cluster") %>% 
+  pivot_longer(-cluster, names_to = "Feature") %>% 
+  mutate(Feature = replace(Feature, Feature == "percent_renewable_electricity", "Renewable Energy / Electricity (%)")) %>%
+  mutate(Feature = replace(Feature, Feature == "annual_tavg", "Annual Mean Temp.")) %>%
+  mutate(Feature = replace(Feature, Feature == "regionAsia", "Region: Asia")) %>%
+  mutate(Feature = replace(Feature, Feature == "regionEurope", "Region: Europe")) %>%
+  mutate(Feature = replace(Feature, Feature == "regionOceania", "Region: Oceania")) %>%
+  mutate(Feature = replace(Feature, Feature == "regionNorth.America", "Region: NA")) %>%
+  mutate(Feature = replace(Feature, Feature == "regionSouth.America", "Region: SA")) %>%
+  mutate(Feature = replace(Feature, Feature == "charge_sttns", "Charge Stations")) %>%
+  mutate(Feature = replace(Feature, Feature == "Nuclear_Share", "Nuclear (Electricity Production)")) %>%
+  mutate(Feature = replace(Feature, Feature == "ratio_renew_nonrenew", "Renewable-to-Nonrenewable")) %>% 
+  mutate(Feature = forcats::fct(Feature, levels = 
+                                  c("Renewable Energy / Electricity (%)",
+                                    "Annual Mean Temp.",
+                                    "Region: Europe",
+                                    "Region: Oceania",
+                                    "Region: NA",
+                                    "Region: Asia",
+                                    "Region: SA",
+                                    "Charge Stations",
+                                    "Nuclear (Electricity Production)",
+                                    "Renewable-to-Nonrenewable"
+                                    ))) %>% 
+  mutate(Feature = forcats::fct_rev(Feature))
 
 
-# 5. Proving that based on outlier data and feature importance, a lot of underestimated predictions are made in January, February, and March
-negative_data %>%
-  count(month) %>%
-  ggplot(aes(x = month, y = n)) +
-  geom_col(color = "black", fill = "cyan") +
-  xlab("Month") +
-  ylab("Count") +
-  ggtitle("Proving that Weathermen Underestimates Temperature in\nJanuary, February, and March")
+ggplot(centroids) +
+  geom_col(aes(value, Feature), width = 1, color = "black", fill = "orangered2", alpha = 0.8) +
+  facet_wrap(~ reorder(cluster, value)) +
+  labs(y = "", x = "Cluster Means", title = "Clusters")
 
 
-# 6. Proof for wind speed
-quantile(temp_outlier$wind, probs = seq(0, 1, 0.2))
-
-higher_wind <- temp_outlier %>%
-  group_by(estimations) %>%
-  mutate(bin_wind = case_when(
-    wind >= 2.17 & wind < 2.80 ~ "[2.17, 2.80)",
-    wind >= 2.80 & wind < 3.24 ~ "[2.80, 3.24)",
-    wind >= 3.24 & wind < 3.79 ~ "[3.24, 3.79)",
-    wind >= 3.79 & wind < 4.33 ~ "[3.79, 4.33)",
-    wind >= 4.33 ~ "[4.33, inf)",
-  )) %>%
-  count(bin_wind) %>%
-  mutate(classification = case_when(
-    bin_wind == "[2.17, 2.80)" ~ "extremely low",
-    bin_wind == "[2.80, 3.24)" ~ "low",
-    bin_wind == "[3.24, 3.79)" ~ "medium",
-    bin_wind == "[3.79, 4.33)" ~ "high",
-    bin_wind == "[4.33, inf)" ~ "extremely high",
-  )) %>%
-  filter(!(classification %in% c("low", "medium"))) %>%
-  mutate(
-    classification =
-      fct_relevel(
-        classification,
-        c(
-          "extremely low", "low",
-          "medium", "high", "extremely high"
-        )
-      )
-  )
-
-# Disregarding the low-medium values (since they do not influence y-hat as per the PDP plot), we can see that temperature overestimations tend to happen more in
-# extremely low / higher wind speed conditions
-higher_wind %>%
-  ggplot(aes(x = classification, y = n, fill = estimations, color = estimations)) +
-  geom_col(position = position_dodge2(preserve = "single")) +
-  scale_fill_manual(values = c("red", "cyan")) +
-  scale_color_manual(values = c("black", "black")) +
-  xlab("Wind Speed") +
-  ylab("Count") +
-  ggtitle("Proving that Weathermen Overestimates Temperature \nin Extremely Low/Higher Wind Speed Conditions")
 ```
 
-- A higher `latitude` seems to not have any significant contributions to underestimations as the line mostly hovers above yhat = 0.
 
-- The irregular influences of `elevation` / `elevation_change_four` warrant further analysis. Nonetheless, we are quite happy that we are able to identify some features to answer the question of overestimation / underestimation.
+```{r}
+clusters  %>% 
+  mutate(Cluster = as.factor(Cluster)) %>%
+  filter(Cluster == "1") %>% 
+  group_by(country, region) %>% 
+  summarize(`Ready Since` = min(year)) %>% 
+  rename(Country = country) %>% 
+  rename(Region = region)
+```
+
+- Both methods agree very well with each other! That's great success!
+
+- The countries that are best positioned to embrace the transition to EVs are:
+  - Iceland
+  - Norway
+  - Canada
+  - Austria
+  - New Zealand
+  - Sweden
+  - Switzerland
+  - Denmark
+  - China
+  - Finland
+
+- An interesting observation is that all Scandinavian countries (in our available data) are included in the list above. This makes sense, because they are all moving towards carbon neutral nations, especially Norway (slated to be by 2030).
+
+- Thus, one of the ways to achieve such goal is to use EVs, as they are greener than normal cars.
+
+- One last thing, let's visualize this finding:
+
+```{r, fig.width = 8}
+
+best_countries <- combined_data %>%
+  dplyr::select(country, region) %>% 
+  distinct() %>% 
+  mutate(Readiness = case_when(
+    country %in% score$Country ~ "Ready",
+    .default = "Not Quite Ready"
+  ))
+  
+base_map <- world %>%
+  ggplot(aes(x = long, y = lat, group = group)) +
+  geom_polygon(color = "black", fill = "white") +
+  theme(
+    axis.text = element_blank()
+  ) +
+  labs(x = "", y = "")
+
+ev_transition <- world %>%
+  inner_join(best_countries, by = c("region" = "country"))
+
+base_map +
+  geom_polygon(data = ev_transition, aes(
+    x = long, y = lat, group = group,
+    fill = Readiness
+  ), alpha = 0.8) +
+  scale_fill_manual(values = c("orangered2", "deepskyblue4")) +
+  labs(fill = "") +
+  theme(legend.position = "bottom") +
+  ggtitle("Readiness to Transition to EVs",
+    subtitle = "As of 2021"
+  )
+
+
+
+```
+
 
 ---
-
-### Factors contributing to Most Accurate Predictions
-
-- We now turn our attention on answering, when do forecasters make more accurate predictions?
-
-- It is important to understand here that we want to identify the factors that make up the most accurate predictions, not just accurate. So, first we will gather only accurate data then we unearth those factors.
-
-- Before pushing on, it is important to understand which data points do we consider as accurate predictions. When analyzing the outliers, we only look at the points to the right/ left of the whiskers. We consider them to be overestimations/ underestimations. Thus, in this context, we define accurate predictions as the data points within the boxplot, inclusive of the whiskers. 
-
-```{r}
-accurate_weather <- weather[which((weather$pred_error >= lower_fence) & (weather$pred_error <= upper_fence)), ]
-
-accurate_weather %>%
-  summarize(error_mean = mean(pred_error))
-
-accurate_preds <- nrow(accurate_weather) / nrow(weather)
-accurate_preds
-```
-
-- According to our definition of 'accurate', we obtain a mean of -0.453 in prediction error. Even if is not 0 on the dot, there really is not a big difference between 0 and -0.453 (especially when the temperature is measured in degrees Fahrenheit). Also, 94% of predictions are accurate.
-
-- Let's take a different but simple approach this time to find out feature importance. We will use the selectKBest algorithm to do feature selection with the absolute prediction error being our y-variable. We select the best 7 out of 14 features.
-
-- Note: We drop the `date`, `observed_temp`, `forecast_temp`, `koppen`, `avg_annual_precip`, and `observed_precip` as we did in our previous models.
-
-```{r}
-set.seed(5094)
-
-# Clean up data
-accurate_weather <- accurate_weather %>%
-  mutate(pred_error = abs(pred_error), month = lubridate::month(date, label = TRUE)) %>%
-  dplyr::select(-date, -observed_temp, -forecast_temp, -koppen, -avg_annual_precip, -observed_precip)
-
-character_cols <- names(accurate_weather)[sapply(accurate_weather, is.character)]
-accurate_weather[character_cols] <- lapply(accurate_weather[character_cols], as.factor)
-
-# Finding the 7 most important features by using KBest (where k = 7) on a linear regression model
-filter_eval <- wrapperEvaluator("lm")
-direct_searcher <- directSearchAlgorithm("selectKBest", list(k = 7))
-results <- directFeatureSelection(accurate_weather, "pred_error", direct_searcher, filter_eval)
-features_used <- results$xNames
-vals <- rep(0, length(features_used))
-
-for (i in 1:length(features_used)) {
-  vals[i] <- results$bestFeatures[[i]]
-}
-df <- data.frame(features = features_used, significance = vals)
-
-ggplot(df, aes(x = features, y = significance)) +
-  geom_col(color = "black", fill = "orange") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1)) +
-  xlab("Features") +
-  ylab("Significance") +
-  ggtitle("Important Features that Contribute to Accurate Predictions",
-    subtitle = "0 = Not Important\n1 = Important"
-  )
-
-results$bestFeatures
-```
-
-- We found that `city`, `state`, `region`, `high_or_low`, `forecast_outlook`, `longitude`, and `month` have some influence on making accurate temperature predictions.
-
-- **Important note**: It looks like city, state, region, and longitude might relate to each other. Nonetheless, we are relaxing correlation assumptions as we are not fitting any model. 
-
-- Now, we want to identify the factors that lead to the most accurate temperature predictions made.
-
-```{r}
-# Feature 1: month
-check_month_accurate <- accurate_weather %>%
-  group_by(month) %>%
-  summarize(avg_error = mean(pred_error))
-
-# Seems like weathermen make the most accurate predictions on June, July, and August
-# How convenient! These months correspond to the Summer season
-ggplot(check_month_accurate, aes(x = month, y = avg_error)) +
-  geom_line(aes(group = 1), color = "black") +
-  geom_point(color = "purple") +
-  xlab("Month") +
-  ylab("Average (Absolute) Prediction Error") +
-  ggtitle("Average Prediction Error of Accurate Data by Month")
-
-accurate_weather <- accurate_weather %>%
-  mutate(season = case_when(
-    month %in% c("Sep", "Oct", "Nov") ~ "Fall",
-    month %in% c("Dec", "Jan", "Feb") ~ "Winter",
-    month %in% c("Mar", "Apr", "May") ~ "Spring",
-    month %in% c("Jun", "Jul", "Aug") ~ "Summer"
-  ))
-
-accurate_weather %>%
-  group_by(season) %>%
-  summarize(avg_error = mean(pred_error))
-```
-
-- We see that temperature predictions during the months of June, July, and August are the most accurate. These months, if we bin them together, are the Summer months. 
-- Check out [https://www.epa.gov/system/files/images/2022-07/seasonal-temperature_download1_2022.png] (Source: NOAA (National Oceanic and Atmospheric Administration). 2022.)
-
-- If we observe the above graph by the NOAA, we can verify that our observations are indeed correct. The Summer season has the least variable temperature, making it the time when weather forecasters make the most accurate predictions.
-
-- Let us look at other factors.
-
-```{r, fig.height = 5}
-# Feature 2: forecast_outlook
-check_forecast_out_accurate <- accurate_weather %>%
-  group_by(forecast_outlook) %>%
-  summarize(avg_error = mean(pred_error))
-
-# The most accurate predictions are made when the forecast outlook is either SMOKE, BLZZRD, OR TSTRMS
-# Perhaps they have some relation to our previous feature, month / season
-ggplot(check_forecast_out_accurate) +
-  geom_col(aes(x = forecast_outlook, y = avg_error, fill = forecast_outlook), color = "black") +
-  coord_flip() +
-  scale_y_continuous(
-    breaks = seq(0, 3, 0.5),
-    labels = seq(0, 3, 0.5)
-  ) +
-  geom_hline(yintercept = 1.85, linetype = "dashed") +
-  scale_fill_manual(values = c(
-    "lightblue", "purple", "lightblue", "lightblue", "lightblue", "lightblue",
-    "lightblue", "lightblue", "lightblue", "lightblue", "lightblue", "lightblue",
-    "lightblue", "lightblue", "lightblue", "purple", "lightblue", "lightblue",
-    "lightblue", "purple", "lightblue", "lightblue", "lightblue"
-  ), guide = "none") +
-  xlab("Forecast Outlook") +
-  ylab("Average (Absolute) Prediction Error") +
-  ggtitle("Average Prediction Error of Accurate Data by Forecast Outlook",
-    subtitle = "Purple = Top 3 lowest prediction error\nLight blue = Other"
-  )
-
-check_forecast_out_accurate %>%
-  slice_min(avg_error, n = 3)
-
-# Yes! These forecast outlooks mainly come from the temperature predictions for Summer
-# What we have gathered here further strengthens our argument that weather forecasters make more accurate predictions during the Summer
-accurate_weather %>%
-  filter(forecast_outlook %in% c(
-    "SMOKE", # 341
-    "BLZZRD", # 28
-    "TSTRMS"
-  )) %>% # 9074
-  count(season)
-```
-
-- We can see that SMOKE, BLZZRD, and TSTRMS `forecast_outlook` contribute to more accurate predictions.
-
-- Relating this back to our analysis of month/season feature, we can firmly say that Summer is the time when weathermen make more accurate predictions. 
-
-- Let us press on.
-
-```{r}
-# Feature 3: high_or_low
-check_highlow_accurate <- accurate_weather %>%
-  group_by(high_or_low) %>%
-  summarize(avg_error = mean(pred_error))
-
-# Although forecast for high temperatures are more accurate, it looks like the difference is too small
-ggplot(check_highlow_accurate) +
-  geom_col(aes(x = high_or_low, y = avg_error), color = "black", fill = "purple") +
-  xlab("Type of Temperature Forecast") +
-  ylab("Average (Absolute) Prediction Error") +
-  ggtitle("Average Prediction Error of Accurate Data by each\nType of Temperature Forecast")
-
-# Verify
-check_highlow_accurate %>%
-  summarize(difference_accurate = `avg_error` - lag(`avg_error`)) %>%
-  drop_na()
-
-temp_outlier %>%
-  group_by(high_or_low, estimations) %>%
-  summarize(avg_error = mean(abs(pred_error))) %>%
-  group_by(estimations) %>%
-  summarize(difference_outlier = abs(`avg_error` - lag(`avg_error`))) %>%
-  drop_na()
-```
-
-- Regardless of the type of temperature forecast (high or low), there really is not a big difference of when the weathermen make more accurate predictions. 
-
-- If we take a look at the outlier data, the difference between high or low for over/under estimations is more apparent, especially for overestimations. 
-
-- Thus, we conclude that when the temperature prediction is accurate, the forecast being a measure of high/low temperature does not make the estimations more precise.
-
-- Now, we move onto the last set of features.
-
-```{r}
-# Feature 4: Location (city, state, region, longitude)
-
-# By state
-# We observe that temperature predictions for FL, IN, and GA are more accurate than other states
-accurate_weather %>%
-  group_by(state) %>%
-  summarize(avg_error = mean(pred_error)) %>%
-  slice_min(avg_error, n = 3)
-
-# By city
-# Geographically, the cities with the lowest average prediction error agree with our analysis of the state feature
-# Daytona Beach is in FL, Atlanta is in GA, and Detroit is in MI
-accurate_weather %>%
-  group_by(city) %>%
-  summarize(avg_error = mean(pred_error)) %>%
-  slice_min(avg_error, n = 3)
-
-# By region
-# Further, we note that the temperature predictions in Southern region of the USA is the most accurate, followed by Midwest, Northeast, and finally West
-accurate_weather %>%
-  group_by(region) %>%
-  summarize(avg_error = mean(pred_error))
-
-# By longitude
-# Next, we spot that locations at middle-to-high (not too extreme) longitudes have more accurate temperature predictions
-# than the locations at higher and lower longitudes
-
-# Binning longitudes by quartiles
-summary(accurate_weather$lon)
-
-accurate_weather %>%
-  mutate(lon_bins = case_when(
-    lon >= -150.00 & lon < -101.72 ~ "[-150.00, -101.72)",
-    lon >= -101.72 & lon < -85.21 ~ "[-101.72, -85.21)",
-    lon >= -85.21 & lon < -80.99 ~ "[-85.21, -80.99)",
-    lon >= -80.99 & lon <= -68.01 ~ "[-80.99, -68.01]"
-  )) %>%
-  mutate(lon_bins = as.factor(lon_bins)) %>%
-  group_by(lon_bins) %>%
-  summarize(avg_error = mean(pred_error)) %>%
-  arrange(avg_error)
-```
-
-- We first look at the individual features, starting with `state` --> `city` --> `region` --> `longitude`.
-
-- By `state`: We observe that temperature predictions for FL, IN, and GA are more accurate than other states.
-
-- By `city`: We gather that the cities with the average prediction error agree with our analysis of the state feature. Daytona Beach is in FL, Atlanta is in GA, and Detroit is in MI.
-
-- By `region`: We note that the temperature predictions in Southern region of the USA is the most accurate, followed by Midwest, Northeast, and finally West. Notice that FL and GA is in the South region, whereas IN is in the Midwest.  
-
-- By `longitude`: We noticed that locations at middle-to-high (not too extreme) longitudes have more accurate temperature predictions than the locations at higher and lower longitudes 
-
-- There seems to be a seemingly-obvious pattern as to where weather forecasters make more accurate predictions. We are going to try to combine all the features together and map out those areas to confirm our suspicions.
-
-```{r}
-# Cumulative Location Features Analysis
-# Let us combine location features together to get a clearer picture
-# Since the usmap does not have data for individual cities, we will assign each data point to their corresponding county
-# This is to capture every feature we are comparing
-last_feature <- accurate_weather %>%
-  group_by(city, state, region) %>%
-  summarize(avg_error = mean(pred_error)) %>%
-  ungroup() %>%
-  slice_min(avg_error, n = 10) %>%
-  mutate(county = case_when(
-    city == "DAYTONA_BEACH" ~ "Volusia County",
-    city == "ATLANTA" ~ "Fulton County",
-    city == "DETROIT" ~ "Wayne County",
-    city == "FORT_WAYNE" ~ "Allen County",
-    city == "CHARLESTON" ~ "Charleston County",
-    city == "GREENSBORO" ~ "Guilford County",
-    city == "DALLAS_FT_WORTH" ~ "Tarrant County",
-    city == "BROWNSVILLE" ~ "Cameron County",
-    city == "BUFFALO" ~ "Johnson County",
-    city == "FORT_SMITH" ~ "Sebastian County"
-  ))
-
-# Data cleanup to get right combination
-relevant_counties <- last_feature %>%
-  pull(county)
-
-relevant_states <- last_feature %>%
-  pull(state)
-
-usa_counties <- us_map(regions = "counties")
-
-cleaned_data <- usa_counties %>%
-  filter((county %in% relevant_counties) & (abbr %in% relevant_states)) %>%
-  filter(!(abbr %in% c("AR", "IN") & county == "Fulton County")) %>%
-  filter(!(abbr %in% c("GA", "NC", "IN") & county == "Wayne County")) %>%
-  filter(!(abbr %in% c("TX", "AR", "GA", "IN") & county == "Johnson County"))
-
-cleaned_data$accurate <- "yes"
-
-usa_counties <- usa_counties %>%
-  left_join(cleaned_data, by = c("x", "y", "order", "hole", "piece", "group", "fips", "abbr", "full", "county")) %>%
-  mutate(accurate = ifelse(is.na(accurate), "no", "yes"))
-
-
-# Convert XY coordinates to lat/lon (Adapted from https://stackoverflow.com/questions/59183384/how-to-convert-x-and-y-coordinates-into-latitude-and-longitude)
-# Convert usa_counties data to sf object
-usa_counties_sf <- st_as_sf(usa_counties, coords = c("x", "y"), crs = usmap_crs())
-
-# Transform CRS to EPSG:4326 (4326 is the most commonly used CRS to translate XY-coordinates to longitude/latitude degrees)
-usa_counties_latlon <- st_transform(usa_counties_sf, crs = 4326)
-
-# Extract longitude and latitude after transformation
-usa_counties_latlon <- usa_counties_latlon %>%
-  mutate(
-    lon = st_coordinates(usa_counties_latlon)[, 1],
-    lat = st_coordinates(usa_counties_latlon)[, 2]
-  )
-
-
-# The counties highlighted red represent where the most accurate temperature predictions are made
-# This confirms our prior observations: Weathermen make more accurate temperature predictions in
-# 1. Southern USA than any other region [This encompasses the city, state, and region observation]
-# 2. Locations with middle-to-high longitude
-ggplot(usa_counties_latlon, aes(x = lon, y = lat, group = group, fill = factor(accurate))) +
-  geom_polygon(color = "black") +
-  scale_fill_manual(values = c("lightblue", "red"), guide = "none") +
-  labs(
-    title = "Top 10 US Cities/Counties with Most Accurate Temperature Predictions",
-    subtitle = "Red = Most Accurate"
-  ) +
-  theme(panel.background = element_rect(color = "BLACK", fill = "GRAY")) +
-  xlab("Longitude") +
-  ylab("Latitude")
-```
-
-- It looks like there is a pattern! 
-
-- We can see that the Southern areas of the United States benefit from more accurate temperature predictions. 
-
-- We can also observe that the temperature predictions at middle-to-high `longitude` locations (not too low nor too high) are more accurate.
-
-- It makes sense that latitude is not an important factor here. We can see that there are cities across lower latitude and higher latitude bands that contribute to more accurate predictions.  
-
-- To combine these observations together, weathermen make more accurate predictions in South USA, at middle-to-high `longitude` locations.
-
----
-
-### Summary
-
-- We have truly learned a lot from this analysis. Let's recap:
-  
-  - Our main purpose of carrying out this EDA is to answer two questions: 
-    1. When do weathermen make more accurate temperature predictions? 
-    2. When do they overestimate/underestimate temperature predictions?
-    
-  - We first did some preliminary visualization to better comprehend the inherent pattern. We discovered that there is a statistical significance between estimated/observed temperature. This serves as a motivation to push on with our analysis.
-  
-  - We tried answering question 2 first:
-    1. We created a logistic regression model, in which the features are filtered by our LASSO regression and bi-directional stepwise selection algorithms. We obtained an AUC of 0.676 and an accuracy score of 65.4%.  
-    2. We feel as if we can obtain better metrics than this, thus we opted to use an extreme gradient boosting classifier. We were right in doing so, as we obtained a much improved AUC of 0.75 and an accuracy of 70.2%.
-    3. Since the caret package does not have the ability to plot feature importance straight away, we have to create another xgb model using the parameters of the trained classifier above (to create a model as similar as possible). This allows us plot a graph of feature importance.
-    4. Looking only at the top 10 features, we gathered that:
-        i. Overestimations are usually made when the location is at a higher `longitude` and a lower `latitude` with medium-to-high `elevation` and extremely high or lower `elevation_change_four`; the forecast is for high temperature; and the `wind` speed is higher or extremely low.
-        ii. In contrast, underestimations are usually made when the location is at a lower `longitude` with high `elevation_change_four` and extremely high `elevation`; the forecast is for low temperature and is made on the `month` of January, February, or March; and the `forecast_outlook` is Sunny.
-  
-  - Then, we answered question 1:
-    1. We took a different approach this time. We used a select kBest algorithm based on a linear model, where k = 7. This selects the 7 best features.
-    2. The reason why we set k = 7 is because there are 14 features, and we believe looking at the best 7 features (half of 14) would help us better understand when the weathermen would make more accurate predictions.
-    3. From this, we found that:
-        i.  the Summer `season`, 
-        ii. the `forecast_outlook` being BLZZRD, TSTRMS, or SMOKE,
-        iii. and the location being in the Southern `region` with middle-to-high `longitude`
-       contribute to more accurate predictions.
-       
-  - With this, we have achieved our aim of answering those two questions. 
-  
